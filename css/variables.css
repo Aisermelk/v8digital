@@ -1,0 +1,25 @@
+:root {
+    /* Cores Principais */
+    --primary: #9C4DFF;
+    --primary-light: #B97CFF;
+    --accent-pink: #FF4FD8;
+    --accent-blue: #43C7FF;
+    
+    /* Neutros e Backgrounds */
+    --bg-dark: #09070F;
+    --surface: #171320;
+    --surface-light: #231B34;
+    --white: #FFFFFF;
+    --text-secondary: #D0CBE2;
+    --border: rgba(255, 255, 255, 0.08);
+
+    /* Gradientes */
+    --gradient-main: linear-gradient(135deg, var(--primary) 0%, var(--accent-pink) 100%);
+    --gradient-glow: radial-gradient(circle at center, rgba(156, 77, 255, 0.15) 0%, transparent 70%);
+
+    /* Espaçamentos e Raio */
+    --radius-lg: 16px;
+    --radius-md: 8px;
+    --container-max: 1200px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
