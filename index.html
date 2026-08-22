@@ -1,253 +1,444 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V8 Digital | Transformando ideias em soluções digitais</title>
-    <meta name="description" content="A V8 Digital cria sites, sistemas, automações e estratégias digitais profissionais para empresas que querem crescer no ambiente online.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/logo/v8p.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <title>V8 Digital | Desenvolvimento Web & Marketing Digital</title>
+  <meta name="description" content="A V8 Digital cria sites profissionais, landing pages, sistemas web, automações, estratégias de marketing digital, tráfego pago e soluções com IA para empresas que querem crescer online.">
+  <meta name="keywords" content="V8 Digital, criação de sites, landing pages, marketing digital, tráfego pago, sistemas web, automação, inteligência artificial">
+  <meta name="author" content="V8 Digital">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#08080d">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+  <link rel="canonical" href="https://v8digital.pages.dev/">
+  <link rel="icon" href="assets/logo/logo.png">
 
-    <!-- Icons (Lucide para modernidade) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="V8 Digital | Desenvolvimento Web & Marketing Digital">
+  <meta property="og:description" content="Sites, landing pages e soluções digitais pensadas para presença, leads e vendas.">
+  <meta property="og:url" content="https://v8digital.pages.dev/">
+  <meta property="og:site_name" content="V8 Digital">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="V8 Digital | Desenvolvimento Web & Marketing Digital">
+  <meta name="twitter:description" content="Soluções digitais para empresas que querem crescer online.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "V8 Digital",
+    "url": "https://v8digital.pages.dev/",
+    "email": "aisermelquisedec@gmail.com",
+    "sameAs": [
+      "https://www.instagram.com/aisermelquisedec/"
+    ],
+    "description": "Desenvolvimento web, landing pages, marketing digital, automações, tráfego pago e soluções com IA."
+  }
+  </script>
 </head>
+
 <body>
 
-    <header id="header">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="assets/logo/v8p.png" alt="V8 Digital Logo">
+  <header class="site-header" id="header">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo" aria-label="V8 Digital - início">
+        <span class="logo-mark">V8</span>
+        <span class="logo-text">Digital</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#processo">Processo</a>
+        <a href="#contato" class="nav-cta">Falar conosco</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">V8 DIGITAL • DESENVOLVIMENTO WEB & MARKETING</span>
+
+          <h1>
+            Sites que atraem.
+            <span>Experiências que convertem.</span>
+          </h1>
+
+          <p>
+            Criamos sites, landing pages e soluções digitais para empresas
+            que querem fortalecer sua presença online, gerar oportunidades
+            e transformar visitantes em clientes.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projetos" class="btn btn-primary">Ver nossos projetos</a>
+            <a href="https://wa.me/54992756194?text=Olá%20V8%20Digital!%20Quero%20conhecer%20os%20serviços%20e%20fazer%20um%20orçamento." class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Falar com a V8 Digital</a>
+          </div>
+
+          <div class="hero-proof">
+            <div><strong>Web</strong><span>Sites & aplicações</span></div>
+            <div><strong>Leads</strong><span>Estratégias de conversão</span></div>
+            <div><strong>Digital</strong><span>Marketing & automação</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="hero-card">
+            <span>V8</span>
+            <strong>Digital</strong>
+            <small>Ideia → Experiência → Resultado</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="servicos">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">O QUE FAZEMOS</span>
+          <h2>Soluções digitais para <span>negócios que querem crescer.</span></h2>
+          <p>Unimos desenvolvimento web, estratégia e tecnologia para criar experiências digitais com propósito.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-number">01</span>
+            <h3>Sites profissionais</h3>
+            <p>Sites modernos, responsivos e alinhados à identidade da sua empresa.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">02</span>
+            <h3>Landing Pages</h3>
+            <p>Páginas focadas em campanhas, captação de leads e conversão.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">03</span>
+            <h3>Sistemas Web</h3>
+            <p>Interfaces e aplicações web desenvolvidas para necessidades específicas.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">04</span>
+            <h3>Automação</h3>
+            <p>Integrações e fluxos digitais para reduzir tarefas manuais e ganhar eficiência.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">05</span>
+            <h3>Marketing Digital</h3>
+            <p>Estratégias digitais para fortalecer a presença da marca e gerar oportunidades.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">06</span>
+            <h3>Tráfego Pago</h3>
+            <p>Estruturação de campanhas e páginas preparadas para receber e converter tráfego.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">07</span>
+            <h3>SEO</h3>
+            <p>Estrutura técnica e conteúdo preparados para melhorar a presença nos mecanismos de busca.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">08</span>
+            <h3>Soluções com IA</h3>
+            <p>Uso estratégico de inteligência artificial para acelerar processos e criar novas experiências digitais.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projetos">
+      <div class="container">
+        <div class="section-heading section-heading-row">
+          <div>
+            <span class="eyebrow">PORTFÓLIO</span>
+            <h2>Projetos que <span>colocam a estratégia em prática.</span></h2>
+          </div>
+          <p>Conheça alguns dos projetos desenvolvidos pela V8 Digital.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-image project-assistencia">
+              <span>Landing Page</span>
+            </div>
+            <div class="project-content">
+              <span class="project-category">LEADS • WHATSAPP • CONVERSÃO</span>
+              <h3>Assistência Técnica</h3>
+              <p>Landing page comercial criada para apresentar o serviço, responder objeções e direcionar o visitante para atendimento.</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Cloudflare</span>
+              </div>
+              <a href="https://assistenciatecnica-eth.pages.dev/" target="_blank" rel="noopener noreferrer" class="project-link">Ver projeto →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image project-moments">
+              <span>Landing Page</span>
+            </div>
+            <div class="project-content">
+              <span class="project-category">MARKETING • PRODUTO • CAPTAÇÃO</span>
+              <h3>My Moments Paris</h3>
+              <p>Landing page desenvolvida para apresentar produtos, comunicar a oportunidade e conduzir o visitante para cadastro e contato.</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Formulário</span>
+              </div>
+              <a href="https://mymonentsparis.pages.dev/" target="_blank" rel="noopener noreferrer" class="project-link">Ver projeto →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image project-play">
+              <span>Aplicação Web</span>
+            </div>
+            <div class="project-content">
+              <span class="project-category">CATÁLOGO • UX • APLICAÇÃO</span>
+              <h3>V8 Play+</h3>
+              <p>Projeto de aplicação web com experiência de catálogo, busca, categorias, autenticação e organização dinâmica de conteúdo.</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>APIs</span>
+              </div>
+              <a href="https://v8play.pages.dev/" target="_blank" rel="noopener noreferrer" class="project-link">Ver projeto →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="sobre">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow">SOBRE A V8 DIGITAL</span>
+          <h2>Mais do que um site.<br><span>Uma presença digital.</span></h2>
+        </div>
+
+        <div class="about-copy">
+          <p>
+            A V8 Digital desenvolve soluções digitais com foco em presença,
+            experiência e resultado. Criamos desde páginas institucionais
+            até landing pages comerciais e aplicações web.
+          </p>
+          <p>
+            Nosso trabalho combina desenvolvimento, estratégia de marketing
+            e ferramentas digitais para transformar ideias em experiências
+            que façam sentido para cada negócio.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section" id="processo">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">COMO TRABALHAMOS</span>
+          <h2>Do primeiro contato ao <span>projeto publicado.</span></h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <span>01</span>
+            <h3>Entendimento</h3>
+            <p>Entendemos o negócio, o público e o objetivo do projeto.</p>
+          </article>
+
+          <article class="process-card">
+            <span>02</span>
+            <h3>Estratégia</h3>
+            <p>Definimos estrutura, conteúdo, experiência e caminho de conversão.</p>
+          </article>
+
+          <article class="process-card">
+            <span>03</span>
+            <h3>Desenvolvimento</h3>
+            <p>Transformamos a estratégia em uma experiência digital funcional e responsiva.</p>
+          </article>
+
+          <article class="process-card">
+            <span>04</span>
+            <h3>Publicação</h3>
+            <p>Testamos, ajustamos e colocamos o projeto no ar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tech-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">TECNOLOGIA</span>
+          <h2>Ferramentas para transformar <span>ideias em experiências.</span></h2>
+        </div>
+
+        <div class="tech-list">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>APIs</span>
+          <span>GitHub</span>
+          <span>Cloudflare</span>
+          <span>Meta Pixel</span>
+          <span>Google Analytics</span>
+          <span>IA</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contato">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <span class="eyebrow">VAMOS CONVERSAR</span>
+          <h2>Tem uma ideia?<br><span>Vamos colocar no ar.</span></h2>
+          <p>Conte um pouco sobre seu projeto. A V8 Digital entra em contato para entender sua necessidade.</p>
+
+          <div class="contact-links">
+            <a href="https://wa.me/54992756194?text=Olá%20V8%20Digital!%20Quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">
+              <strong>WhatsApp</strong>
+              <span>+55 49 9275-6194</span>
             </a>
-
-            <nav id="nav-menu">
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#tecnologias">Tecnologias</a></li>
-                    <li><a href="#processo">Processo</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-
-            <div class="header-actions">
-                <a href="#contato" class="btn btn-primary btn-sm">Solicitar orçamento</a>
-                <button id="menu-toggle" aria-label="Abrir Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+            <a href="mailto:aisermelquisedec@gmail.com">
+              <strong>E-mail</strong>
+              <span>aisermelquisedec@gmail.com</span>
+            </a>
+            <a href="https://www.instagram.com/aisermelquisedec/" target="_blank" rel="noopener noreferrer">
+              <strong>Instagram</strong>
+              <span>@aisermelquisedec</span>
+            </a>
+          </div>
         </div>
-    </header>
 
-    <main>
-        <!-- HERO SECTION -->
-        <section id="inicio" class="hero">
-            <div class="hero-bg-glow"></div>
-            <div class="container">
-                <div class="hero-content">
-                    <div class="badge">Especialistas em Tecnologia</div>
-                    <h1>Transformamos ideias em <span class="text-gradient">soluções digitais.</span></h1>
-                    <p>A V8 Digital cria sites, sistemas, automações e estratégias digitais profissionais para empresas que querem crescer no ambiente online.</p>
-                    
-                    <div class="hero-btns">
-                        <a href="#projetos" class="btn btn-primary">Conheça nossos projetos</a>
-                        <a href="#" class="btn btn-outline whatsapp-link">Falar com a V8 Digital</a>
-                    </div>
+        <form class="contact-form" action="https://formspree.io/f/xljrvnjo" method="POST">
+          <input type="hidden" name="_subject" value="Novo contato — V8 Digital">
+          <input type="hidden" name="_next" value="https://v8digital.pages.dev/obrigado.html">
 
-                    <div class="hero-indicators">
-                        <span><i data-lucide="check-circle"></i> Desenvolvimento Web</span>
-                        <span><i data-lucide="check-circle"></i> Automação</span>
-                        <span><i data-lucide="check-circle"></i> Marketing Digital</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Seu nome" autocomplete="name" required>
 
-        <!-- SOBRE -->
-        <section id="sobre" class="about section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Digital não é apenas presença. <span class="text-gradient">É resultado.</span></h2>
-                    <p>Focamos em transformar necessidades de negócios em soluções funcionais, rápidas e orientadas à conversão.</p>
-                </div>
+          <label for="whatsapp">WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" placeholder="(00) 00000-0000" autocomplete="tel" required>
 
-                <div class="about-grid">
-                    <div class="about-card">
-                        <i data-lucide="code-2"></i>
-                        <h3>Desenvolvimento Personalizado</h3>
-                        <p>Sistemas sob medida para a sua regra de negócio.</p>
-                    </div>
-                    <div class="about-card">
-                        <i data-lucide="layout"></i>
-                        <h3>Experiência do Usuário</h3>
-                        <p>Interfaces intuitivas que facilitam a navegação.</p>
-                    </div>
-                    <div class="about-card">
-                        <i data-lucide="zap"></i>
-                        <h3>Performance</h3>
-                        <p>Sites leves que carregam instantaneamente.</p>
-                    </div>
-                    <div class="about-card">
-                        <i data-lucide="shield-check"></i>
-                        <h3>Segurança</h3>
-                        <p>Protocolos modernos de proteção de dados.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="seu@email.com" autocomplete="email" required>
 
-        <!-- SERVIÇOS -->
-        <section id="servicos" class="services section-padding">
-            <div class="container">
-                <div class="section-header center">
-                    <h2 class="h1">Nossos Serviços</h2>
-                </div>
-                <div class="services-grid" id="services-container">
-                    <!-- Gerado via JS ou estático para SEO -->
-                </div>
-            </div>
-        </section>
+          <label for="servico">O que você precisa?</label>
+          <select id="servico" name="servico" required>
+            <option value="">Selecione um serviço</option>
+            <option>Site profissional</option>
+            <option>Landing Page</option>
+            <option>Sistema Web</option>
+            <option>Automação</option>
+            <option>Marketing Digital</option>
+            <option>Tráfego Pago</option>
+            <option>SEO</option>
+            <option>Solução com IA</option>
+            <option>Outro</option>
+          </select>
 
-        <!-- PROJETOS -->
-        <section id="projetos" class="projects section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="h1">Projetos em Destaque</h2>
-                    <p>Conheça alguns trabalhos que transformaram empresas.</p>
-                </div>
-                <div class="projects-grid" id="projects-render">
-                    <!-- Dinamicamente via projects.js -->
-                </div>
-            </div>
-        </section>
+          <label for="mensagem">Conte sobre o projeto</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Descreva brevemente sua ideia ou necessidade." required></textarea>
 
-        <!-- TECNOLOGIAS -->
-        <section id="tecnologias" class="tech-section section-padding">
-            <div class="container">
-                <div class="section-header center">
-                    <h2>Tecnologias que utilizamos</h2>
-                </div>
-                <div class="tech-track">
-                    <!-- Lista de tecnologias aqui -->
-                    <div class="tech-item">HTML5</div>
-                    <div class="tech-item">CSS3</div>
-                    <div class="tech-item">JavaScript</div>
-                    <div class="tech-item">Firebase</div>
-                    <div class="tech-item">APIs REST</div>
-                    <div class="tech-item">GitHub</div>
-                    <div class="tech-item">Cloudflare</div>
-                    <div class="tech-item">Meta Pixel</div>
-                </div>
-            </div>
-        </section>
+          <button type="submit" class="btn btn-primary">Solicitar orçamento</button>
+          <small>Seus dados serão utilizados apenas para responder à sua solicitação.</small>
+        </form>
+      </div>
+    </section>
 
-        <!-- PROCESSO -->
-        <section id="processo" class="process section-padding">
-            <div class="container">
-                <div class="section-header center">
-                    <h2 class="h1">Como trabalhamos</h2>
-                </div>
-                <div class="process-steps">
-                    <!-- Step items 01 a 06 conforme briefing -->
-                </div>
-            </div>
-        </section>
+    <section class="final-cta">
+      <div class="container final-cta-content">
+        <span class="eyebrow">PRÓXIMO PASSO</span>
+        <h2>Seu próximo projeto pode começar <span>agora.</span></h2>
+        <a href="https://wa.me/54992756194?text=Olá%20V8%20Digital!%20Quero%20começar%20um%20projeto." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Falar com a V8 Digital</a>
+      </div>
+    </section>
 
-        <!-- CTA FINAL -->
-        <section class="cta-section section-padding">
-            <div class="container">
-                <div class="cta-box">
-                    <h2>Tem uma ideia? Vamos transformar em realidade.</h2>
-                    <p>Conte para a V8 Digital o que você precisa e descubra como podemos ajudar seu negócio.</p>
-                    <div class="cta-actions">
-                        <a href="#contato" class="btn btn-primary">Solicitar orçamento</a>
-                        <a href="#" class="btn btn-outline whatsapp-link">Falar pelo WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+  </main>
 
-        <!-- CONTATO -->
-        <section id="contato" class="contact section-padding">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h2>Vamos iniciar um projeto?</h2>
-                        <p>Preencha o formulário ou utilize nossos canais diretos.</p>
-                        
-                        <div class="info-list">
-                            <div class="info-item">
-                                <i data-lucide="mail"></i>
-                                <span id="contact-email">contato@v8digital.com.br</span>
-                            </div>
-                            <div class="info-item">
-                                <i data-lucide="message-circle"></i>
-                                <span id="contact-whatsapp">WhatsApp</span>
-                            </div>
-                        </div>
-                    </div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#inicio" class="logo">
+          <span class="logo-mark">V8</span>
+          <span class="logo-text">Digital</span>
+        </a>
+        <p>Desenvolvimento Web & Marketing Digital.</p>
+      </div>
 
-                    <form id="contact-form" class="form">
-                        <div class="form-group">
-                            <input type="text" name="nome" placeholder="Seu nome" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="whatsapp" placeholder="Seu WhatsApp" required>
-                        </div>
-                        <div class="form-group">
-                            <select name="servico" required>
-                                <option value="" disabled selected>Serviço de interesse</option>
-                                <option value="Site">Site Profissional</option>
-                                <option value="Sistema">Sistema Web</option>
-                                <option value="Automacao">Automação</option>
-                                <option value="Marketing">Marketing Digital</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="mensagem" placeholder="Fale um pouco sobre seu projeto" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-full">Enviar solicitação</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+      <div class="footer-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <img src="assets/logo/v8p.png" alt="V8 Digital" class="footer-logo">
-                <p>Transformando ideias em soluções digitais.</p>
-                <div class="social-links">
-                    <a href="#" class="instagram-link"><i data-lucide="instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 V8 Digital. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+      <div class="footer-contact">
+        <a href="mailto:aisermelquisedec@gmail.com">aisermelquisedec@gmail.com</a>
+        <a href="https://www.instagram.com/aisermelquisedec/" target="_blank" rel="noopener noreferrer">@aisermelquisedec</a>
+      </div>
+    </div>
 
-    <!-- Scripts -->
-    <script src="js/config.js"></script>
-    <script src="js/projects.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <div class="container footer-bottom">
+      <span>© 2026 V8 Digital. Todos os direitos reservados.</span>
+      <span>Desenvolvimento Web • Marketing Digital • Soluções Digitais</span>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/54992756194?text=Olá%20V8%20Digital!%20Vim%20pelo%20site%20e%20quero%20saber%20mais." target="_blank" rel="noopener noreferrer" aria-label="Falar com a V8 Digital pelo WhatsApp">
+    WhatsApp
+  </a>
+
+  <script src="js/config.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.getElementById('menuToggle');
+      const nav = document.getElementById('mainNav');
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+          const opened = nav.classList.toggle('active');
+          toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
+        });
+
+        nav.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            nav.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>
