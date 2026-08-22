@@ -14,6 +14,11 @@
     content="noindex, nofollow"
   >
 
+  <meta
+    name="theme-color"
+    content="#07080d"
+  >
+
   <title>Admin — V8 Digital</title>
 
   <link
@@ -35,75 +40,108 @@
 
     <div class="login-card">
 
+      <!-- MARCA -->
+
       <div class="brand">
+
         <div class="brand-mark">
           V8
         </div>
 
-        <div>
+        <div class="brand-text">
           <strong>V8 Digital</strong>
           <span>Painel administrativo</span>
         </div>
+
       </div>
 
 
+      <!-- TÍTULO -->
+
       <div class="login-heading">
 
-        <span>ADMIN</span>
+        <span class="eyebrow">
+          ÁREA RESTRITA
+        </span>
 
         <h1>
           Bem-vindo
         </h1>
 
         <p>
-          Acesse o painel para gerenciar
-          as configurações do seu site.
+          Entre para gerenciar as principais
+          configurações do seu site.
         </p>
 
       </div>
 
 
-      <form id="loginForm">
+      <!-- LOGIN -->
 
-        <label for="adminEmail">
-          E-mail
-        </label>
+      <form
+        id="loginForm"
+        autocomplete="on"
+      >
 
-        <input
-          type="email"
-          id="adminEmail"
-          placeholder="seu@email.com"
-          autocomplete="username"
-          required
-        >
+        <!-- E-MAIL -->
 
+        <div class="form-group">
 
-        <label for="adminPassword">
-          Senha
-        </label>
-
-        <div class="password-field">
+          <label for="adminEmail">
+            E-mail
+          </label>
 
           <input
-            type="password"
-            id="adminPassword"
-            placeholder="Digite sua senha"
-            autocomplete="current-password"
+            type="email"
+            id="adminEmail"
+            name="email"
+            placeholder="seu@email.com"
+            autocomplete="username"
             required
           >
-
-          <button
-            type="button"
-            id="togglePassword"
-            aria-label="Mostrar senha"
-          >
-            Mostrar
-          </button>
 
         </div>
 
 
-        <label class="remember">
+        <!-- SENHA -->
+
+        <div class="form-group">
+
+          <label for="adminPassword">
+            Senha
+          </label>
+
+          <div class="password-field">
+
+            <input
+              type="password"
+              id="adminPassword"
+              name="password"
+              placeholder="Digite sua senha"
+              autocomplete="current-password"
+              required
+            >
+
+            <button
+              type="button"
+              id="togglePassword"
+              class="password-toggle"
+              aria-label="Mostrar senha"
+            >
+              Mostrar
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- LEMBRAR -->
+
+        <label
+          class="remember"
+          for="rememberLogin"
+        >
 
           <input
             type="checkbox"
@@ -117,6 +155,8 @@
         </label>
 
 
+        <!-- BOTÃO -->
+
         <button
           type="submit"
           class="btn btn-primary"
@@ -125,13 +165,18 @@
         </button>
 
 
+        <!-- ERRO -->
+
         <p
           class="login-error"
           id="loginError"
+          role="alert"
         ></p>
 
       </form>
 
+
+      <!-- VOLTAR -->
 
       <a
         href="../index.html"
@@ -155,6 +200,8 @@
     hidden
   >
 
+    <!-- HEADER -->
+
     <header class="admin-header">
 
       <div class="admin-brand">
@@ -163,9 +210,16 @@
           V8
         </div>
 
-        <div>
-          <strong>V8 Digital</strong>
-          <span>Admin</span>
+        <div class="brand-text">
+
+          <strong>
+            V8 Digital
+          </strong>
+
+          <span>
+            Painel administrativo
+          </span>
+
         </div>
 
       </div>
@@ -176,6 +230,7 @@
         <a
           href="../index.html"
           target="_blank"
+          rel="noopener noreferrer"
           class="view-site"
         >
           Ver site
@@ -194,7 +249,12 @@
     </header>
 
 
+    <!-- CONTEÚDO -->
+
     <section class="dashboard-content">
+
+
+      <!-- CABEÇALHO -->
 
       <div class="dashboard-heading">
 
@@ -209,11 +269,12 @@
           </h1>
 
           <p>
-            Gerencie as principais informações
-            utilizadas pelo seu portfólio.
+            Gerencie os dados utilizados
+            pelo seu portfólio.
           </p>
 
         </div>
+
 
         <div
           class="status"
@@ -225,7 +286,12 @@
       </div>
 
 
-      <form id="settingsForm">
+      <!-- FORMULÁRIO PRINCIPAL -->
+
+      <form
+        id="settingsForm"
+        autocomplete="off"
+      >
 
 
         <!-- =================================================
@@ -248,7 +314,7 @@
 
               <p>
                 Informações utilizadas
-                no site e nos CTAs.
+                nos botões e CTAs.
               </p>
 
             </div>
@@ -257,6 +323,9 @@
 
 
           <div class="fields-grid">
+
+
+            <!-- WHATSAPP -->
 
             <div class="field">
 
@@ -267,15 +336,19 @@
               <input
                 type="text"
                 id="whatsapp"
+                name="whatsapp"
+                inputmode="numeric"
                 placeholder="54992756194"
               >
 
               <small>
-                Informe o número com DDI e DDD.
+                Use DDI + DDD + número.
               </small>
 
             </div>
 
+
+            <!-- E-MAIL -->
 
             <div class="field">
 
@@ -286,11 +359,14 @@
               <input
                 type="email"
                 id="email"
+                name="email"
                 placeholder="seu@email.com"
               >
 
             </div>
 
+
+            <!-- INSTAGRAM -->
 
             <div class="field">
 
@@ -301,11 +377,14 @@
               <input
                 type="text"
                 id="instagram"
+                name="instagram"
                 placeholder="@seuinstagram"
               >
 
             </div>
 
+
+            <!-- FACEBOOK -->
 
             <div class="field">
 
@@ -316,7 +395,8 @@
               <input
                 type="url"
                 id="facebook"
-                placeholder="https://facebook.com/"
+                name="facebook"
+                placeholder="https://facebook.com/..."
               >
 
             </div>
@@ -345,8 +425,8 @@
               </h2>
 
               <p>
-                IDs das principais ferramentas
-                de análise e marketing.
+                IDs das ferramentas de análise
+                e marketing.
               </p>
 
             </div>
@@ -355,6 +435,9 @@
 
 
           <div class="fields-grid">
+
+
+            <!-- META -->
 
             <div class="field">
 
@@ -365,11 +448,14 @@
               <input
                 type="text"
                 id="metaPixel"
+                name="metaPixel"
                 placeholder="123456789012345"
               >
 
             </div>
 
+
+            <!-- GOOGLE ANALYTICS -->
 
             <div class="field">
 
@@ -380,11 +466,14 @@
               <input
                 type="text"
                 id="googleAnalytics"
+                name="googleAnalytics"
                 placeholder="G-XXXXXXXXXX"
               >
 
             </div>
 
+
+            <!-- GOOGLE TAG -->
 
             <div class="field full">
 
@@ -395,6 +484,7 @@
               <input
                 type="text"
                 id="googleTag"
+                name="googleTag"
                 placeholder="GTM-XXXXXXX"
               >
 
@@ -444,8 +534,14 @@
               <input
                 type="url"
                 id="formspree"
-                placeholder="https://formspree.io/f/xxxxxxxx"
+                name="formspree"
+                placeholder="https://formspree.io/f/..."
               >
+
+              <small>
+                URL utilizada pelo formulário
+                principal do site.
+              </small>
 
             </div>
 
@@ -474,7 +570,7 @@
 
               <p>
                 Informações gerais do
-                portfólio.
+                seu portfólio.
               </p>
 
             </div>
@@ -483,6 +579,9 @@
 
 
           <div class="fields-grid">
+
+
+            <!-- NOME -->
 
             <div class="field">
 
@@ -493,11 +592,14 @@
               <input
                 type="text"
                 id="siteName"
+                name="siteName"
                 placeholder="V8 Digital"
               >
 
             </div>
 
+
+            <!-- DOMÍNIO -->
 
             <div class="field">
 
@@ -508,11 +610,14 @@
               <input
                 type="text"
                 id="siteDomain"
+                name="siteDomain"
                 placeholder="v8digital.pages.dev"
               >
 
             </div>
 
+
+            <!-- MENSAGEM -->
 
             <div class="field full">
 
@@ -522,6 +627,7 @@
 
               <textarea
                 id="whatsappMessage"
+                name="whatsappMessage"
                 rows="4"
                 placeholder="Olá! Gostaria de solicitar um orçamento."
               ></textarea>
@@ -556,6 +662,7 @@
 
         </div>
 
+
       </form>
 
     </section>
@@ -563,7 +670,11 @@
   </main>
 
 
-  <script src="admin.js"></script>
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script src="./admin.js"></script>
 
 </body>
 
