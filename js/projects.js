@@ -1,484 +1,386 @@
 /* =========================================================
    V8 DIGITAL — PROJECTS.JS
-   Portfólio oficial
+   Portfólio de projetos
    ========================================================= */
 
-const projects = [
-  {
+"use strict";
+
+
+/* =========================================================
+   PROJETOS
+   ========================================================= */
+
+const V8_PROJECTS = {
+
+  "assistencia-tecnica": {
+
     id: "assistencia-tecnica",
 
     title: "Assistência Técnica",
 
-    shortTitle: "Assistência Técnica",
-
-    category: "Landing Page",
-
-    categoryLabel: "LEADS • WHATSAPP • CONVERSÃO",
+    category: "Landing Page • Suporte Técnico",
 
     description:
-      "Landing page comercial desenvolvida para apresentar serviços de assistência técnica, responder às principais dúvidas do público e direcionar visitantes para atendimento.",
+      "Landing page desenvolvida para um serviço de suporte técnico especializado, com foco em apresentar o problema do cliente de forma clara, transmitir confiança e direcionar o visitante para o atendimento.",
 
-    longDescription:
-      "Projeto desenvolvido com foco em geração e qualificação de leads. A estrutura utiliza comunicação direta, apresentação de benefícios, chamadas para ação, formulário de contato e integração com WhatsApp para facilitar o atendimento.",
+    image:
+      "assets/projects/assistencia-tecnica.jpg",
 
-    url: "https://assistenciatecnica-eth.pages.dev/",
-
-    type: "Landing Page",
+    url:
+      "https://assistenciatecnica-eth.pages.dev/",
 
     technologies: [
       "HTML5",
       "CSS3",
       "JavaScript",
+      "Cloudflare Pages",
       "Formulário",
-      "WhatsApp",
-      "Cloudflare"
-    ],
-
-    features: [
-      "Landing page responsiva",
-      "Estrutura orientada à conversão",
-      "CTA para WhatsApp",
-      "Formulário de captação",
-      "Qualificação de leads",
-      "Seção de serviços",
-      "FAQ",
-      "Design adaptado para dispositivos móveis"
+      "WhatsApp"
     ],
 
     highlights: [
-      "Geração de leads",
-      "Atendimento via WhatsApp",
-      "Estratégia de conversão"
+      "Landing page comercial",
+      "Design responsivo",
+      "Foco em conversão",
+      "CTA para WhatsApp",
+      "Formulário de atendimento",
+      "Experiência mobile"
     ],
 
-    image: "assets/projects/assistencia-tecnica.jpg",
+    challenge:
+      "Criar uma página simples e objetiva para transformar visitantes que estão enfrentando problemas com o aparelho em potenciais clientes.",
 
-    featured: true,
+    solution:
+      "A estrutura foi organizada em torno da principal dor do visitante, utilizando chamadas diretas, elementos de confiança, apresentação do atendimento e CTAs distribuídos estrategicamente pela página."
 
-    year: "2026",
-
-    status: "Publicado"
   },
 
-  {
+
+  "my-moments-paris": {
+
     id: "my-moments-paris",
 
     title: "My Moments Paris",
 
-    shortTitle: "My Moments Paris",
-
-    category: "Landing Page",
-
-    categoryLabel: "MARKETING • PRODUTO • CAPTAÇÃO",
+    category: "Landing Page • Marketing Digital",
 
     description:
-      "Landing page comercial desenvolvida para apresentar produtos, comunicar uma oportunidade de negócio e conduzir visitantes para cadastro e contato.",
+      "Projeto de landing page desenvolvido para apresentar uma oportunidade comercial de forma visual, profissional e orientada à geração de leads.",
 
-    longDescription:
-      "Projeto desenvolvido combinando apresentação de produtos, comunicação comercial, chamadas para ação e captação de contatos. A página foi estruturada para criar uma jornada clara entre apresentação, interesse e ação.",
+    image:
+      "assets/projects/my-moments-paris.jpg",
 
-    url: "https://mymonentsparis.pages.dev/",
-
-    type: "Landing Page",
+    url:
+      "https://mymonentsparis.pages.dev/",
 
     technologies: [
       "HTML5",
       "CSS3",
       "JavaScript",
+      "Cloudflare Pages",
       "Formulário",
-      "WhatsApp",
-      "Cloudflare"
-    ],
-
-    features: [
-      "Landing page responsiva",
-      "Apresentação de produtos",
-      "Seções comerciais",
-      "Chamadas para ação",
-      "Formulário de captação",
-      "Integração com plataforma externa",
-      "WhatsApp",
-      "Estrutura orientada à conversão"
+      "WhatsApp"
     ],
 
     highlights: [
-      "Marketing digital",
+      "Landing page de vendas",
+      "Estratégia de conversão",
+      "Design responsivo",
       "Captação de leads",
-      "Apresentação de produtos"
+      "CTA para WhatsApp",
+      "Estrutura comercial"
     ],
 
-    image: "assets/projects/my-moments-paris.jpg",
+    challenge:
+      "Apresentar uma oportunidade comercial de maneira profissional, mantendo a navegação simples e conduzindo o visitante até o contato.",
 
-    featured: true,
+    solution:
+      "Foi criada uma estrutura visual com hierarquia de informações, benefícios, chamadas para ação e formulário, permitindo que a página funcione como uma ferramenta de captação."
 
-    year: "2026",
-
-    status: "Publicado"
   },
 
-  {
+
+  "v8-play": {
+
     id: "v8-play",
 
-    title: "V8 Play+",
+    title: "V8 Play",
 
-    shortTitle: "V8 Play+",
-
-    category: "Aplicação Web",
-
-    categoryLabel: "CATÁLOGO • UX • APLICAÇÃO",
+    category: "Web App • Entretenimento",
 
     description:
-      "Aplicação web desenvolvida com experiência de catálogo, busca, categorias, autenticação e organização dinâmica de conteúdo.",
+      "Projeto desenvolvido para apresentar uma experiência digital voltada ao entretenimento, com interface moderna, navegação simples e identidade visual própria.",
 
-    longDescription:
-      "Projeto desenvolvido para demonstrar uma experiência web mais próxima de uma aplicação do que de um site institucional. A interface foi estruturada para facilitar descoberta, pesquisa e navegação entre diferentes categorias de conteúdo.",
+    image:
+      "assets/projects/v8-play.jpg",
 
-    url: "https://v8play.pages.dev/",
-
-    type: "Aplicação Web",
+    url:
+      "https://v8play.pages.dev/",
 
     technologies: [
       "HTML5",
       "CSS3",
       "JavaScript",
-      "APIs",
-      "Cloudflare"
-    ],
-
-    features: [
-      "Catálogo de conteúdo",
-      "Busca",
-      "Categorias",
-      "Interface responsiva",
-      "Sistema de autenticação",
-      "Organização dinâmica",
-      "Experiência de navegação",
-      "Interface adaptada para entretenimento"
+      "Cloudflare Pages",
+      "Interface Web",
+      "Design Responsivo"
     ],
 
     highlights: [
-      "Aplicação Web",
-      "Experiência do usuário",
-      "Catálogo dinâmico"
+      "Interface moderna",
+      "Experiência responsiva",
+      "Navegação simplificada",
+      "Identidade visual",
+      "Estrutura web",
+      "Deploy na Cloudflare"
     ],
 
-    image: "assets/projects/v8-play.jpg",
+    challenge:
+      "Criar uma interface visualmente atrativa e fácil de utilizar, mantendo uma experiência consistente em diferentes tamanhos de tela.",
 
-    featured: true,
+    solution:
+      "O projeto foi estruturado com foco na experiência do usuário, utilizando componentes visuais, organização de conteúdo e navegação objetiva."
 
-    year: "2026",
-
-    status: "Publicado"
   }
-];
 
-
-/* =========================================================
-   CONFIGURAÇÃO DO PORTFÓLIO
-   ========================================================= */
-
-const projectsConfig = {
-
-  sectionTitle: "Projetos que colocam a estratégia em prática.",
-
-  sectionDescription:
-    "Conheça alguns dos projetos desenvolvidos pela V8 Digital.",
-
-  showFeaturedOnly: false,
-
-  openExternalLinks: true,
-
-  currentYear: new Date().getFullYear()
 };
 
 
 /* =========================================================
-   FUNÇÕES
+   FUNÇÕES AUXILIARES
    ========================================================= */
 
-/**
- * Retorna todos os projetos.
- */
-function getProjects() {
-  return projects;
-}
+function escapeHTML(value) {
 
+  const div =
+    document.createElement("div");
 
-/**
- * Retorna somente os projetos em destaque.
- */
-function getFeaturedProjects() {
-  return projects.filter(project => project.featured === true);
-}
+  div.textContent =
+    value ?? "";
 
+  return div.innerHTML;
 
-/**
- * Busca um projeto pelo ID.
- */
-function getProjectById(id) {
-  return projects.find(project => project.id === id);
-}
-
-
-/**
- * Busca projetos por categoria.
- */
-function getProjectsByCategory(category) {
-  return projects.filter(
-    project =>
-      project.category.toLowerCase() === category.toLowerCase()
-  );
-}
-
-
-/**
- * Retorna as categorias disponíveis.
- */
-function getProjectCategories() {
-  return [
-    ...new Set(
-      projects.map(project => project.category)
-    )
-  ];
 }
 
 
 /* =========================================================
-   RENDERIZAÇÃO DOS PROJETOS
+   CRIAÇÃO DO MODAL
    ========================================================= */
 
-function renderProjects(containerSelector = ".projects-grid") {
-
-  const container =
-    document.querySelector(containerSelector);
-
-  if (!container) {
-    return;
-  }
-
-  const list =
-    projectsConfig.showFeaturedOnly
-      ? getFeaturedProjects()
-      : getProjects();
-
-  if (!list.length) {
-
-    container.innerHTML = `
-      <div class="projects-empty">
-        <p>Nenhum projeto disponível no momento.</p>
-      </div>
-    `;
-
-    return;
-  }
-
-
-  container.innerHTML = list
-    .map(project => createProjectCard(project))
-    .join("");
-}
-
-
-/* =========================================================
-   CARD DO PROJETO
-   ========================================================= */
-
-function createProjectCard(project) {
-
-  const technologies =
-    project.technologies
-      .slice(0, 4)
-      .map(
-        technology =>
-          `<span>${escapeHTML(technology)}</span>`
-      )
-      .join("");
-
-
-  return `
-    <article
-      class="project-card"
-      data-project-id="${escapeHTML(project.id)}"
-    >
-
-      <div
-        class="project-image"
-        style="background-image: url('${escapeAttribute(project.image)}')"
-      >
-
-        <div class="project-image-overlay"></div>
-
-        <span class="project-type">
-          ${escapeHTML(project.type)}
-        </span>
-
-      </div>
-
-
-      <div class="project-content">
-
-        <span class="project-category">
-          ${escapeHTML(project.categoryLabel)}
-        </span>
-
-        <h3>
-          ${escapeHTML(project.title)}
-        </h3>
-
-        <p>
-          ${escapeHTML(project.description)}
-        </p>
-
-
-        <div class="project-tags">
-
-          ${technologies}
-
-        </div>
-
-
-        <div class="project-actions">
-
-          <a
-            href="${escapeAttribute(project.url)}"
-            class="project-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver projeto
-            <span aria-hidden="true">→</span>
-          </a>
-
-        </div>
-
-      </div>
-
-    </article>
-  `;
-}
-
-
-/* =========================================================
-   MODAL / DETALHES DO PROJETO
-   ========================================================= */
-
-function openProjectModal(projectId) {
-
-  const project =
-    getProjectById(projectId);
-
-  if (!project) {
-    return;
-  }
-
+function createProjectModal() {
 
   let modal =
-    document.querySelector(".project-modal");
+    document.querySelector(
+      "#project-modal"
+    );
 
 
-  if (!modal) {
+  if (modal) {
+    return modal;
+  }
 
-    modal =
-      document.createElement("div");
 
-    modal.className =
-      "project-modal";
+  modal =
+    document.createElement("div");
 
-    modal.innerHTML = `
+  modal.id =
+    "project-modal";
+
+  modal.className =
+    "project-modal";
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+  modal.innerHTML = `
+
+    <div
+      class="project-modal-backdrop"
+      data-modal-close
+    ></div>
+
+    <div
+      class="project-modal-content"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="project-modal-title"
+    >
+
+      <button
+        class="project-modal-close"
+        type="button"
+        aria-label="Fechar projeto"
+        data-modal-close
+      >
+        ×
+      </button>
+
       <div
-        class="project-modal-backdrop"
-        data-close-modal
+        class="project-modal-body"
+        id="project-modal-body"
       ></div>
 
-      <div
-        class="project-modal-content"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="projectModalTitle"
-      >
+    </div>
 
-        <button
-          class="project-modal-close"
-          type="button"
-          aria-label="Fechar"
-          data-close-modal
-        >
-          ×
-        </button>
-
-        <div class="project-modal-body"></div>
-
-      </div>
-    `;
-
-    document.body.appendChild(modal);
+  `;
 
 
+  document.body.appendChild(
     modal
-      .querySelectorAll("[data-close-modal]")
-      .forEach(button => {
-
-        button.addEventListener(
-          "click",
-          closeProjectModal
-        );
-
-      });
+  );
 
 
-    document.addEventListener(
-      "keydown",
-      event => {
+  /*
+   * Fechar modal
+   */
 
-        if (
-          event.key === "Escape" &&
-          modal.classList.contains("active")
-        ) {
+  modal
+    .querySelectorAll(
+      "[data-modal-close]"
+    )
+    .forEach(button => {
 
-          closeProjectModal();
+      button.addEventListener(
+        "click",
+        closeProjectModal
+      );
 
-        }
+    });
+
+
+  /*
+   * ESC
+   */
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if (
+        event.key === "Escape" &&
+        modal.classList.contains("active")
+      ) {
+
+        closeProjectModal();
 
       }
+
+    }
+  );
+
+
+  return modal;
+
+}
+
+
+/* =========================================================
+   ABRIR PROJETO
+   ========================================================= */
+
+function openProjectModal(
+  projectId
+) {
+
+  const project =
+    V8_PROJECTS[projectId];
+
+
+  if (!project) {
+
+    console.warn(
+      `Projeto "${projectId}" não encontrado.`
     );
+
+    return;
+
   }
+
+
+  const modal =
+    createProjectModal();
 
 
   const body =
     modal.querySelector(
-      ".project-modal-body"
+      "#project-modal-body"
     );
+
+
+  const technologies =
+    project.technologies
+      .map(
+        tech =>
+          `<span>${escapeHTML(tech)}</span>`
+      )
+      .join("");
+
+
+  const highlights =
+    project.highlights
+      .map(
+        item =>
+          `<span>${escapeHTML(item)}</span>`
+      )
+      .join("");
 
 
   body.innerHTML = `
 
-    <span class="eyebrow">
-      ${escapeHTML(project.category)}
-    </span>
+    <div class="project-modal-header">
 
-    <h2 id="projectModalTitle">
-      ${escapeHTML(project.title)}
-    </h2>
+      <div class="project-category">
+        ${escapeHTML(project.category)}
+      </div>
 
-    <p class="project-modal-description">
-      ${escapeHTML(project.longDescription)}
-    </p>
+      <h2 id="project-modal-title">
+        ${escapeHTML(project.title)}
+      </h2>
+
+      <p class="project-modal-description">
+        ${escapeHTML(project.description)}
+      </p>
+
+    </div>
 
 
     <div class="project-modal-section">
 
-      <h3>Destaques</h3>
+      <h3>
+        Sobre o projeto
+      </h3>
+
+      <p class="project-modal-description">
+        ${escapeHTML(project.challenge)}
+      </p>
+
+    </div>
+
+
+    <div class="project-modal-section">
+
+      <h3>
+        Solução
+      </h3>
+
+      <p class="project-modal-description">
+        ${escapeHTML(project.solution)}
+      </p>
+
+    </div>
+
+
+    <div class="project-modal-section">
+
+      <h3>
+        Destaques
+      </h3>
 
       <div class="project-modal-highlights">
-
-        ${project.highlights
-          .map(
-            item =>
-              `<span>${escapeHTML(item)}</span>`
-          )
-          .join("")
-        }
-
+        ${highlights}
       </div>
 
     </div>
@@ -486,37 +388,12 @@ function openProjectModal(projectId) {
 
     <div class="project-modal-section">
 
-      <h3>Principais recursos</h3>
-
-      <ul>
-
-        ${project.features
-          .map(
-            feature =>
-              `<li>${escapeHTML(feature)}</li>`
-          )
-          .join("")
-        }
-
-      </ul>
-
-    </div>
-
-
-    <div class="project-modal-section">
-
-      <h3>Tecnologias</h3>
+      <h3>
+        Tecnologias
+      </h3>
 
       <div class="project-modal-tech">
-
-        ${project.technologies
-          .map(
-            technology =>
-              `<span>${escapeHTML(technology)}</span>`
-          )
-          .join("")
-        }
-
+        ${technologies}
       </div>
 
     </div>
@@ -525,21 +402,21 @@ function openProjectModal(projectId) {
     <div class="project-modal-actions">
 
       <a
-        href="${escapeAttribute(project.url)}"
-        class="btn btn-primary"
+        href="${escapeHTML(project.url)}"
         target="_blank"
         rel="noopener noreferrer"
+        class="btn btn-primary"
       >
         Visitar projeto
       </a>
 
       <a
-        href="https://wa.me/54992756194?text=${encodeURIComponent(
-          `Olá V8 Digital! Vi o projeto "${project.title}" no portfólio e gostaria de conversar sobre um projeto semelhante.`
+        href="${createWhatsAppLink(
+          `Olá! Vi o projeto ${project.title} no portfólio da V8 Digital e gostaria de solicitar um orçamento.`
         )}"
-        class="btn btn-secondary"
         target="_blank"
         rel="noopener noreferrer"
+        class="btn btn-secondary"
       >
         Quero um projeto assim
       </a>
@@ -549,164 +426,181 @@ function openProjectModal(projectId) {
   `;
 
 
-  modal.classList.add("active");
+  modal.classList.add(
+    "active"
+  );
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
 
   document.body.classList.add(
     "modal-open"
   );
+
+
+  /*
+   * Coloca o foco no botão fechar
+   */
+
+  const closeButton =
+    modal.querySelector(
+      ".project-modal-close"
+    );
+
+
+  if (closeButton) {
+
+    setTimeout(
+      () => closeButton.focus(),
+      50
+    );
+
+  }
+
 }
 
 
 /* =========================================================
-   FECHAR MODAL
+   FECHAR PROJETO
    ========================================================= */
 
 function closeProjectModal() {
 
   const modal =
-    document.querySelector(".project-modal");
+    document.querySelector(
+      "#project-modal"
+    );
+
 
   if (!modal) {
     return;
   }
 
-  modal.classList.remove("active");
+
+  modal.classList.remove(
+    "active"
+  );
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
 
   document.body.classList.remove(
     "modal-open"
   );
+
 }
 
 
 /* =========================================================
-   FILTROS
+   WHATSAPP
    ========================================================= */
 
-function filterProjects(category) {
+function createWhatsAppLink(
+  message
+) {
 
-  const container =
-    document.querySelector(".projects-grid");
+  const number =
+    "54992756194";
 
-  if (!container) {
+
+  return (
+    "https://wa.me/" +
+    number +
+    "?text=" +
+    encodeURIComponent(message)
+  );
+
+}
+
+
+/* =========================================================
+   CONFIGURAÇÃO DOS CARDS
+   ========================================================= */
+
+function initProjectCards() {
+
+  const cards =
+    document.querySelectorAll(
+      "[data-project-id]"
+    );
+
+
+  if (!cards.length) {
     return;
   }
 
 
-  let filteredProjects;
+  cards.forEach(card => {
+
+    const projectId =
+      card.dataset.projectId;
 
 
-  if (
-    !category ||
-    category === "Todos"
-  ) {
-
-    filteredProjects =
-      getProjects();
-
-  } else {
-
-    filteredProjects =
-      getProjectsByCategory(category);
-
-  }
+    const project =
+      V8_PROJECTS[projectId];
 
 
-  container.innerHTML =
-    filteredProjects
-      .map(project =>
-        createProjectCard(project)
-      )
-      .join("");
-}
-
-
-/* =========================================================
-   UTILITÁRIOS DE SEGURANÇA
-   ========================================================= */
-
-function escapeHTML(value) {
-
-  if (value === null || value === undefined) {
-    return "";
-  }
-
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
-
-
-function escapeAttribute(value) {
-
-  return escapeHTML(value)
-    .replace(/`/g, "&#096;");
-}
-
-
-/* =========================================================
-   INICIALIZAÇÃO
-   ========================================================= */
-
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-
-    /*
-     * Só renderiza automaticamente se
-     * existir uma grade de projetos.
-     */
-
-    const projectGrid =
-      document.querySelector(
-        ".projects-grid"
-      );
-
-
-    if (projectGrid) {
-
-      /*
-       * Como o novo index.html já possui
-       * os cards diretamente no HTML,
-       * não sobrescrevemos automaticamente.
-       *
-       * Caso você queira deixar o JS
-       * responsável pelos cards no futuro,
-       * basta chamar:
-       *
-       * renderProjects();
-       */
-
+    if (!project) {
+      return;
     }
 
 
     /*
-     * Botões que possuírem
-     * data-project-id abrirão
-     * os detalhes do projeto.
+     * Abre o modal
      */
 
-    document.addEventListener(
+    card.addEventListener(
       "click",
       event => {
 
-        const button =
-          event.target.closest(
-            "[data-project-id]"
-          );
+        /*
+         * Se o usuário clicou
+         * diretamente em um link,
+         * não interceptamos.
+         */
 
-        if (!button) {
+        if (
+          event.target.closest("a")
+        ) {
           return;
         }
 
 
-        const projectId =
-          button.dataset.projectId;
+        openProjectModal(
+          projectId
+        );
+
+      }
+    );
 
 
-        if (projectId) {
+    /*
+     * Acessibilidade
+     */
+
+    card.setAttribute(
+      "role",
+      "button"
+    );
+
+    card.setAttribute(
+      "tabindex",
+      "0"
+    );
+
+
+    card.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
 
           event.preventDefault();
 
@@ -719,38 +613,40 @@ document.addEventListener(
       }
     );
 
+  });
+
+}
+
+
+/* =========================================================
+   INICIALIZAÇÃO
+   ========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    createProjectModal();
+
+    initProjectCards();
+
   }
 );
 
 
 /* =========================================================
-   EXPORTAÇÃO GLOBAL
+   API GLOBAL
    ========================================================= */
 
 window.V8Projects = {
 
-  projects,
-
-  config: projectsConfig,
-
-  getProjects,
-
-  getFeaturedProjects,
-
-  getProjectById,
-
-  getProjectsByCategory,
-
-  getProjectCategories,
-
-  renderProjects,
-
-  createProjectCard,
+  projects:
+    V8_PROJECTS,
 
   openProjectModal,
 
   closeProjectModal,
 
-  filterProjects
+  createProjectModal
 
 };
