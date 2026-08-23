@@ -1,49 +1,26 @@
-/* =========================================================
-   V8 DIGITAL — ADMIN PANEL
-   Dashboard profissional
-   ========================================================= */
-
 :root {
   --bg: #07080d;
-  --bg-soft: #0b0d14;
-
-  --sidebar: #0b0c12;
-
   --card: #10121a;
-  --card-hover: #141722;
+  --card-2: #141722;
 
-  --input: #0b0d13;
-
-  --text: #f7f7fb;
-  --muted: rgba(247, 247, 251, 0.58);
-  --muted-2: rgba(247, 247, 251, 0.38);
+  --text: #f5f7fb;
+  --muted: rgba(245, 247, 251, 0.55);
 
   --primary: #8b5cf6;
-  --primary-2: #a855f7;
   --secondary: #ec4899;
 
-  --success: #34d399;
-  --danger: #fb7185;
-
   --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.14);
 
-  --gradient:
-    linear-gradient(
-      135deg,
-      #8b5cf6 0%,
-      #ec4899 100%
-    );
-
-  --shadow:
-    0 25px 70px rgba(0, 0, 0, 0.35);
-
-  --radius: 18px;
+  --gradient: linear-gradient(
+    135deg,
+    #8b5cf6,
+    #ec4899
+  );
 }
 
-/* =========================================================
+/* =====================================================
    RESET
-   ========================================================= */
+   ===================================================== */
 
 * {
   box-sizing: border-box;
@@ -52,23 +29,25 @@
 }
 
 html {
+  width: 100%;
   min-height: 100%;
   background: var(--bg);
 }
 
 body {
+  width: 100%;
   min-height: 100vh;
 
   background:
     radial-gradient(
       circle at 15% 0%,
-      rgba(139, 92, 246, 0.12),
+      rgba(139, 92, 246, 0.14),
       transparent 32%
     ),
     radial-gradient(
       circle at 90% 20%,
       rgba(236, 72, 153, 0.06),
-      transparent 28%
+      transparent 30%
     ),
     var(--bg);
 
@@ -83,12 +62,13 @@ body {
     sans-serif;
 
   line-height: 1.5;
+
+  overflow-x: hidden;
 }
 
 button,
 input,
-textarea,
-select {
+textarea {
   font: inherit;
 }
 
@@ -102,42 +82,50 @@ a {
   text-decoration: none;
 }
 
-button {
-  border: 0;
+/* =====================================================
+   HIDDEN
+   IMPORTANTE PARA LOGIN / DASHBOARD
+   ===================================================== */
+
+[hidden] {
+  display: none !important;
 }
 
-/* =========================================================
+/* =====================================================
    LOGIN
-   ========================================================= */
+   ===================================================== */
 
 .login-screen {
+  width: 100%;
   min-height: 100vh;
 
   display: grid;
   place-items: center;
 
-  padding: 30px 20px;
+  padding: 24px;
 }
 
 .login-card {
-  width: min(440px, 100%);
+  width: min(430px, 100%);
 
-  padding: 36px;
-
-  border: 1px solid var(--border);
-  border-radius: 24px;
+  padding: 34px;
 
   background:
-    linear-gradient(
-      145deg,
-      rgba(18, 20, 30, 0.96),
-      rgba(10, 11, 17, 0.96)
-    );
+    rgba(16, 18, 26, 0.92);
 
-  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.45);
 
   backdrop-filter: blur(20px);
 }
+
+/* =====================================================
+   MARCA
+   ===================================================== */
 
 .brand,
 .admin-brand {
@@ -147,21 +135,21 @@ button {
 }
 
 .brand-mark {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
 
   display: grid;
   place-items: center;
 
-  flex-shrink: 0;
-
-  border-radius: 13px;
+  border-radius: 12px;
 
   background: var(--gradient);
 
   color: #fff;
 
-  font-size: 15px;
+  font-size: 0.85rem;
   font-weight: 900;
 
   box-shadow:
@@ -186,27 +174,26 @@ button {
 
   color: var(--muted);
 
-  font-size: 0.68rem;
+  font-size: 0.7rem;
 }
 
-/* =========================================================
-   LOGIN HEADING
-   ========================================================= */
+/* =====================================================
+   LOGIN TÍTULO
+   ===================================================== */
 
 .login-heading {
-  margin: 42px 0 30px;
+  margin: 42px 0 28px;
 }
 
 .eyebrow {
-  display: inline-block;
+  display: block;
 
   color: #a78bfa;
 
-  font-size: 0.63rem;
+  font-size: 0.65rem;
   font-weight: 800;
 
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0.14em;
 }
 
 .login-heading h1 {
@@ -214,28 +201,24 @@ button {
 
   color: #fff;
 
-  font-size: clamp(2.3rem, 7vw, 3rem);
-  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1.05;
 
-  line-height: 1;
-
-  letter-spacing: -0.055em;
+  letter-spacing: -0.05em;
 }
 
 .login-heading p {
-  max-width: 340px;
-
   margin-top: 12px;
 
   color: var(--muted);
 
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   line-height: 1.7;
 }
 
-/* =========================================================
-   FORM
-   ========================================================= */
+/* =====================================================
+   FORMULÁRIOS
+   ===================================================== */
 
 .form-group {
   margin-bottom: 18px;
@@ -244,33 +227,29 @@ button {
 label {
   display: block;
 
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.74);
 
-  font-size: 0.74rem;
-  font-weight: 700;
+  font-size: 0.76rem;
+  font-weight: 600;
 }
 
 input,
-textarea,
-select {
+textarea {
   width: 100%;
 
-  min-height: 46px;
-
-  padding: 12px 14px;
-
   border: 1px solid var(--border);
-  border-radius: 11px;
+
+  border-radius: 10px;
+
+  padding: 13px 14px;
 
   outline: none;
 
-  background: var(--input);
+  background: rgba(0, 0, 0, 0.22);
 
   color: #fff;
-
-  font-size: 0.82rem;
 
   transition:
     border-color 0.2s ease,
@@ -280,41 +259,34 @@ select {
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(255, 255, 255, 0.25);
-}
-
-input:hover,
-textarea:hover,
-select:hover {
-  border-color: var(--border-hover);
+  color: rgba(255, 255, 255, 0.28);
 }
 
 input:focus,
-textarea:focus,
-select:focus {
-  border-color: rgba(139, 92, 246, 0.8);
+textarea:focus {
+  border-color: rgba(139, 92, 246, 0.75);
 
-  background: #0d0f16;
+  background: rgba(0, 0, 0, 0.3);
 
   box-shadow:
     0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
 textarea {
-  min-height: 120px;
   resize: vertical;
+  min-height: 110px;
 }
 
-/* =========================================================
-   PASSWORD
-   ========================================================= */
+/* =====================================================
+   SENHA
+   ===================================================== */
 
 .password-field {
   position: relative;
 }
 
 .password-field input {
-  padding-right: 80px;
+  padding-right: 82px;
 }
 
 .password-field button {
@@ -325,72 +297,66 @@ textarea {
 
   transform: translateY(-50%);
 
-  padding: 7px 9px;
+  padding: 6px 9px;
 
+  border: 0;
   border-radius: 7px;
 
-  background: rgba(139, 92, 246, 0.08);
+  background: transparent;
 
-  color: #c4b5fd;
+  color: #a78bfa;
 
-  font-size: 0.67rem;
+  font-size: 0.68rem;
   font-weight: 700;
 
   cursor: pointer;
-
-  transition: background 0.2s ease;
 }
 
 .password-field button:hover {
-  background: rgba(139, 92, 246, 0.16);
+  background: rgba(139, 92, 246, 0.1);
 }
 
-/* =========================================================
-   REMEMBER
-   ========================================================= */
+/* =====================================================
+   LEMBRAR
+   ===================================================== */
 
 .remember {
   display: flex;
-
   align-items: center;
 
-  gap: 9px;
+  gap: 8px;
 
   margin: 16px 0 20px;
 
-  color: var(--muted);
-
-  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.62);
 
   cursor: pointer;
 }
 
 .remember input {
   width: 15px;
-  min-height: 15px;
+  height: 15px;
 
   margin: 0;
 
   accent-color: var(--primary);
-
-  cursor: pointer;
 }
 
-/* =========================================================
-   BUTTONS
-   ========================================================= */
+/* =====================================================
+   BOTÕES
+   ===================================================== */
 
 .btn {
   min-height: 46px;
 
   padding: 11px 18px;
 
-  border-radius: 11px;
+  border-radius: 10px;
 
   cursor: pointer;
 
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 700;
 
   transition:
     transform 0.2s ease,
@@ -404,22 +370,26 @@ textarea {
 
 .btn:disabled {
   opacity: 0.55;
+
   cursor: not-allowed;
+
   transform: none;
 }
 
 .btn-primary {
+  border: 0;
+
   background: var(--gradient);
 
   color: #fff;
 
   box-shadow:
-    0 10px 28px rgba(139, 92, 246, 0.2);
+    0 10px 25px rgba(139, 92, 246, 0.18);
 }
 
 .btn-primary:hover {
   box-shadow:
-    0 14px 35px rgba(139, 92, 246, 0.3);
+    0 14px 30px rgba(139, 92, 246, 0.25);
 }
 
 .btn-secondary {
@@ -434,25 +404,25 @@ textarea {
   width: 100%;
 }
 
-/* =========================================================
-   LOGIN ERROR
-   ========================================================= */
+/* =====================================================
+   ERRO LOGIN
+   ===================================================== */
 
 .login-error {
   min-height: 20px;
 
   margin-top: 12px;
 
-  color: var(--danger);
+  color: #fb7185;
 
   font-size: 0.72rem;
 
   text-align: center;
 }
 
-/* =========================================================
-   BACK SITE
-   ========================================================= */
+/* =====================================================
+   VOLTAR
+   ===================================================== */
 
 .back-site {
   display: block;
@@ -461,7 +431,7 @@ textarea {
 
   color: var(--muted);
 
-  font-size: 0.7rem;
+  font-size: 0.72rem;
 
   text-align: center;
 
@@ -472,32 +442,25 @@ textarea {
   color: #fff;
 }
 
-/* =========================================================
+/* =====================================================
    DASHBOARD
-   ========================================================= */
+   ===================================================== */
 
 .dashboard {
+  width: 100%;
   min-height: 100vh;
 
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(139, 92, 246, 0.06),
-      transparent 30%
-    );
+  display: block;
+
+  background: transparent;
 }
 
-/* =========================================================
+/* =====================================================
    HEADER
-   ========================================================= */
+   ===================================================== */
 
 .admin-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-
   width: 100%;
-
   min-height: 72px;
 
   padding: 0 32px;
@@ -512,44 +475,39 @@ textarea {
     rgba(7, 8, 13, 0.92);
 
   backdrop-filter: blur(18px);
-}
 
-.admin-brand {
-  gap: 11px;
-}
-
-.admin-brand .brand-mark {
-  width: 40px;
-  height: 40px;
-
-  border-radius: 11px;
-
-  font-size: 13px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header-actions {
   display: flex;
-
   align-items: center;
 
-  gap: 9px;
+  gap: 10px;
 }
 
 .view-site,
 .logout-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   min-height: 36px;
 
   padding: 8px 13px;
 
   border: 1px solid var(--border);
+
   border-radius: 9px;
 
-  background: rgba(255, 255, 255, 0.035);
+  background: rgba(255, 255, 255, 0.04);
 
-  color: rgba(255, 255, 255, 0.82);
+  color: #fff;
 
-  font-size: 0.68rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 600;
 
   cursor: pointer;
 
@@ -560,38 +518,40 @@ textarea {
 
 .view-site:hover,
 .logout-button:hover {
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.08);
 
-  border-color: var(--border-hover);
-
-  color: #fff;
+  border-color:
+    rgba(255, 255, 255, 0.15);
 }
 
-/* =========================================================
-   DASHBOARD CONTENT
-   ========================================================= */
+/* =====================================================
+   CONTEÚDO
+   ===================================================== */
 
 .dashboard-content {
-  width: min(1120px, calc(100% - 48px));
+  width: calc(100% - 40px);
+  max-width: 980px;
 
   margin: 0 auto;
 
-  padding: 52px 0 80px;
+  padding:
+    52px 0 80px;
 }
 
-/* =========================================================
-   DASHBOARD HEADING
-   ========================================================= */
+/* =====================================================
+   CABEÇALHO DO PAINEL
+   ===================================================== */
 
 .dashboard-heading {
-  margin-bottom: 32px;
+  width: 100%;
+
+  margin-bottom: 30px;
 
   display: flex;
-
   align-items: flex-end;
   justify-content: space-between;
 
-  gap: 30px;
+  gap: 25px;
 }
 
 .dashboard-heading h1 {
@@ -599,53 +559,41 @@ textarea {
 
   color: #fff;
 
-  font-size: clamp(2.4rem, 5vw, 3.3rem);
-
-  font-weight: 800;
-
+  font-size: 3rem;
   line-height: 1;
 
-  letter-spacing: -0.065em;
+  letter-spacing: -0.06em;
 }
 
 .dashboard-heading p {
-  margin-top: 10px;
+  margin-top: 9px;
 
   color: var(--muted);
 
-  font-size: 0.8rem;
+  font-size: 0.84rem;
 }
 
 .status {
   flex-shrink: 0;
 
-  padding: 7px 12px;
+  padding: 7px 11px;
 
   border: 1px solid rgba(139, 92, 246, 0.22);
 
   border-radius: 999px;
 
-  background: rgba(139, 92, 246, 0.05);
+  background: rgba(139, 92, 246, 0.04);
 
   color: #c4b5fd;
 
-  font-size: 0.62rem;
-  font-weight: 700;
+  font-size: 0.65rem;
 
   white-space: nowrap;
 }
 
-/* =========================================================
-   SETTINGS FORM
-   ========================================================= */
-
-#settingsForm {
-  width: 100%;
-}
-
-/* =========================================================
-   SETTINGS CARDS
-   ========================================================= */
+/* =====================================================
+   CARDS
+   ===================================================== */
 
 .settings-card {
   width: 100%;
@@ -656,44 +604,33 @@ textarea {
 
   border: 1px solid var(--border);
 
-  border-radius: var(--radius);
+  border-radius: 18px;
 
   background:
     linear-gradient(
-      145deg,
-      rgba(18, 20, 28, 0.82),
-      rgba(11, 12, 18, 0.82)
+      180deg,
+      rgba(255, 255, 255, 0.028),
+      rgba(255, 255, 255, 0.018)
     );
 
   box-shadow:
-    0 15px 45px rgba(0, 0, 0, 0.15);
-
-  transition:
-    border-color 0.2s ease,
-    background 0.2s ease;
+    0 15px 45px rgba(0, 0, 0, 0.12);
 }
 
 .settings-card:hover {
-  border-color: rgba(255, 255, 255, 0.11);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(20, 22, 32, 0.88),
-      rgba(11, 12, 18, 0.88)
-    );
+  border-color:
+    rgba(255, 255, 255, 0.11);
 }
 
-/* =========================================================
-   CARD HEADING
-   ========================================================= */
+/* =====================================================
+   CABEÇALHO DOS CARDS
+   ===================================================== */
 
 .card-heading {
   display: flex;
-
   align-items: flex-start;
 
-  gap: 13px;
+  gap: 14px;
 
   margin-bottom: 24px;
 }
@@ -702,43 +639,45 @@ textarea {
   width: 38px;
   height: 38px;
 
+  flex: 0 0 38px;
+
   display: grid;
   place-items: center;
 
-  flex-shrink: 0;
-
-  border: 1px solid rgba(139, 92, 246, 0.13);
-
   border-radius: 10px;
 
-  background: rgba(139, 92, 246, 0.08);
+  background:
+    rgba(139, 92, 246, 0.1);
 
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .card-heading h2 {
   color: #fff;
 
-  font-size: 0.95rem;
-  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.2;
 }
 
 .card-heading p {
-  margin-top: 3px;
+  margin-top: 4px;
 
   color: var(--muted);
 
-  font-size: 0.68rem;
+  font-size: 0.7rem;
 }
 
-/* =========================================================
-   FIELDS GRID
-   ========================================================= */
+/* =====================================================
+   GRID DOS CAMPOS
+   ===================================================== */
 
 .fields-grid {
+  width: 100%;
+
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   gap: 18px;
 }
@@ -754,146 +693,62 @@ textarea {
 .field small {
   display: block;
 
-  margin-top: 6px;
+  margin-top: 5px;
 
-  color: var(--muted-2);
+  color: rgba(255, 255, 255, 0.32);
 
-  font-size: 0.6rem;
-  line-height: 1.4;
+  font-size: 0.63rem;
 }
 
-/* =========================================================
-   SAVE AREA
-   ========================================================= */
+/* =====================================================
+   AÇÕES
+   ===================================================== */
 
 .save-area {
-  position: sticky;
-
-  bottom: 16px;
-  z-index: 20;
-
-  margin-top: 24px;
-
-  padding: 12px;
+  width: 100%;
 
   display: flex;
-
+  align-items: center;
   justify-content: flex-end;
 
   gap: 10px;
 
-  border: 1px solid var(--border);
-
-  border-radius: 14px;
-
-  background:
-    rgba(12, 13, 19, 0.88);
-
-  backdrop-filter: blur(16px);
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.35);
+  margin-top: 25px;
 }
 
 .save-button {
   min-width: 210px;
 }
 
-/* =========================================================
-   SCROLLBAR
-   ========================================================= */
+/* =====================================================
+   RESPONSIVO
+   ===================================================== */
 
-::-webkit-scrollbar {
-  width: 9px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.12);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* =========================================================
-   SELECTION
-   ========================================================= */
-
-::selection {
-  background: rgba(139, 92, 246, 0.35);
-
-  color: #fff;
-}
-
-/* =========================================================
-   RESPONSIVE — TABLET
-   ========================================================= */
-
-@media (max-width: 850px) {
-
-  .dashboard-content {
-    width: min(100% - 32px, 720px);
-
-    padding-top: 40px;
-  }
-
-  .dashboard-heading {
-    align-items: flex-start;
-
-    flex-direction: column;
-
-    gap: 15px;
-  }
-
-  .fields-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .field.full {
-    grid-column: auto;
-  }
-
-}
-
-/* =========================================================
-   RESPONSIVE — MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
   .login-screen {
-    padding: 18px;
+    padding: 16px;
   }
 
   .login-card {
-    padding: 26px 22px;
-
+    padding: 25px;
     border-radius: 20px;
   }
 
   .login-heading {
-    margin-top: 34px;
+    margin-top: 35px;
   }
 
   .login-heading h1 {
-    font-size: 2.25rem;
+    font-size: 2.2rem;
   }
+
+  /* HEADER */
 
   .admin-header {
     min-height: 64px;
 
     padding: 0 16px;
-  }
-
-  .admin-brand .brand-mark {
-    width: 36px;
-    height: 36px;
   }
 
   .admin-brand span {
@@ -904,13 +759,27 @@ textarea {
     display: none;
   }
 
-  .dashboard-content {
-    width: calc(100% - 24px);
+  .header-actions {
+    gap: 6px;
+  }
 
-    padding: 32px 0 60px;
+  .logout-button {
+    min-height: 34px;
+    padding: 7px 10px;
+  }
+
+  /* CONTEÚDO */
+
+  .dashboard-content {
+    width: calc(100% - 28px);
+
+    padding:
+      32px 0 60px;
   }
 
   .dashboard-heading {
+    display: block;
+
     margin-bottom: 24px;
   }
 
@@ -919,13 +788,17 @@ textarea {
   }
 
   .status {
-    font-size: 0.58rem;
+    display: inline-block;
+
+    margin-top: 15px;
   }
 
-  .settings-card {
-    padding: 20px 17px;
+  /* CARDS */
 
-    border-radius: 15px;
+  .settings-card {
+    padding: 21px;
+
+    border-radius: 16px;
   }
 
   .card-heading {
@@ -933,31 +806,21 @@ textarea {
   }
 
   .fields-grid {
-    gap: 15px;
+    grid-template-columns: 1fr;
+
+    gap: 16px;
   }
 
-  input,
-  textarea,
-  select {
-    min-height: 45px;
-
-    font-size: 0.8rem;
+  .field.full {
+    grid-column: auto;
   }
+
+  /* BOTÕES */
 
   .save-area {
-    position: static;
+    flex-direction: column-reverse;
 
-    flex-direction: column;
-
-    padding: 0;
-
-    border: 0;
-
-    background: transparent;
-
-    box-shadow: none;
-
-    backdrop-filter: none;
+    align-items: stretch;
   }
 
   .save-area .btn {
@@ -967,29 +830,46 @@ textarea {
   .save-button {
     min-width: 0;
   }
-
 }
 
-/* =========================================================
-   MOBILE PEQUENO
-   ========================================================= */
+/* =====================================================
+   TELAS MUITO PEQUENAS
+   ===================================================== */
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
 
   .login-card {
-    padding: 23px 18px;
+    padding: 21px;
   }
 
   .dashboard-content {
-    width: calc(100% - 18px);
+    width: calc(100% - 20px);
   }
 
   .settings-card {
-    padding: 18px 14px;
+    padding: 18px;
   }
 
   .dashboard-heading h1 {
     font-size: 2.1rem;
   }
 
+  .brand-mark {
+    width: 39px;
+    height: 39px;
+
+    flex-basis: 39px;
+  }
+}
+
+/* =====================================================
+   ACESSIBILIDADE
+   ===================================================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
 }
