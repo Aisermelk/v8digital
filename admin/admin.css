@@ -3,6 +3,7 @@
   --card: #10121a;
   --card-2: #141722;
 
+  --white: #fff;
   --text: #f5f7fb;
   --muted: rgba(245, 247, 251, 0.55);
 
@@ -18,6 +19,7 @@
   );
 }
 
+
 /* =====================================================
    RESET
    ===================================================== */
@@ -31,7 +33,6 @@
 html {
   width: 100%;
   min-height: 100%;
-  background: var(--bg);
 }
 
 body {
@@ -40,13 +41,8 @@ body {
 
   background:
     radial-gradient(
-      circle at 15% 0%,
-      rgba(139, 92, 246, 0.14),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 90% 20%,
-      rgba(236, 72, 153, 0.06),
+      circle at 20% 0%,
+      rgba(139, 92, 246, 0.13),
       transparent 30%
     ),
     var(--bg);
@@ -55,13 +51,8 @@ body {
 
   font-family:
     Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
     Arial,
     sans-serif;
-
-  line-height: 1.5;
 
   overflow-x: hidden;
 }
@@ -72,24 +63,6 @@ textarea {
   font: inherit;
 }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* =====================================================
-   HIDDEN
-   IMPORTANTE PARA LOGIN / DASHBOARD
-   ===================================================== */
-
-[hidden] {
-  display: none !important;
-}
 
 /* =====================================================
    LOGIN
@@ -102,26 +75,26 @@ a {
   display: grid;
   place-items: center;
 
-  padding: 24px;
+  padding: 25px;
 }
 
 .login-card {
   width: min(430px, 100%);
 
-  padding: 34px;
-
-  background:
-    rgba(16, 18, 26, 0.92);
+  padding: 35px;
 
   border: 1px solid var(--border);
 
   border-radius: 24px;
 
+  background: rgba(16, 18, 26, 0.88);
+
   box-shadow:
-    0 30px 90px rgba(0, 0, 0, 0.45);
+    0 35px 100px rgba(0, 0, 0, 0.4);
 
   backdrop-filter: blur(20px);
 }
+
 
 /* =====================================================
    MARCA
@@ -138,10 +111,10 @@ a {
   width: 42px;
   height: 42px;
 
-  flex: 0 0 42px;
-
   display: grid;
   place-items: center;
+
+  flex-shrink: 0;
 
   border-radius: 12px;
 
@@ -149,21 +122,13 @@ a {
 
   color: #fff;
 
-  font-size: 0.85rem;
   font-weight: 900;
-
-  box-shadow:
-    0 8px 25px rgba(139, 92, 246, 0.25);
 }
 
 .brand strong,
 .admin-brand strong {
   display: block;
-
-  color: #fff;
-
   font-size: 0.95rem;
-  font-weight: 800;
 }
 
 .brand span,
@@ -177,20 +142,20 @@ a {
   font-size: 0.7rem;
 }
 
+
 /* =====================================================
-   LOGIN TÍTULO
+   LOGIN HEADING
    ===================================================== */
 
 .login-heading {
-  margin: 42px 0 28px;
+  margin: 45px 0 30px;
 }
 
 .eyebrow {
-  display: block;
-
   color: #a78bfa;
 
   font-size: 0.65rem;
+
   font-weight: 800;
 
   letter-spacing: 0.14em;
@@ -199,39 +164,35 @@ a {
 .login-heading h1 {
   margin-top: 8px;
 
-  color: #fff;
-
   font-size: 2.5rem;
-  line-height: 1.05;
 
   letter-spacing: -0.05em;
 }
 
 .login-heading p {
-  margin-top: 12px;
+  margin-top: 10px;
 
   color: var(--muted);
 
   font-size: 0.86rem;
+
   line-height: 1.7;
 }
 
-/* =====================================================
-   FORMULÁRIOS
-   ===================================================== */
 
-.form-group {
-  margin-bottom: 18px;
-}
+/* =====================================================
+   FORM
+   ===================================================== */
 
 label {
   display: block;
 
   margin-bottom: 7px;
 
-  color: rgba(255, 255, 255, 0.74);
+  color: rgba(255, 255, 255, 0.72);
 
   font-size: 0.76rem;
+
   font-weight: 600;
 }
 
@@ -252,9 +213,8 @@ textarea {
   color: #fff;
 
   transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
+    border 0.25s,
+    box-shadow 0.25s;
 }
 
 input::placeholder,
@@ -264,18 +224,16 @@ textarea::placeholder {
 
 input:focus,
 textarea:focus {
-  border-color: rgba(139, 92, 246, 0.75);
-
-  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(139, 92, 246, 0.7);
 
   box-shadow:
     0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
-textarea {
-  resize: vertical;
-  min-height: 110px;
+form > label {
+  margin-top: 18px;
 }
+
 
 /* =====================================================
    SENHA
@@ -286,7 +244,7 @@ textarea {
 }
 
 .password-field input {
-  padding-right: 82px;
+  padding-right: 75px;
 }
 
 .password-field button {
@@ -297,9 +255,10 @@ textarea {
 
   transform: translateY(-50%);
 
-  padding: 6px 9px;
+  padding: 6px 8px;
 
   border: 0;
+
   border-radius: 7px;
 
   background: transparent;
@@ -307,40 +266,31 @@ textarea {
   color: #a78bfa;
 
   font-size: 0.68rem;
-  font-weight: 700;
 
   cursor: pointer;
 }
 
-.password-field button:hover {
-  background: rgba(139, 92, 246, 0.1);
-}
 
 /* =====================================================
-   LEMBRAR
+   REMEMBER
    ===================================================== */
 
 .remember {
   display: flex;
+
   align-items: center;
 
   gap: 8px;
 
-  margin: 16px 0 20px;
-
-  color: rgba(255, 255, 255, 0.62);
+  margin: 17px 0 20px;
 
   cursor: pointer;
 }
 
 .remember input {
-  width: 15px;
-  height: 15px;
-
-  margin: 0;
-
-  accent-color: var(--primary);
+  width: auto;
 }
+
 
 /* =====================================================
    BOTÕES
@@ -355,24 +305,20 @@ textarea {
 
   cursor: pointer;
 
-  font-size: 0.78rem;
   font-weight: 700;
 
   transition:
-    transform 0.2s ease,
-    opacity 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.25s,
+    opacity 0.25s;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .btn:disabled {
   opacity: 0.55;
-
   cursor: not-allowed;
-
   transform: none;
 }
 
@@ -382,14 +328,6 @@ textarea {
   background: var(--gradient);
 
   color: #fff;
-
-  box-shadow:
-    0 10px 25px rgba(139, 92, 246, 0.18);
-}
-
-.btn-primary:hover {
-  box-shadow:
-    0 14px 30px rgba(139, 92, 246, 0.25);
 }
 
 .btn-secondary {
@@ -403,6 +341,7 @@ textarea {
 .login-card .btn {
   width: 100%;
 }
+
 
 /* =====================================================
    ERRO LOGIN
@@ -420,10 +359,6 @@ textarea {
   text-align: center;
 }
 
-/* =====================================================
-   VOLTAR
-   ===================================================== */
-
 .back-site {
   display: block;
 
@@ -434,26 +369,25 @@ textarea {
   font-size: 0.72rem;
 
   text-align: center;
-
-  transition: color 0.2s ease;
 }
 
-.back-site:hover {
-  color: #fff;
-}
 
 /* =====================================================
    DASHBOARD
    ===================================================== */
 
 .dashboard {
-  width: 100%;
-  min-height: 100vh;
-
   display: block;
 
-  background: transparent;
+  width: 100%;
+  min-width: 100%;
+
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
 }
+
 
 /* =====================================================
    HEADER
@@ -461,28 +395,27 @@ textarea {
 
 .admin-header {
   width: 100%;
+
   min-height: 72px;
 
-  padding: 0 32px;
+  padding: 0 30px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   border-bottom: 1px solid var(--border);
 
-  background:
-    rgba(7, 8, 13, 0.92);
+  background: rgba(7, 8, 13, 0.92);
 
   backdrop-filter: blur(18px);
-
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .header-actions {
   display: flex;
+
   align-items: center;
 
   gap: 10px;
@@ -490,13 +423,7 @@ textarea {
 
 .view-site,
 .logout-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 36px;
-
-  padding: 8px 13px;
+  padding: 9px 13px;
 
   border: 1px solid var(--border);
 
@@ -507,48 +434,54 @@ textarea {
   color: #fff;
 
   font-size: 0.72rem;
-  font-weight: 600;
 
   cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease;
 }
 
 .view-site:hover,
 .logout-button:hover {
   background: rgba(255, 255, 255, 0.08);
-
-  border-color:
-    rgba(255, 255, 255, 0.15);
 }
 
+
 /* =====================================================
-   CONTEÚDO
+   CONTEÚDO PRINCIPAL
    ===================================================== */
 
 .dashboard-content {
-  width: calc(100% - 40px);
+  display: block;
+
+  width: min(calc(100% - 40px), 980px);
+
   max-width: 980px;
 
-  margin: 0 auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 
-  padding:
-    52px 0 80px;
+  padding: 60px 0 100px;
+
+  position: relative;
+
+  left: auto !important;
+  right: auto !important;
+
+  transform: none !important;
 }
 
+
 /* =====================================================
-   CABEÇALHO DO PAINEL
+   TÍTULO
    ===================================================== */
 
 .dashboard-heading {
   width: 100%;
 
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 
   display: flex;
+
   align-items: flex-end;
+
   justify-content: space-between;
 
   gap: 25px;
@@ -557,20 +490,21 @@ textarea {
 .dashboard-heading h1 {
   margin-top: 7px;
 
-  color: #fff;
-
   font-size: 3rem;
+
   line-height: 1;
 
   letter-spacing: -0.06em;
 }
 
 .dashboard-heading p {
-  margin-top: 9px;
+  margin-top: 10px;
 
   color: var(--muted);
 
   font-size: 0.84rem;
+
+  line-height: 1.6;
 }
 
 .status {
@@ -578,11 +512,9 @@ textarea {
 
   padding: 7px 11px;
 
-  border: 1px solid rgba(139, 92, 246, 0.22);
+  border: 1px solid rgba(139, 92, 246, 0.2);
 
   border-radius: 999px;
-
-  background: rgba(139, 92, 246, 0.04);
 
   color: #c4b5fd;
 
@@ -591,6 +523,18 @@ textarea {
   white-space: nowrap;
 }
 
+
+/* =====================================================
+   FORMULÁRIO DE CONFIGURAÇÕES
+   ===================================================== */
+
+#settingsForm {
+  width: 100%;
+
+  display: block;
+}
+
+
 /* =====================================================
    CARDS
    ===================================================== */
@@ -598,7 +542,7 @@ textarea {
 .settings-card {
   width: 100%;
 
-  margin-bottom: 18px;
+  margin: 0 0 18px;
 
   padding: 28px;
 
@@ -613,62 +557,51 @@ textarea {
       rgba(255, 255, 255, 0.018)
     );
 
-  box-shadow:
-    0 15px 45px rgba(0, 0, 0, 0.12);
-}
+  position: relative;
 
-.settings-card:hover {
-  border-color:
-    rgba(255, 255, 255, 0.11);
+  overflow: visible;
 }
-
-/* =====================================================
-   CABEÇALHO DOS CARDS
-   ===================================================== */
 
 .card-heading {
   display: flex;
-  align-items: flex-start;
+
+  align-items: center;
 
   gap: 14px;
 
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 }
 
 .card-icon {
   width: 38px;
   height: 38px;
 
-  flex: 0 0 38px;
-
   display: grid;
+
   place-items: center;
+
+  flex-shrink: 0;
 
   border-radius: 10px;
 
-  background:
-    rgba(139, 92, 246, 0.1);
-
-  font-size: 1rem;
+  background: rgba(139, 92, 246, 0.1);
 }
 
 .card-heading h2 {
-  color: #fff;
-
   font-size: 1rem;
-  line-height: 1.2;
 }
 
 .card-heading p {
-  margin-top: 4px;
+  margin-top: 3px;
 
   color: var(--muted);
 
   font-size: 0.7rem;
 }
 
+
 /* =====================================================
-   GRID DOS CAMPOS
+   CAMPOS
    ===================================================== */
 
 .fields-grid {
@@ -690,6 +623,23 @@ textarea {
   grid-column: 1 / -1;
 }
 
+.field label {
+  margin-bottom: 7px;
+}
+
+.field input,
+.field textarea {
+  display: block;
+
+  width: 100%;
+}
+
+.field textarea {
+  min-height: 110px;
+
+  resize: vertical;
+}
+
 .field small {
   display: block;
 
@@ -698,52 +648,99 @@ textarea {
   color: rgba(255, 255, 255, 0.32);
 
   font-size: 0.63rem;
+
+  line-height: 1.4;
 }
 
+
 /* =====================================================
-   AÇÕES
+   ÁREA DOS BOTÕES
    ===================================================== */
 
 .save-area {
   width: 100%;
 
+  margin-top: 25px;
+  margin-bottom: 30px;
+
+  padding: 18px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: flex-end;
 
   gap: 10px;
 
-  margin-top: 25px;
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  background: rgba(16, 18, 26, 0.95);
+
+  position: relative;
+
+  z-index: 5;
+}
+
+.save-area .btn {
+  flex-shrink: 0;
 }
 
 .save-button {
   min-width: 210px;
 }
 
+
+/* =====================================================
+   STATUS DE SALVAMENTO
+   ===================================================== */
+
+#saveStatus {
+  min-height: 18px;
+
+  margin-top: 8px;
+
+  color: #c4b5fd;
+
+  font-size: 0.7rem;
+}
+
+
+/* =====================================================
+   HIDDEN
+   ===================================================== */
+
+[hidden] {
+  display: none !important;
+}
+
+
 /* =====================================================
    RESPONSIVO
    ===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 
-  .login-screen {
-    padding: 16px;
+  .dashboard-content {
+    width: min(calc(100% - 32px), 980px);
+
+    padding-top: 40px;
   }
+
+  .dashboard-heading h1 {
+    font-size: 2.6rem;
+  }
+
+}
+
+
+@media (max-width: 700px) {
 
   .login-card {
     padding: 25px;
-    border-radius: 20px;
   }
-
-  .login-heading {
-    margin-top: 35px;
-  }
-
-  .login-heading h1 {
-    font-size: 2.2rem;
-  }
-
-  /* HEADER */
 
   .admin-header {
     min-height: 64px;
@@ -759,32 +756,23 @@ textarea {
     display: none;
   }
 
-  .header-actions {
-    gap: 6px;
-  }
-
-  .logout-button {
-    min-height: 34px;
-    padding: 7px 10px;
-  }
-
-  /* CONTEÚDO */
-
   .dashboard-content {
     width: calc(100% - 28px);
 
-    padding:
-      32px 0 60px;
+    max-width: none;
+
+    padding-top: 35px;
+    padding-bottom: 70px;
   }
 
   .dashboard-heading {
     display: block;
 
-    margin-bottom: 24px;
+    margin-bottom: 25px;
   }
 
   .dashboard-heading h1 {
-    font-size: 2.35rem;
+    font-size: 2.4rem;
   }
 
   .status {
@@ -793,16 +781,10 @@ textarea {
     margin-top: 15px;
   }
 
-  /* CARDS */
-
   .settings-card {
     padding: 21px;
 
     border-radius: 16px;
-  }
-
-  .card-heading {
-    margin-bottom: 20px;
   }
 
   .fields-grid {
@@ -815,22 +797,23 @@ textarea {
     grid-column: auto;
   }
 
-  /* BOTÕES */
-
   .save-area {
-    flex-direction: column-reverse;
+    flex-direction: column;
 
     align-items: stretch;
+
+    padding: 14px;
   }
 
-  .save-area .btn {
-    width: 100%;
-  }
-
+  .save-area .btn,
   .save-button {
+    width: 100%;
+
     min-width: 0;
   }
+
 }
+
 
 /* =====================================================
    TELAS MUITO PEQUENAS
@@ -838,38 +821,25 @@ textarea {
 
 @media (max-width: 420px) {
 
-  .login-card {
-    padding: 21px;
-  }
-
   .dashboard-content {
     width: calc(100% - 20px);
-  }
-
-  .settings-card {
-    padding: 18px;
   }
 
   .dashboard-heading h1 {
     font-size: 2.1rem;
   }
 
-  .brand-mark {
-    width: 39px;
-    height: 39px;
-
-    flex-basis: 39px;
+  .settings-card {
+    padding: 17px;
   }
-}
 
-/* =====================================================
-   ACESSIBILIDADE
-   ===================================================== */
+  .card-heading {
+    gap: 10px;
+  }
 
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid #a78bfa;
-  outline-offset: 2px;
+  .card-icon {
+    width: 34px;
+    height: 34px;
+  }
+
 }
