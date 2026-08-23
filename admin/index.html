@@ -49,8 +49,15 @@
         </div>
 
         <div class="brand-text">
-          <strong>V8 Digital</strong>
-          <span>Painel administrativo</span>
+
+          <strong>
+            V8 Digital
+          </strong>
+
+          <span>
+            Painel administrativo
+          </span>
+
         </div>
 
       </div>
@@ -200,63 +207,70 @@
     hidden
   >
 
-    <!-- HEADER -->
+    <!-- ===================================================
+         HEADER
+         =================================================== -->
 
     <header class="admin-header">
 
-      <div class="admin-brand">
+      <div class="admin-header-inner">
 
-        <div class="brand-mark">
-          V8
+        <div class="admin-brand">
+
+          <div class="brand-mark">
+            V8
+          </div>
+
+          <div class="brand-text">
+
+            <strong>
+              V8 Digital
+            </strong>
+
+            <span>
+              Painel administrativo
+            </span>
+
+          </div>
+
         </div>
 
-        <div class="brand-text">
 
-          <strong>
-            V8 Digital
-          </strong>
+        <div class="header-actions">
 
-          <span>
-            Painel administrativo
-          </span>
+          <a
+            href="../index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="view-site"
+          >
+            Ver site
+          </a>
+
+          <button
+            type="button"
+            id="logoutButton"
+            class="logout-button"
+          >
+            Sair
+          </button>
 
         </div>
-
-      </div>
-
-
-      <div class="header-actions">
-
-        <a
-          href="../index.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="view-site"
-        >
-          Ver site
-        </a>
-
-        <button
-          type="button"
-          id="logoutButton"
-          class="logout-button"
-        >
-          Sair
-        </button>
 
       </div>
 
     </header>
 
 
-    <!-- CONTEÚDO -->
+    <!-- ===================================================
+         ÁREA PRINCIPAL
+         =================================================== -->
 
-    <section class="dashboard-content">
-
+    <div class="admin-container">
 
       <!-- CABEÇALHO -->
 
-      <div class="dashboard-heading">
+      <section class="dashboard-heading">
 
         <div>
 
@@ -269,8 +283,7 @@
           </h1>
 
           <p>
-            Gerencie os dados utilizados
-            pelo seu portfólio.
+            Gerencie os dados utilizados pelo seu portfólio.
           </p>
 
         </div>
@@ -283,16 +296,17 @@
           Carregando...
         </div>
 
-      </div>
+      </section>
 
 
-      <!-- FORMULÁRIO PRINCIPAL -->
+      <!-- =================================================
+           FORMULÁRIO
+           ================================================= -->
 
       <form
         id="settingsForm"
         autocomplete="off"
       >
-
 
         <!-- =================================================
              CONTATOS
@@ -313,8 +327,7 @@
               </h2>
 
               <p>
-                Informações utilizadas
-                nos botões e CTAs.
+                Informações utilizadas nos botões e CTAs.
               </p>
 
             </div>
@@ -323,9 +336,6 @@
 
 
           <div class="fields-grid">
-
-
-            <!-- WHATSAPP -->
 
             <div class="field">
 
@@ -348,8 +358,6 @@
             </div>
 
 
-            <!-- E-MAIL -->
-
             <div class="field">
 
               <label for="email">
@@ -366,8 +374,6 @@
             </div>
 
 
-            <!-- INSTAGRAM -->
-
             <div class="field">
 
               <label for="instagram">
@@ -383,8 +389,6 @@
 
             </div>
 
-
-            <!-- FACEBOOK -->
 
             <div class="field">
 
@@ -425,8 +429,7 @@
               </h2>
 
               <p>
-                IDs das ferramentas de análise
-                e marketing.
+                IDs das ferramentas de análise e marketing.
               </p>
 
             </div>
@@ -435,9 +438,6 @@
 
 
           <div class="fields-grid">
-
-
-            <!-- META -->
 
             <div class="field">
 
@@ -455,8 +455,6 @@
             </div>
 
 
-            <!-- GOOGLE ANALYTICS -->
-
             <div class="field">
 
               <label for="googleAnalytics">
@@ -472,8 +470,6 @@
 
             </div>
 
-
-            <!-- GOOGLE TAG -->
 
             <div class="field full">
 
@@ -514,8 +510,7 @@
               </h2>
 
               <p>
-                Configuração do formulário
-                de contato.
+                Configuração do formulário de contato.
               </p>
 
             </div>
@@ -539,8 +534,7 @@
               >
 
               <small>
-                URL utilizada pelo formulário
-                principal do site.
+                URL utilizada pelo formulário principal do site.
               </small>
 
             </div>
@@ -569,8 +563,7 @@
               </h2>
 
               <p>
-                Informações gerais do
-                seu portfólio.
+                Informações gerais do seu portfólio.
               </p>
 
             </div>
@@ -579,9 +572,6 @@
 
 
           <div class="fields-grid">
-
-
-            <!-- NOME -->
 
             <div class="field">
 
@@ -599,8 +589,6 @@
             </div>
 
 
-            <!-- DOMÍNIO -->
-
             <div class="field">
 
               <label for="siteDomain">
@@ -616,8 +604,6 @@
 
             </div>
 
-
-            <!-- MENSAGEM -->
 
             <div class="field full">
 
@@ -662,10 +648,9 @@
 
         </div>
 
-
       </form>
 
-    </section>
+    </div>
 
   </main>
 
@@ -675,7 +660,116 @@
        ===================================================== -->
 
   <script src="../js/config.js"></script>
+
   <script src="./admin.js"></script>
+
+
+  <!-- =====================================================
+       PROTEÇÃO DE LAYOUT
+       Evita CSS externo deslocar o dashboard.
+       ===================================================== -->
+
+  <style>
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .dashboard {
+      width: 100%;
+      min-height: 100vh;
+      display: block !important;
+    }
+
+    .admin-header {
+      width: 100%;
+      display: block;
+    }
+
+    .admin-header-inner {
+      width: min(1180px, calc(100% - 40px));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .admin-container {
+      width: min(100% - 40px, 980px);
+      margin: 0 auto;
+      padding: 55px 0 90px;
+    }
+
+    .dashboard-heading {
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    #settingsForm {
+      width: 100%;
+      display: block;
+    }
+
+    .settings-card {
+      width: 100%;
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    .fields-grid {
+      width: 100%;
+    }
+
+    .save-area {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 25px;
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: 700px) {
+
+      .admin-header-inner {
+        width: calc(100% - 28px);
+      }
+
+      .admin-container {
+        width: calc(100% - 28px);
+        padding-top: 35px;
+      }
+
+      .dashboard-heading {
+        display: block;
+      }
+
+      .save-area {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .save-area .btn {
+        width: 100%;
+      }
+
+    }
+
+  </style>
 
 </body>
 
