@@ -2,11 +2,27 @@
 
 /* =====================================================
    V8 DIGITAL — ADMIN
-   Agora fala de verdade com o Worker (Cloudflare) —
-   login e configurações deixam de ser só locais.
+   PAINEL ADMINISTRATIVO
+   Cloudflare Worker + Token JWT
    ===================================================== */
 
 const TOKEN_STORAGE_KEY = "v8_admin_token";
+
+/*
+ * Worker da API
+ *
+ * Se js/config.js estiver configurado corretamente,
+ * V8_API será utilizado.
+ *
+ * Caso contrário, este endereço será usado.
+ */
+const DEFAULT_API_URL =
+  "https://v8digital-api.aisermelk.workers.dev";
+
+
+/* =====================================================
+   CAMPOS ADMINISTRÁVEIS
+   ===================================================== */
 
 const FIELDS = [
   "whatsapp",
@@ -29,88 +45,256 @@ const FIELDS = [
 
 const loginScreen = document.getElementById("loginScreen");
 const dashboard = document.getElementById("dashboard");
+
 const loginForm = document.getElementById("loginForm");
 const settingsForm = document.getElementById("settingsForm");
+
 const loginError = document.getElementById("loginError");
-const togglePassword = document.getElementById("togglePassword");
-const passwordInput = document.getElementById("adminPassword");
-const logoutButton = document.getElementById("logoutButton");
-const resetButton = document.getElementById("resetButton");
-const saveStatus = document.getElementById("saveStatus");
+
+const togglePassword =
+  document.getElementById("togglePassword");
+
+const passwordInput =
+  document.getElementById("adminPassword");
+
+const logoutButton =
+  document.getElementById("logoutButton");
+
+const resetButton =
+  document.getElementById("resetButton");
+
+const saveStatus =
+  document.getElementById("saveStatus");
 
 
 /* =====================================================
-   VERIFICAÇÃO DE CONFIGURAÇÃO
+   CONFIGURAÇÃO DA API
    ===================================================== */
 
-function workerConfigured() {
-  return (
+function getApiBaseUrl() {
+
+  if (
     typeof V8_API !== "undefined" &&
+    V8_API &&
     V8_API.baseUrl &&
     !V8_API.baseUrl.includes("SEU-USUARIO")
-  );
+  ) {
+
+    return V8_API.baseUrl.replace(/\/+$/, "");
+
+  }
+
+  return DEFAULT_API_URL;
+
 }
+
+
+function getProject() {
+
+  if (
+    typeof V8_API !== "undefined" &&
+    V8_API &&
+    V8_API.project
+  ) {
+
+    return V8_API.project;
+
+  }
+
+  return "v8digital";
+
+}
+
 
 function apiUrl(path) {
-  return `${V8_API.baseUrl}${path}`;
+
+  const base = getApiBaseUrl();
+
+  if (!path.startsWith("/")) {
+    path = "/" + path;
+  }
+
+  return `${base}${path}`;
+
 }
 
 
 /* =====================================================
-   TOKEN (sessão)
+   DEBUG
    ===================================================== */
 
-function saveToken(token, remember) {
-  const storage = remember ? localStorage : sessionStorage;
-  storage.setItem(TOKEN_STORAGE_KEY, token);
-}
+console.log("=================================");
+console.log("V8 DIGITAL ADMIN");
+console.log("API:", getApiBaseUrl());
+console.log("Projeto:", getProject());
+console.log("=================================");
 
-function getToken() {
-  return (
-    localStorage.getItem(TOKEN_STORAGE_KEY) ||
-    sessionStorage.getItem(TOKEN_STORAGE_KEY)
-  );
-}
 
-function clearToken() {
+/* =====================================================
+   TOKEN
+   ===================================================== */
+
+function saveToken(token, remember = true) {
+
+  if (!token) {
+    console.error("Tentativa de salvar token vazio.");
+    return;
+  }
+
+  /*
+   * Limpa tokens antigos
+   */
   localStorage.removeItem(TOKEN_STORAGE_KEY);
   sessionStorage.removeItem(TOKEN_STORAGE_KEY);
+
+  const storage =
+    remember
+      ? localStorage
+      : sessionStorage;
+
+  storage.setItem(
+    TOKEN_STORAGE_KEY,
+    token
+  );
+
+  console.log("Token salvo.");
 }
 
+
+function getToken() {
+
+  const localToken =
+    localStorage.getItem(TOKEN_STORAGE_KEY);
+
+  if (localToken) {
+    return localToken;
+  }
+
+  const sessionToken =
+    sessionStorage.getItem(TOKEN_STORAGE_KEY);
+
+  if (sessionToken) {
+    return sessionToken;
+  }
+
+  return null;
+
+}
+
+
+function clearToken() {
+
+  localStorage.removeItem(TOKEN_STORAGE_KEY);
+
+  sessionStorage.removeItem(TOKEN_STORAGE_KEY);
+
+  console.log("Token removido.");
+
+}
+
+
 function isLoggedIn() {
+
   return Boolean(getToken());
+
 }
 
 
 /* =====================================================
-   TELAS
+   TELA DE LOGIN
+   ===================================================== */
+
+function showLogin(message = "") {
+
+  console.log("Abrindo tela de login.");
+
+  if (dashboard) {
+    dashboard.hidden = true;
+    dashboard.style.display = "none";
+  }
+
+  if (loginScreen) {
+    loginScreen.hidden = false;
+    loginScreen.style.display = "grid";
+  }
+
+  if (loginError) {
+    loginError.textContent = message;
+  }
+
+}
+
+
+/* =====================================================
+   TELA DO PAINEL
    ===================================================== */
 
 function showDashboard() {
-  loginScreen.hidden = true;
-  dashboard.hidden = false;
-  loadSettings();
-}
 
-function showLogin(message) {
-  dashboard.hidden = true;
-  loginScreen.hidden = false;
-  if (message) loginError.textContent = message;
-}
+  console.log("Abrindo painel administrativo.");
 
-if (!workerConfigured()) {
-
-  showLogin(
-    "O endereço do Worker ainda não foi configurado em js/config.js — o admin não pode funcionar sem isso."
-  );
-
-  if (loginForm) {
-    loginForm.querySelector('button[type="submit"]').disabled = true;
+  if (loginScreen) {
+    loginScreen.hidden = true;
+    loginScreen.style.display = "none";
   }
 
-} else if (isLoggedIn()) {
+  if (dashboard) {
+    dashboard.hidden = false;
+    dashboard.style.display = "flex";
+  }
 
-  showDashboard();
+  /*
+   * Carrega configurações somente depois
+   * de mostrar o painel.
+   */
+  loadSettings();
+
+}
+
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+function setStatus(message) {
+
+  if (saveStatus) {
+    saveStatus.textContent = message;
+  }
+
+  console.log("[ADMIN]", message);
+
+}
+
+
+/* =====================================================
+   TRATAMENTO DE RESPOSTA
+   ===================================================== */
+
+async function readJson(response) {
+
+  const text = await response.text();
+
+  if (!text) {
+    return {};
+  }
+
+  try {
+
+    return JSON.parse(text);
+
+  } catch (error) {
+
+    console.error(
+      "Resposta não é JSON:",
+      text
+    );
+
+    return {
+      error: text
+    };
+
+  }
 
 }
 
@@ -121,68 +305,262 @@ if (!workerConfigured()) {
 
 if (loginForm) {
 
-  loginForm.addEventListener("submit", async event => {
+  loginForm.addEventListener(
+    "submit",
+    async function (event) {
 
-    event.preventDefault();
+      event.preventDefault();
 
-    loginError.textContent = "";
-
-    const email = document.getElementById("adminEmail").value.trim();
-    const password = passwordInput.value;
-    const remember = document.getElementById("rememberLogin").checked;
-
-    const submitButton = loginForm.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
-    submitButton.textContent = "Entrando...";
-
-    try {
-
-      const response = await fetch(apiUrl("/api/login"), {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        loginError.textContent = data.error || "Não foi possível entrar.";
-        return;
+      if (loginError) {
+        loginError.textContent = "";
       }
 
-      saveToken(data.token, remember);
-      showDashboard();
+      const emailElement =
+        document.getElementById("adminEmail");
 
-    } catch (err) {
+      const passwordElement =
+        document.getElementById("adminPassword");
 
-      loginError.textContent =
-        "Não foi possível falar com o servidor. Verifique sua conexão.";
+      const rememberElement =
+        document.getElementById("rememberLogin");
 
-    } finally {
+      const email =
+        emailElement
+          ? emailElement.value.trim()
+          : "";
 
-      submitButton.disabled = false;
-      submitButton.textContent = "Entrar no painel";
+      const password =
+        passwordElement
+          ? passwordElement.value
+          : "";
+
+      const remember =
+        rememberElement
+          ? rememberElement.checked
+          : true;
+
+
+      /* ---------------------------------------------
+         VALIDAÇÃO
+         --------------------------------------------- */
+
+      if (!email) {
+
+        if (loginError) {
+          loginError.textContent =
+            "Digite seu e-mail.";
+        }
+
+        return;
+
+      }
+
+
+      if (!password) {
+
+        if (loginError) {
+          loginError.textContent =
+            "Digite sua senha.";
+        }
+
+        return;
+
+      }
+
+
+      const submitButton =
+        loginForm.querySelector(
+          'button[type="submit"]'
+        );
+
+
+      if (submitButton) {
+
+        submitButton.disabled = true;
+        submitButton.textContent =
+          "Entrando...";
+
+      }
+
+
+      try {
+
+        console.log(
+          "Tentando login:",
+          email
+        );
+
+        const response =
+          await fetch(
+            apiUrl("/api/login"),
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json",
+                "Accept":
+                  "application/json"
+              },
+
+              body: JSON.stringify({
+                email,
+                password
+              })
+            }
+          );
+
+
+        console.log(
+          "Status login:",
+          response.status
+        );
+
+
+        const data =
+          await readJson(response);
+
+
+        console.log(
+          "Resposta login:",
+          data
+        );
+
+
+        /* ---------------------------------------------
+           ERRO
+           --------------------------------------------- */
+
+        if (!response.ok) {
+
+          if (response.status === 401) {
+
+            if (loginError) {
+              loginError.textContent =
+                data.error ||
+                "E-mail ou senha incorretos.";
+            }
+
+          } else {
+
+            if (loginError) {
+              loginError.textContent =
+                data.error ||
+                `Erro do servidor (${response.status}).`;
+            }
+
+          }
+
+          return;
+
+        }
+
+
+        /* ---------------------------------------------
+           TOKEN
+           --------------------------------------------- */
+
+        if (!data.token) {
+
+          console.error(
+            "Servidor respondeu sem token:",
+            data
+          );
+
+          if (loginError) {
+            loginError.textContent =
+              "Login realizado, mas o servidor não enviou o token.";
+          }
+
+          return;
+
+        }
+
+
+        /*
+         * SALVA TOKEN
+         */
+        saveToken(
+          data.token,
+          remember
+        );
+
+
+        /*
+         * LIMPA CAMPO DE SENHA
+         */
+        if (passwordElement) {
+          passwordElement.value = "";
+        }
+
+
+        /*
+         * ABRE PAINEL
+         */
+        showDashboard();
+
+
+      } catch (error) {
+
+        console.error(
+          "Erro no login:",
+          error
+        );
+
+
+        if (loginError) {
+
+          loginError.textContent =
+            "Não foi possível conectar ao servidor. Verifique o Worker e o CORS.";
+
+        }
+
+      } finally {
+
+        if (submitButton) {
+
+          submitButton.disabled = false;
+
+          submitButton.textContent =
+            "Entrar no painel";
+
+        }
+
+      }
 
     }
-
-  });
+  );
 
 }
 
 
 /* =====================================================
-   MOSTRAR SENHA
+   MOSTRAR / OCULTAR SENHA
    ===================================================== */
 
-if (togglePassword) {
+if (togglePassword && passwordInput) {
 
-  togglePassword.addEventListener("click", () => {
+  togglePassword.addEventListener(
+    "click",
+    function () {
 
-    const isPassword = passwordInput.type === "password";
-    passwordInput.type = isPassword ? "text" : "password";
-    togglePassword.textContent = isPassword ? "Ocultar" : "Mostrar";
+      const isPassword =
+        passwordInput.type === "password";
 
-  });
+
+      passwordInput.type =
+        isPassword
+          ? "text"
+          : "password";
+
+
+      togglePassword.textContent =
+        isPassword
+          ? "Ocultar"
+          : "Mostrar";
+
+    }
+  );
 
 }
 
@@ -193,43 +571,142 @@ if (togglePassword) {
 
 if (logoutButton) {
 
-  logoutButton.addEventListener("click", () => {
-    clearToken();
-    showLogin();
-  });
+  logoutButton.addEventListener(
+    "click",
+    function () {
+
+      clearToken();
+
+      showLogin(
+        "Você saiu do painel."
+      );
+
+    }
+  );
 
 }
 
 
 /* =====================================================
-   CARREGAR CONFIGURAÇÕES (endpoint público)
+   CARREGAR CONFIGURAÇÕES
    ===================================================== */
 
 async function loadSettings() {
 
-  setStatus("Carregando configurações...");
+  setStatus(
+    "Carregando configurações..."
+  );
+
 
   try {
 
-    const response = await fetch(
-      apiUrl(`/api/config?project=${encodeURIComponent(V8_API.project)}`)
+    const project =
+      encodeURIComponent(
+        getProject()
+      );
+
+
+    const url =
+      apiUrl(
+        `/api/config?project=${project}`
+      );
+
+
+    console.log(
+      "Carregando configurações:",
+      url
     );
 
-    if (!response.ok) throw new Error("Falha ao carregar.");
 
-    const data = await response.json();
-    const config = data.config || {};
+    const response =
+      await fetch(
+        url,
+        {
+          method: "GET",
 
-    FIELDS.forEach(key => {
-      const field = document.getElementById(key);
-      if (field) field.value = config[key] || "";
-    });
+          headers: {
+            "Accept":
+              "application/json"
+          }
+        }
+      );
 
-    setStatus("Configurações carregadas");
 
-  } catch (err) {
+    console.log(
+      "Status configurações:",
+      response.status
+    );
 
-    setStatus("Não foi possível carregar as configurações");
+
+    const data =
+      await readJson(response);
+
+
+    if (!response.ok) {
+
+      /*
+       * Se a API exigir autenticação para leitura
+       */
+      if (response.status === 401) {
+
+        clearToken();
+
+        showLogin(
+          "Sua sessão expirou. Entre novamente."
+        );
+
+        return;
+
+      }
+
+      throw new Error(
+        data.error ||
+        "Falha ao carregar configurações."
+      );
+
+    }
+
+
+    const config =
+      data.config || data || {};
+
+
+    /*
+     * Preenche os campos
+     */
+    FIELDS.forEach(
+      function (key) {
+
+        const field =
+          document.getElementById(key);
+
+        if (!field) {
+          return;
+        }
+
+        field.value =
+          config[key] ?? "";
+
+      }
+    );
+
+
+    setStatus(
+      "Configurações carregadas"
+    );
+
+
+  } catch (error) {
+
+    console.error(
+      "Erro ao carregar configurações:",
+      error
+    );
+
+
+    setStatus(
+      "Não foi possível carregar as configurações"
+    );
 
   }
 
@@ -237,104 +714,322 @@ async function loadSettings() {
 
 
 /* =====================================================
-   SALVAR (endpoint autenticado)
+   SALVAR CONFIGURAÇÕES
    ===================================================== */
 
 if (settingsForm) {
 
-  settingsForm.addEventListener("submit", async event => {
+  settingsForm.addEventListener(
+    "submit",
+    async function (event) {
 
-    event.preventDefault();
+      event.preventDefault();
 
-    const config = {};
-    FIELDS.forEach(key => {
-      const field = document.getElementById(key);
-      if (field) config[key] = field.value.trim();
-    });
 
-    const saveButton = settingsForm.querySelector(".save-button");
-    saveButton.disabled = true;
-    setStatus("Salvando...");
+      const token =
+        getToken();
 
-    try {
 
-      const response = await fetch(
-        apiUrl(`/api/config?project=${encodeURIComponent(V8_API.project)}`),
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${getToken()}`,
-          },
-          body: JSON.stringify(config),
-        }
-      );
+      /*
+       * Sem token
+       */
+      if (!token) {
 
-      const data = await response.json();
+        showLogin(
+          "Sua sessão terminou. Entre novamente."
+        );
 
-      if (!response.ok) {
-
-        // Sessão expirada — manda pro login de novo.
-        if (response.status === 401) {
-          clearToken();
-          showLogin("Sua sessão expirou. Entre novamente.");
-          return;
-        }
-
-        setStatus(data.error || "Não foi possível salvar");
         return;
 
       }
 
-      setStatus("✓ Configurações salvas");
-      setTimeout(() => setStatus("Configurações salvas no servidor"), 3000);
 
-    } catch (err) {
+      /*
+       * Monta configuração
+       */
+      const config = {};
 
-      setStatus("Erro de conexão ao salvar");
 
-    } finally {
+      FIELDS.forEach(
+        function (key) {
 
-      saveButton.disabled = false;
+          const field =
+            document.getElementById(key);
+
+          if (!field) {
+            return;
+          }
+
+          config[key] =
+            field.value.trim();
+
+        }
+      );
+
+
+      const saveButton =
+        settingsForm.querySelector(
+          ".save-button"
+        );
+
+
+      if (saveButton) {
+        saveButton.disabled = true;
+      }
+
+
+      setStatus(
+        "Salvando..."
+      );
+
+
+      try {
+
+        const project =
+          encodeURIComponent(
+            getProject()
+          );
+
+
+        const response =
+          await fetch(
+            apiUrl(
+              `/api/config?project=${project}`
+            ),
+            {
+              method: "PUT",
+
+              headers: {
+
+                "Content-Type":
+                  "application/json",
+
+                "Accept":
+                  "application/json",
+
+                "Authorization":
+                  `Bearer ${token}`
+
+              },
+
+              body:
+                JSON.stringify(config)
+
+            }
+          );
+
+
+        console.log(
+          "Status salvar:",
+          response.status
+        );
+
+
+        const data =
+          await readJson(response);
+
+
+        /*
+         * TOKEN INVÁLIDO
+         */
+        if (response.status === 401) {
+
+          clearToken();
+
+          showLogin(
+            "Sua sessão expirou. Entre novamente."
+          );
+
+          return;
+
+        }
+
+
+        /*
+         * OUTROS ERROS
+         */
+        if (!response.ok) {
+
+          setStatus(
+            data.error ||
+            `Erro ao salvar (${response.status})`
+          );
+
+          return;
+
+        }
+
+
+        /*
+         * SUCESSO
+         */
+        setStatus(
+          "✓ Configurações salvas"
+        );
+
+
+        setTimeout(
+          function () {
+
+            setStatus(
+              "Configurações salvas no servidor"
+            );
+
+          },
+          3000
+        );
+
+
+      } catch (error) {
+
+        console.error(
+          "Erro ao salvar:",
+          error
+        );
+
+
+        setStatus(
+          "Erro de conexão ao salvar"
+        );
+
+
+      } finally {
+
+        if (saveButton) {
+          saveButton.disabled = false;
+        }
+
+      }
 
     }
-
-  });
+  );
 
 }
 
 
 /* =====================================================
-   RESTAURAR (limpa os campos do formulário, não apaga
-   nada no servidor até você clicar em Salvar)
+   RESETAR FORMULÁRIO
    ===================================================== */
 
 if (resetButton) {
 
-  resetButton.addEventListener("click", () => {
+  resetButton.addEventListener(
+    "click",
+    function () {
 
-    const confirmed = confirm(
-      "Limpar os campos do formulário? (isso não apaga nada salvo até você clicar em Salvar)"
-    );
+      const confirmed =
+        confirm(
+          "Limpar os campos do formulário?\n\n" +
+          "Isso NÃO apaga os dados do servidor. " +
+          "Eles só serão apagados do servidor se você clicar em Salvar."
+        );
 
-    if (!confirmed) return;
 
-    FIELDS.forEach(key => {
-      const field = document.getElementById(key);
-      if (field) field.value = "";
-    });
+      if (!confirmed) {
+        return;
+      }
 
-    setStatus("Campos limpos — clique em Salvar para confirmar");
 
-  });
+      FIELDS.forEach(
+        function (key) {
+
+          const field =
+            document.getElementById(key);
+
+          if (field) {
+            field.value = "";
+          }
+
+        }
+      );
+
+
+      setStatus(
+        "Campos limpos — clique em Salvar para confirmar"
+      );
+
+    }
+  );
 
 }
 
 
 /* =====================================================
-   STATUS
+   INICIALIZAÇÃO
    ===================================================== */
 
-function setStatus(message) {
-  if (saveStatus) saveStatus.textContent = message;
+function initializeAdmin() {
+
+  console.log(
+    "Inicializando painel V8 Digital..."
+  );
+
+
+  /*
+   * Verifica elementos principais
+   */
+  if (!loginScreen) {
+    console.error(
+      "Elemento #loginScreen não encontrado."
+    );
+  }
+
+
+  if (!dashboard) {
+    console.error(
+      "Elemento #dashboard não encontrado."
+    );
+  }
+
+
+  /*
+   * Verifica token
+   */
+  const token =
+    getToken();
+
+
+  if (token) {
+
+    console.log(
+      "Token encontrado. Abrindo painel..."
+    );
+
+    showDashboard();
+
+    return;
+
+  }
+
+
+  /*
+   * Sem token
+   */
+  console.log(
+    "Nenhum token encontrado. Exibindo login."
+  );
+
+
+  showLogin();
+
+}
+
+
+/* =====================================================
+   EXECUTAR
+   ===================================================== */
+
+if (
+  document.readyState === "loading"
+) {
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    initializeAdmin
+  );
+
+} else {
+
+  initializeAdmin();
+
 }
