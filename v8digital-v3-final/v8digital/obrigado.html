@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Mensagem enviada | V8 Digital</title>
+
+  <meta
+    name="description"
+    content="Sua mensagem foi enviada para a V8 Digital. Em breve entraremos em contato."
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <meta
+    name="theme-color"
+    content="#08080d"
+  >
+
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    href="assets/logo/v8p.png"
+  >
+
+  <!-- CSS principal -->
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/responsive.css"
+  >
+
+  <style>
+    /* =========================================
+       PÁGINA OBRIGADO
+       ========================================= */
+
+    .thankyou-page {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 40px 20px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    /* =========================================
+       EFEITOS DE FUNDO
+       ========================================= */
+
+    .thankyou-page::before,
+    .thankyou-page::after {
+      content: "";
+
+      position: absolute;
+
+      width: 420px;
+      height: 420px;
+
+      border-radius: 50%;
+
+      filter: blur(90px);
+
+      opacity: 0.18;
+
+      pointer-events: none;
+    }
+
+    .thankyou-page::before {
+      top: -180px;
+      left: -160px;
+
+      background: #8b5cf6;
+    }
+
+    .thankyou-page::after {
+      right: -180px;
+      bottom: -180px;
+
+      background: #ec4899;
+    }
+
+    /* =========================================
+       CARD
+       ========================================= */
+
+    .thankyou-card {
+      width: min(680px, 100%);
+
+      position: relative;
+
+      z-index: 1;
+
+      text-align: center;
+
+      padding: clamp(32px, 6vw, 64px);
+
+      border: 1px solid rgba(255, 255, 255, 0.10);
+
+      border-radius: 28px;
+
+      background: rgba(15, 15, 24, 0.82);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.35);
+    }
+
+    /* =========================================
+       ÍCONE
+       ========================================= */
+
+    .thankyou-icon {
+      width: 82px;
+      height: 82px;
+
+      margin: 0 auto 28px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      font-size: 36px;
+      font-weight: 800;
+
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          135deg,
+          #8b5cf6,
+          #ec4899
+        );
+
+      box-shadow:
+        0 15px 40px rgba(139, 92, 246, 0.30);
+    }
+
+    /* =========================================
+       EYEBROW
+       ========================================= */
+
+    .thankyou-card .eyebrow {
+      display: inline-block;
+
+      margin-bottom: 14px;
+    }
+
+    /* =========================================
+       TÍTULO
+       ========================================= */
+
+    .thankyou-card h1 {
+      margin: 0 0 18px;
+
+      font-size: clamp(2.2rem, 6vw, 4rem);
+
+      line-height: 1.05;
+    }
+
+    .thankyou-card h1 span {
+      background:
+        linear-gradient(
+          90deg,
+          #a78bfa,
+          #f472b6
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    /* =========================================
+       TEXTO
+       ========================================= */
+
+    .thankyou-card p {
+      max-width: 520px;
+
+      margin: 0 auto 30px;
+
+      color: rgba(255, 255, 255, 0.72);
+
+      font-size: 1.05rem;
+
+      line-height: 1.7;
+    }
+
+    /* =========================================
+       BOTÕES
+       ========================================= */
+
+    .thankyou-actions {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+    }
+
+    /* =========================================
+       RODAPÉ DA MENSAGEM
+       ========================================= */
+
+    .thankyou-note {
+      margin-top: 28px !important;
+
+      margin-bottom: 0 !important;
+
+      font-size: 0.85rem !important;
+
+      color: rgba(255, 255, 255, 0.48) !important;
+    }
+
+    /* =========================================
+       MOBILE
+       ========================================= */
+
+    @media (max-width: 600px) {
+
+      .thankyou-page {
+        padding: 24px 16px;
+      }
+
+      .thankyou-card {
+        padding: 36px 22px;
+        border-radius: 22px;
+      }
+
+      .thankyou-icon {
+        width: 72px;
+        height: 72px;
+
+        font-size: 30px;
+
+        margin-bottom: 22px;
+      }
+
+      .thankyou-card h1 {
+        font-size: 2.35rem;
+      }
+
+      .thankyou-card p {
+        font-size: 0.98rem;
+      }
+
+      .thankyou-actions {
+        flex-direction: column;
+      }
+
+      .thankyou-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="thankyou-page">
+
+    <section
+      class="thankyou-card"
+      aria-labelledby="thankyou-title"
+    >
+
+      <!-- Ícone de sucesso -->
+      <div
+        class="thankyou-icon"
+        aria-hidden="true"
+      >
+        ✓
+      </div>
+
+      <!-- Marca -->
+      <span class="eyebrow">
+        V8 DIGITAL
+      </span>
+
+      <!-- Título -->
+      <h1 id="thankyou-title">
+        Mensagem
+        <span>enviada!</span>
+      </h1>
+
+      <!-- Mensagem -->
+      <p>
+        Obrigado pelo contato.
+        Recebemos sua solicitação e vamos analisar
+        as informações enviadas para entender
+        a melhor solução para o seu projeto.
+      </p>
+
+      <!-- Ações -->
+      <div class="thankyou-actions">
+
+        <!-- Voltar para o site -->
+        <a
+          href="https://v8digital.pages.dev/"
+          class="btn btn-primary"
+        >
+          Voltar para o site
+        </a>
+
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/54992756194?text=Olá%20V8%20Digital!%20Acabei%20de%20enviar%20uma%20solicitação%20pelo%20site."
+          class="btn btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Falar pelo WhatsApp
+        </a>
+
+      </div>
+
+      <!-- Identificação -->
+      <p class="thankyou-note">
+        V8 Digital • Desenvolvimento Web & Marketing Digital
+      </p>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
