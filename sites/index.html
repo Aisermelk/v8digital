@@ -1,3741 +1,2979 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Criação de Sites Profissionais | V8 Digital</title>
-
-  <meta
-    name="description"
-    content="Crie seu site profissional com a V8 Digital. Sites modernos, responsivos e personalizados a partir de R$ 99."
-  >
-
-  <meta
-    name="keywords"
-    content="criação de sites, site profissional, criação de site barato, landing page, site empresarial, V8 Digital"
-  >
-
-  <meta
-    name="author"
-    content="V8 Digital"
-  >
-
-  <meta
-    name="robots"
-    content="index, follow"
-  >
-
-  <meta
-    name="theme-color"
-    content="#08080d"
-  >
-
-  <link
-    rel="canonical"
-    href="https://v8digital.pages.dev/sites/"
-  >
-
-  <link
-    rel="icon"
-    href="../assets/logo/v8p.png"
-  >
-
-  <!-- =========================================================
-       OPEN GRAPH
-  ========================================================== -->
-
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:locale"
-    content="pt_BR"
-  >
-
-  <meta
-    property="og:title"
-    content="Crie seu site profissional | V8 Digital"
-  >
-
-  <meta
-    property="og:description"
-    content="Sites profissionais, modernos e responsivos a partir de R$ 99."
-  >
-
-  <meta
-    property="og:url"
-    content="https://v8digital.pages.dev/sites/"
-  >
-
-  <meta
-    property="og:site_name"
-    content="V8 Digital"
-  >
-
-  <meta
-    property="og:image"
-    content="https://v8digital.pages.dev/assets/banner/og-banner.jpg"
-  >
-
-  <meta
-    property="og:image:width"
-    content="1200"
-  >
-
-  <meta
-    property="og:image:height"
-    content="630"
-  >
-
-  <!-- =========================================================
-       TWITTER
-  ========================================================== -->
-
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  >
-
-  <meta
-    name="twitter:title"
-    content="Crie seu site profissional | V8 Digital"
-  >
-
-  <meta
-    name="twitter:description"
-    content="Sites profissionais a partir de R$ 99."
-  >
-
-  <meta
-    name="twitter:image"
-    content="https://v8digital.pages.dev/assets/banner/og-banner.jpg"
-  >
-
-  <!-- =========================================================
-       FONT
-  ========================================================== -->
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- =========================================================
-       ESTILOS
-       A página possui CSS próprio para não alterar o site principal.
-  ========================================================== -->
-
-  <style>
-
-    /* =========================================================
-       RESET
-    ========================================================== */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: #08080d;
-      color: #f5f5f7;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
-    }
-
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    /* =========================================================
-       VARIÁVEIS
-    ========================================================== */
-
-    :root {
-      --bg: #08080d;
-      --bg-soft: #0d0d14;
-      --bg-card: #111119;
-      --bg-card-hover: #15151f;
-
-      --text: #f5f5f7;
-      --text-soft: #a5a5b2;
-      --text-muted: #777784;
-
-      --border: rgba(255, 255, 255, 0.09);
-      --border-strong: rgba(255, 255, 255, 0.16);
-
-      --accent: #ffffff;
-      --accent-soft: rgba(255, 255, 255, 0.08);
-
-      --radius: 20px;
-      --radius-small: 12px;
-
-      --shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
-    }
-
-    /* =========================================================
-       HEADER
-    ========================================================== */
-
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-
-      background: rgba(8, 8, 13, 0.82);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .nav-container {
-      min-height: 76px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-
-      font-weight: 800;
-      letter-spacing: -0.04em;
-    }
-
-    .logo-img {
-      width: 38px;
-      height: 38px;
-      object-fit: contain;
-    }
-
-    .logo-text {
-      font-size: 18px;
-    }
-
-    .main-nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .main-nav a {
-      color: var(--text-soft);
-      font-size: 14px;
-      font-weight: 500;
-
-      transition:
-        color 0.25s ease,
-        opacity 0.25s ease;
-    }
-
-    .main-nav a:hover {
-      color: var(--text);
-    }
-
-    .nav-cta {
-      padding: 11px 18px;
-
-      border: 1px solid var(--border-strong);
-      border-radius: 999px;
-
-      color: var(--text) !important;
-
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .nav-cta:hover {
-      background: rgba(255, 255, 255, 0.09);
-    }
-
-    .menu-toggle {
-      display: none;
-
-      width: 42px;
-      height: 42px;
-
-      border: 1px solid var(--border);
-      border-radius: 10px;
-
-      background: transparent;
-      cursor: pointer;
-
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .menu-toggle span {
-      display: block;
-
-      width: 18px;
-      height: 2px;
-
-      background: var(--text);
-      border-radius: 999px;
-    }
-
-    /* =========================================================
-       BUTTONS
-    ========================================================== */
 
-    .btn {
-      min-height: 52px;
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Sites Profissionais a partir de R$ 99 | V8 Digital
+    </title>
+
+    <meta
+        name="description"
+        content="Crie seu site profissional com a V8 Digital. Sites responsivos, modernos e personalizados a partir de R$ 99."
+    >
+
+    <meta
+        name="keywords"
+        content="criação de sites, site profissional, landing page, site barato, site para empresa, site para negócio, V8 Digital"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <link
+        rel="canonical"
+        href="https://v8digital.pages.dev/sites/"
+    >
+
+    <!-- Open Graph -->
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:title"
+        content="Sites Profissionais a partir de R$ 99 | V8 Digital"
+    >
+
+    <meta
+        property="og:description"
+        content="Seu negócio merece um site profissional. Escolha seu plano e coloque sua presença digital no ar."
+    >
+
+    <meta
+        property="og:url"
+        content="https://v8digital.pages.dev/sites/"
+    >
+
+    <meta
+        property="og:image"
+        content="https://v8digital.pages.dev/assets/logo/v8p.png"
+    >
+
+    <!-- Twitter -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Sites Profissionais a partir de R$ 99 | V8 Digital"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Sites profissionais, modernos e responsivos para empresas e profissionais."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://v8digital.pages.dev/assets/logo/v8p.png"
+    >
+
+    <!-- Favicon -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../assets/logo/v8p.png"
+    >
+
+    <!-- Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #08080d;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        :root {
+            --bg: #08080d;
+            --bg-soft: #0e0e15;
+            --bg-card: #11111a;
+            --border: rgba(255,255,255,.09);
+            --text: #ffffff;
+            --muted: #9b9ba8;
+            --muted-2: #70707d;
+            --primary: #ffffff;
+            --accent: #7c5cff;
+            --accent-2: #9d86ff;
+            --success: #36d399;
+            --radius: 20px;
+            --max: 1180px;
+        }
+
+        /* =========================================================
+           UTILITIES
+        ========================================================= */
+
+        .container {
+            width: min(var(--max), calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            max-width: 720px;
+            margin-bottom: 55px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-2);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 22px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        h1,
+        h2,
+        h3 {
+            letter-spacing: -.04em;
+        }
+
+        h2 {
+            font-size: clamp(34px, 5vw, 54px);
+            line-height: 1.05;
+        }
+
+        .section-header p {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 17px;
+            max-width: 650px;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,.06);
+            background: rgba(8,8,13,.82);
+            backdrop-filter: blur(18px);
+        }
+
+        .nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 54px;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #bdbdc8;
+            font-size: 13px;
+            font-weight: 600;
+            transition: .25s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-cta {
+            padding: 11px 18px;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #08080d !important;
+        }
+
+        .menu-btn {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: transparent;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            position: relative;
+            padding: 120px 0 90px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: rgba(124,92,255,.13);
+            filter: blur(120px);
+            top: -250px;
+            right: -180px;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: rgba(75,70,180,.08);
+            filter: blur(100px);
+            bottom: -250px;
+            left: -180px;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .hero h1 {
+            max-width: 760px;
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: .96;
+        }
+
+        .hero h1 span {
+            color: var(--accent-2);
+        }
+
+        .hero-text {
+            max-width: 650px;
+            margin-top: 26px;
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 34px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+            padding: 0 22px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            font-size: 14px;
+            font-weight: 700;
+            transition: .25s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #ffffff;
+            color: #08080d;
+            border-color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,.03);
+            color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,.07);
+        }
+
+        .hero-note {
+            margin-top: 20px;
+            color: var(--muted-2);
+            font-size: 12px;
+        }
+
+        /* =========================================================
+           HERO VISUAL
+        ========================================================= */
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .browser {
+            border: 1px solid rgba(255,255,255,.1);
+            background: #101018;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow:
+                0 30px 100px rgba(0,0,0,.45),
+                0 0 80px rgba(124,92,255,.08);
+            transform: perspective(1200px) rotateY(-5deg) rotateX(2deg);
+        }
+
+        .browser-top {
+            height: 42px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 0 15px;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4a4a56;
+        }
+
+        .browser-url {
+            flex: 1;
+            margin-left: 8px;
+            height: 24px;
+            border-radius: 6px;
+            background: rgba(255,255,255,.04);
+        }
+
+        .browser-body {
+            min-height: 400px;
+            padding: 30px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #11111a,
+                    #171329 60%,
+                    #0e0e14
+                );
+        }
+
+        .mock-logo {
+            width: 80px;
+            height: 13px;
+            border-radius: 4px;
+            background: rgba(255,255,255,.85);
+        }
+
+        .mock-title {
+            width: 78%;
+            height: 45px;
+            margin-top: 70px;
+            border-radius: 7px;
+            background: rgba(255,255,255,.92);
+        }
+
+        .mock-title-2 {
+            width: 58%;
+            height: 45px;
+            margin-top: 10px;
+            border-radius: 7px;
+            background: rgba(157,134,255,.8);
+        }
+
+        .mock-text {
+            width: 72%;
+            height: 11px;
+            margin-top: 24px;
+            border-radius: 5px;
+            background: rgba(255,255,255,.16);
+        }
+
+        .mock-button {
+            width: 130px;
+            height: 42px;
+            margin-top: 25px;
+            border-radius: 9px;
+            background: #ffffff;
+        }
+
+        .mock-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 35px;
+        }
+
+        .mock-card {
+            height: 90px;
+            border-radius: 12px;
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.07);
+        }
+
+        /* =========================================================
+           BENEFITS
+        ========================================================= */
+
+        .benefits {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: #0b0b11;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .benefit {
+            padding: 32px 25px;
+            border-right: 1px solid var(--border);
+        }
+
+        .benefit:last-child {
+            border-right: 0;
+        }
+
+        .benefit-number {
+            font-size: 12px;
+            color: var(--accent-2);
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .benefit h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .benefit p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           PLANS
+        ========================================================= */
+
+        .plans {
+            background: #08080d;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .plan {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 34px;
+            border: 1px solid var(--border);
+            background: linear-gradient(
+                180deg,
+                rgba(255,255,255,.035),
+                rgba(255,255,255,.015)
+            );
+            border-radius: var(--radius);
+        }
+
+        .plan.featured {
+            border-color: rgba(124,92,255,.65);
+            box-shadow:
+                0 20px 80px rgba(124,92,255,.08);
+            transform: translateY(-8px);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(124,92,255,.15);
+            color: #b9aaff;
+            border: 1px solid rgba(124,92,255,.25);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+
+        .plan-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .plan-description {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 8px;
+            min-height: 40px;
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+            margin-top: 25px;
+        }
+
+        .price strong {
+            font-size: 50px;
+            line-height: 1;
+            letter-spacing: -.06em;
+        }
+
+        .price span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .plan-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 28px 0;
+        }
+
+        .plan-list {
+            list-style: none;
+            display: grid;
+            gap: 13px;
+        }
+
+        .plan-list li {
+            display: flex;
+            gap: 10px;
+            color: #c4c4ce;
+            font-size: 13px;
+        }
+
+        .plan-list li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: 800;
+        }
+
+        .plan .btn {
+            width: 100%;
+            margin-top: auto;
+            padding-top: 15px;
+            margin-bottom: 0;
+        }
+
+        .plan.featured .btn {
+            background: #ffffff;
+            color: #08080d;
+        }
+
+        /* =========================================================
+           INCLUDED
+        ========================================================= */
+
+        .included {
+            background: #0c0c12;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .included-card {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: rgba(255,255,255,.025);
+            transition: .25s ease;
+        }
+
+        .included-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(124,92,255,.3);
+        }
+
+        .included-card-number {
+            color: var(--accent-2);
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .included-card h3 {
+            font-size: 17px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        .included-card p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           PROJECTS
+        ========================================================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .project {
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--bg-card);
+            transition: .3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,.16);
+        }
+
+        .project-image {
+            height: 210px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            background:
+                radial-gradient(
+                    circle at 50% 30%,
+                    rgba(124,92,255,.25),
+                    transparent 55%
+                ),
+                #101018;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-window {
+            width: 90%;
+            height: 145px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,.1);
+            background: #171720;
+            padding: 13px;
+        }
+
+        .project-line {
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,.12);
+            margin-bottom: 8px;
+        }
+
+        .project-line.large {
+            width: 75%;
+            height: 22px;
+            background: rgba(255,255,255,.75);
+            margin-top: 20px;
+        }
+
+        .project-line.medium {
+            width: 55%;
+            background: rgba(157,134,255,.65);
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-content h3 {
+            font-size: 18px;
+        }
+
+        .project-content p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            margin-top: 18px;
+            color: #b9aaff;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+           PROCESS
+        ========================================================= */
+
+        .process {
+            background: #0c0c12;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+        }
+
+        .process-step {
+            padding: 35px 28px;
+            background: #0c0c12;
+        }
+
+        .process-number {
+            color: var(--accent-2);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .process-step h3 {
+            margin-top: 35px;
+            font-size: 18px;
+        }
+
+        .process-step p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 9px;
+        }
+
+        /* =========================================================
+           FAQ
+        ========================================================= */
+
+        .faq-grid {
+            max-width: 850px;
+        }
+
+        .faq-item {
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-item:last-child {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background: none;
+            border: 0;
+            color: #ffffff;
+            text-align: left;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .faq-icon {
+            font-size: 20px;
+            color: var(--muted);
+            transition: .25s ease;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 50px 25px 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: var(--accent-2);
+        }
+
+        /* =========================================================
+           FORM
+        ========================================================= */
+
+        .contact {
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(124,92,255,.12),
+                    transparent 35%
+                ),
+                #0b0b11;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .contact-copy p {
+            color: var(--muted);
+            margin-top: 18px;
+            max-width: 480px;
+        }
+
+        .contact-points {
+            list-style: none;
+            display: grid;
+            gap: 13px;
+            margin-top: 30px;
+        }
+
+        .contact-points li {
+            color: #c8c8d2;
+            font-size: 13px;
+        }
+
+        .contact-points strong {
+            color: #ffffff;
+        }
+
+        .form-box {
+            padding: 34px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255,255,255,.025);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .field {
+            display: grid;
+            gap: 8px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        .field label {
+            color: #c9c9d3;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            border: 1px solid rgba(255,255,255,.1);
+            background: rgba(0,0,0,.18);
+            color: #ffffff;
+            border-radius: 10px;
+            outline: none;
+            padding: 13px 14px;
+            transition: .2s ease;
+        }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            border-color: rgba(124,92,255,.7);
+        }
+
+        .field textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .field select option {
+            background: #11111a;
+            color: #ffffff;
+        }
+
+        .form-submit {
+            width: 100%;
+            margin-top: 18px;
+        }
+
+        .form-note {
+            margin-top: 12px;
+            color: var(--muted-2);
+            font-size: 11px;
+            text-align: center;
+        }
+
+        /* =========================================================
+           FINAL CTA
+        ========================================================= */
+
+        .final-cta {
+            padding: 110px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            background: rgba(124,92,255,.1);
+            filter: blur(110px);
+            pointer-events: none;
+        }
+
+        .final-cta > .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta h2 {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .final-cta p {
+            color: var(--muted);
+            max-width: 620px;
+            margin: 20px auto 30px;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 35px 0;
+            background: #07070b;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-logo img {
+            width: 45px;
+        }
+
+        .footer-text {
+            color: var(--muted-2);
+            font-size: 11px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        /* =========================================================
+           WHATSAPP
+        ========================================================= */
+
+        .whatsapp {
+            position: fixed;
+            z-index: 999;
+            right: 20px;
+            bottom: 20px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #25d366;
+            color: #ffffff;
+            box-shadow: 0 12px 35px rgba(0,0,0,.35);
+            font-size: 25px;
+            font-weight: 800;
+            transition: .25s ease;
+        }
+
+        .whatsapp:hover {
+            transform: translateY(-4px) scale(1.04);
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-visual {
+                max-width: 700px;
+            }
+
+            .benefits-grid,
+            .included-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefit:nth-child(2) {
+                border-right: 0;
+            }
+
+            .benefit:nth-child(-n+2) {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .plans-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .plan.featured {
+                transform: none;
+            }
+
+            .plan {
+                max-width: 650px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+        }
+
+        @media (max-width: 760px) {
+
+            .container {
+                width: min(var(--max), calc(100% - 28px));
+            }
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .nav {
+                min-height: 68px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 14px;
+                right: 14px;
+                padding: 15px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 5px;
+                background: rgba(14,14,21,.97);
+                border: 1px solid var(--border);
+                border-radius: 15px;
+                box-shadow: 0 20px 60px rgba(0,0,0,.4);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px;
+            }
+
+            .nav-cta {
+                text-align: center;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 85px 0 65px;
+            }
+
+            .hero h1 {
+                font-size: clamp(44px, 13vw, 66px);
+            }
+
+            .hero-text {
+                font-size: 16px;
+            }
+
+            .browser {
+                transform: none;
+            }
+
+            .browser-body {
+                min-height: 320px;
+                padding: 20px;
+            }
+
+            .mock-title {
+                margin-top: 50px;
+                height: 32px;
+            }
+
+            .mock-title-2 {
+                height: 32px;
+            }
+
+            .benefits-grid,
+            .included-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit,
+            .benefit:nth-child(2) {
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .benefit:last-child {
+                border-bottom: 0;
+            }
+
+            .process-grid {
+                gap: 1px;
+            }
+
+            .form-box {
+                padding: 22px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .field.full {
+                grid-column: auto;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .whatsapp {
+                width: 52px;
+                height: 52px;
+                right: 15px;
+                bottom: 15px;
+            }
+        }
+
+    </style>
 
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 0 25px;
-
-      border-radius: 999px;
-
-      font-size: 14px;
-      font-weight: 700;
-
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: #ffffff;
-      color: #08080d;
-    }
-
-    .btn-primary:hover {
-      background: #e9e9ed;
-    }
-
-    .btn-secondary {
-      border: 1px solid var(--border-strong);
-      color: var(--text);
-
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .btn-full {
-      width: 100%;
-    }
-
-    /* =========================================================
-       EYEBROW
-    ========================================================== */
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
-      margin-bottom: 18px;
-
-      color: #bdbdc8;
-
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-
-      width: 24px;
-      height: 1px;
-
-      background: rgba(255, 255, 255, 0.45);
-    }
-
-    /* =========================================================
-       HERO
-    ========================================================== */
-
-    .hero {
-      position: relative;
-
-      min-height: 760px;
-
-      display: flex;
-      align-items: center;
-
-      padding: 150px 0 100px;
-
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-
-      position: absolute;
-
-      width: 650px;
-      height: 650px;
-
-      top: -250px;
-      right: -180px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.08),
-          transparent 68%
-        );
-
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: "";
-
-      position: absolute;
-
-      width: 500px;
-      height: 500px;
-
-      bottom: -300px;
-      left: -250px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.05),
-          transparent 68%
-        );
-
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-
-      gap: 70px;
-
-      align-items: center;
-    }
-
-    .hero-copy h1 {
-      max-width: 720px;
-
-      font-size: clamp(44px, 6vw, 76px);
-
-      line-height: 0.98;
-      letter-spacing: -0.065em;
-      font-weight: 800;
-    }
-
-    .hero-copy h1 span {
-      display: block;
-      color: #a9a9b5;
-    }
-
-    .hero-copy > p {
-      max-width: 650px;
-
-      margin-top: 28px;
-
-      color: var(--text-soft);
-
-      font-size: 18px;
-      line-height: 1.75;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-
-      margin-top: 34px;
-    }
-
-    .hero-note {
-      margin-top: 18px;
-
-      color: var(--text-muted);
-
-      font-size: 12px;
-    }
-
-    /* =========================================================
-       HERO VISUAL
-    ========================================================== */
-
-    .hero-visual {
-      position: relative;
-
-      min-height: 470px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .visual-glow {
-      position: absolute;
-
-      width: 390px;
-      height: 390px;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.12),
-          rgba(255, 255, 255, 0.025) 45%,
-          transparent 70%
-        );
-
-      filter: blur(4px);
-    }
-
-    .browser {
-      position: relative;
-
-      width: min(480px, 100%);
-
-      border: 1px solid var(--border-strong);
-      border-radius: 20px;
-
-      background: rgba(17, 17, 25, 0.88);
-
-      box-shadow: var(--shadow);
-
-      overflow: hidden;
-
-      transform: perspective(1000px) rotateY(-5deg) rotateX(3deg);
-    }
-
-    .browser-top {
-      height: 42px;
-
-      display: flex;
-      align-items: center;
-
-      padding: 0 15px;
-
-      border-bottom: 1px solid var(--border);
-
-      background: rgba(255, 255, 255, 0.025);
-    }
-
-    .browser-dots {
-      display: flex;
-      gap: 6px;
-    }
-
-    .browser-dots span {
-      width: 8px;
-      height: 8px;
-
-      border-radius: 50%;
-
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    .browser-content {
-      min-height: 340px;
-
-      padding: 28px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,0.06),
-          rgba(255,255,255,0.015)
-        );
-    }
-
-    .mock-label {
-      width: 85px;
-      height: 9px;
-
-      border-radius: 99px;
-
-      background: rgba(255, 255, 255, 0.22);
-
-      margin-bottom: 18px;
-    }
-
-    .mock-title {
-      width: 82%;
-      height: 22px;
-
-      border-radius: 7px;
-
-      background: rgba(255, 255, 255, 0.82);
-
-      margin-bottom: 10px;
-    }
-
-    .mock-title.short {
-      width: 58%;
-    }
-
-    .mock-text {
-      width: 72%;
-      height: 8px;
-
-      border-radius: 99px;
-
-      background: rgba(255, 255, 255, 0.16);
-
-      margin-top: 10px;
-    }
-
-    .mock-button {
-      width: 125px;
-      height: 38px;
-
-      border-radius: 99px;
-
-      background: rgba(255, 255, 255, 0.85);
-
-      margin-top: 28px;
-    }
-
-    .mock-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 10px;
-
-      margin-top: 38px;
-    }
-
-    .mock-card {
-      height: 92px;
-
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-
-      background: rgba(255,255,255,0.035);
-    }
-
-    /* =========================================================
-       SECTION
-    ========================================================== */
-
-    .section {
-      padding: 110px 0;
-    }
-
-    .section-heading {
-      max-width: 760px;
-
-      margin-bottom: 55px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(34px, 4vw, 52px);
-
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-    }
-
-    .section-heading h2 span {
-      color: #9d9da9;
-    }
-
-    .section-heading p {
-      max-width: 680px;
-
-      margin-top: 20px;
-
-      color: var(--text-soft);
-
-      font-size: 16px;
-    }
-
-    /* =========================================================
-       BENEFITS
-    ========================================================== */
-
-    .benefits-section {
-      background: #0b0b11;
-
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .benefits-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 14px;
-    }
-
-    .benefit-card {
-      padding: 28px;
-
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-
-      background: rgba(255, 255, 255, 0.025);
-
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease;
-    }
-
-    .benefit-card:hover {
-      transform: translateY(-5px);
-
-      background: var(--bg-card-hover);
-
-      border-color: var(--border-strong);
-    }
-
-    .benefit-number {
-      display: block;
-
-      margin-bottom: 40px;
-
-      color: #777784;
-
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .benefit-card h3 {
-      margin-bottom: 10px;
-
-      font-size: 18px;
-      letter-spacing: -0.02em;
-    }
-
-    .benefit-card p {
-      color: var(--text-soft);
-
-      font-size: 14px;
-    }
-
-    /* =========================================================
-       PRICING
-    ========================================================== */
-
-    .pricing-section {
-      position: relative;
-    }
-
-    .pricing-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 18px;
-
-      align-items: stretch;
-    }
-
-    .pricing-card {
-      position: relative;
-
-      display: flex;
-      flex-direction: column;
-
-      padding: 36px;
-
-      border: 1px solid var(--border);
-      border-radius: 24px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,0.045),
-          rgba(255,255,255,0.015)
-        );
-
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease;
-    }
-
-    .pricing-card:hover {
-      transform: translateY(-6px);
-
-      border-color: var(--border-strong);
-    }
-
-    .pricing-card.featured {
-      border-color: rgba(255,255,255,0.34);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,0.09),
-          rgba(255,255,255,0.025)
-        );
-
-      box-shadow:
-        0 30px 90px rgba(0, 0, 0, 0.35);
-    }
-
-    .featured-badge {
-      position: absolute;
-
-      top: 20px;
-      right: 20px;
-
-      padding: 7px 12px;
-
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 999px;
-
-      background: rgba(255,255,255,0.08);
-
-      font-size: 10px;
-      font-weight: 800;
-
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .pricing-name {
-      color: #c3c3ce;
-
-      font-size: 13px;
-      font-weight: 700;
-
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .pricing-card h3 {
-      margin-top: 15px;
-
-      font-size: 26px;
-
-      letter-spacing: -0.04em;
-    }
-
-    .pricing-description {
-      min-height: 54px;
-
-      margin-top: 10px;
-
-      color: var(--text-soft);
-
-      font-size: 14px;
-    }
-
-    .pricing-price {
-      display: flex;
-      align-items: flex-end;
-      gap: 4px;
-
-      margin-top: 28px;
-
-      padding-bottom: 26px;
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .pricing-price small {
-      margin-bottom: 9px;
-
-      color: var(--text-muted);
-
-      font-size: 13px;
-    }
-
-    .pricing-price strong {
-      font-size: 54px;
-
-      line-height: 0.95;
-      letter-spacing: -0.065em;
-    }
-
-    .pricing-price span {
-      margin-bottom: 5px;
-
-      color: var(--text-muted);
-
-      font-size: 13px;
-    }
-
-    .pricing-list {
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
-
-      margin: 28px 0 32px;
-
-      list-style: none;
-    }
-
-    .pricing-list li {
-      position: relative;
-
-      padding-left: 23px;
-
-      color: #c4c4cd;
-
-      font-size: 14px;
-    }
-
-    .pricing-list li::before {
-      content: "✓";
-
-      position: absolute;
-      left: 0;
-      top: 0;
-
-      color: #ffffff;
-
-      font-weight: 700;
-    }
-
-    .pricing-card .btn {
-      margin-top: auto;
-    }
-
-    /* =========================================================
-       INCLUDED
-    ========================================================== */
-
-    .included-section {
-      background: #0b0b11;
-
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .included-grid {
-      display: grid;
-
-      grid-template-columns: 0.85fr 1.15fr;
-
-      gap: 80px;
-
-      align-items: start;
-    }
-
-    .included-copy h2 {
-      max-width: 500px;
-
-      font-size: clamp(34px, 4vw, 52px);
-
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-    }
-
-    .included-copy h2 span {
-      color: #9d9da9;
-    }
-
-    .included-copy p {
-      max-width: 500px;
-
-      margin-top: 20px;
-
-      color: var(--text-soft);
-    }
-
-    .included-list {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 12px;
-    }
-
-    .included-item {
-      padding: 24px;
-
-      border: 1px solid var(--border);
-      border-radius: 16px;
-
-      background: rgba(255,255,255,0.025);
-    }
-
-    .included-item strong {
-      display: block;
-
-      margin-bottom: 7px;
-
-      font-size: 15px;
-    }
-
-    .included-item span {
-      color: var(--text-soft);
-
-      font-size: 13px;
-    }
-
-    /* =========================================================
-       PORTFOLIO
-    ========================================================== */
-
-    .portfolio-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 18px;
-    }
-
-    .portfolio-card {
-      overflow: hidden;
-
-      border: 1px solid var(--border);
-      border-radius: 20px;
-
-      background: var(--bg-card);
-
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease;
-    }
-
-    .portfolio-card:hover {
-      transform: translateY(-5px);
-
-      border-color: var(--border-strong);
-    }
-
-    .portfolio-image {
-      position: relative;
-
-      min-height: 240px;
-
-      display: flex;
-      align-items: flex-end;
-
-      padding: 22px;
-
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          145deg,
-          #191923,
-          #0c0c12
-        );
-    }
-
-    .portfolio-image::before {
-      content: "";
-
-      position: absolute;
-
-      width: 250px;
-      height: 250px;
-
-      right: -80px;
-      top: -80px;
-
-      border-radius: 50%;
-
-      border: 1px solid rgba(255,255,255,0.14);
-
-      box-shadow:
-        0 0 0 35px rgba(255,255,255,0.025),
-        0 0 0 70px rgba(255,255,255,0.015);
-    }
-
-    .portfolio-browser {
-      position: relative;
-      z-index: 1;
-
-      width: 100%;
-
-      padding: 12px;
-
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 12px;
-
-      background: rgba(255,255,255,0.05);
-
-      transform: translateY(15px);
-    }
-
-    .portfolio-browser-top {
-      width: 100%;
-      height: 7px;
-
-      border-radius: 99px;
-
-      background: rgba(255,255,255,0.15);
-
-      margin-bottom: 14px;
-    }
-
-    .portfolio-browser-line {
-      width: 78%;
-      height: 10px;
-
-      border-radius: 99px;
-
-      background: rgba(255,255,255,0.55);
-
-      margin-bottom: 8px;
-    }
-
-    .portfolio-browser-line.small {
-      width: 50%;
-
-      background: rgba(255,255,255,0.18);
-    }
-
-    .portfolio-browser-boxes {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 6px;
-
-      margin-top: 18px;
-    }
-
-    .portfolio-browser-boxes span {
-      height: 50px;
-
-      border-radius: 6px;
-
-      background: rgba(255,255,255,0.08);
-    }
-
-    .portfolio-content {
-      padding: 25px;
-    }
-
-    .portfolio-category {
-      color: #888894;
-
-      font-size: 10px;
-      font-weight: 700;
-
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .portfolio-content h3 {
-      margin-top: 9px;
-
-      font-size: 21px;
-
-      letter-spacing: -0.03em;
-    }
-
-    .portfolio-content p {
-      margin-top: 9px;
-
-      color: var(--text-soft);
-
-      font-size: 13px;
-    }
-
-    /* =========================================================
-       PROCESS
-    ========================================================== */
-
-    .process-section {
-      background: #0b0b11;
-
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .process-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 14px;
-    }
-
-    .process-card {
-      padding: 28px;
-
-      border: 1px solid var(--border);
-      border-radius: 18px;
-
-      background: rgba(255,255,255,0.025);
-    }
-
-    .process-card > span {
-      color: #777784;
-
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .process-card h3 {
-      margin-top: 42px;
-
-      font-size: 18px;
-    }
-
-    .process-card p {
-      margin-top: 9px;
-
-      color: var(--text-soft);
-
-      font-size: 13px;
-    }
-
-    /* =========================================================
-       FAQ
-    ========================================================== */
-
-    .faq-grid {
-      max-width: 850px;
-
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .faq-question {
-      width: 100%;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-
-      padding: 23px 0;
-
-      border: 0;
-
-      background: transparent;
-
-      color: var(--text);
-
-      text-align: left;
-
-      cursor: pointer;
-
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .faq-icon {
-      flex: 0 0 auto;
-
-      font-size: 22px;
-      font-weight: 400;
-
-      color: #888894;
-
-      transition: transform 0.25s ease;
-    }
-
-    .faq-answer {
-      max-height: 0;
-
-      overflow: hidden;
-
-      transition:
-        max-height 0.35s ease,
-        padding 0.35s ease;
-    }
-
-    .faq-answer p {
-      padding-bottom: 0;
-
-      color: var(--text-soft);
-
-      font-size: 14px;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 180px;
-    }
-
-    .faq-item.active .faq-answer p {
-      padding-bottom: 22px;
-    }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
-    }
-
-    /* =========================================================
-       CONTACT
-    ========================================================== */
-
-    .contact-section {
-      background:
-        radial-gradient(
-          circle at 80% 20%,
-          rgba(255,255,255,0.07),
-          transparent 35%
-        ),
-        #0b0b11;
-
-      border-top: 1px solid var(--border);
-    }
-
-    .contact-grid {
-      display: grid;
-
-      grid-template-columns: 0.85fr 1.15fr;
-
-      gap: 70px;
-
-      align-items: start;
-    }
-
-    .contact-copy h2 {
-      max-width: 600px;
-
-      font-size: clamp(38px, 5vw, 60px);
-
-      line-height: 1;
-      letter-spacing: -0.06em;
-    }
-
-    .contact-copy h2 span {
-      color: #9d9da9;
-    }
-
-    .contact-copy > p {
-      max-width: 520px;
-
-      margin-top: 22px;
-
-      color: var(--text-soft);
-    }
-
-    .contact-points {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-
-      margin-top: 35px;
-    }
-
-    .contact-point {
-      padding: 17px 18px;
-
-      border: 1px solid var(--border);
-      border-radius: 13px;
-
-      background: rgba(255,255,255,0.025);
-    }
-
-    .contact-point strong {
-      display: block;
-
-      font-size: 13px;
-    }
-
-    .contact-point span {
-      display: block;
-
-      margin-top: 3px;
-
-      color: var(--text-muted);
-
-      font-size: 12px;
-    }
-
-    .contact-form {
-      padding: 34px;
-
-      border: 1px solid var(--border-strong);
-      border-radius: 24px;
-
-      background: rgba(255,255,255,0.035);
-
-      box-shadow: var(--shadow);
-    }
-
-    .form-title {
-      margin-bottom: 25px;
-
-      font-size: 22px;
-      letter-spacing: -0.03em;
-    }
-
-    .form-group {
-      margin-bottom: 17px;
-    }
-
-    .form-group label {
-      display: block;
-
-      margin-bottom: 7px;
-
-      color: #c7c7d0;
-
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-
-      padding: 14px 15px;
-
-      border: 1px solid var(--border);
-      border-radius: 11px;
-
-      outline: none;
-
-      background: rgba(0,0,0,0.2);
-
-      color: var(--text);
-
-      font-size: 14px;
-
-      transition:
-        border-color 0.2s ease,
-        background 0.2s ease;
-    }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: #666672;
-    }
-
-    .form-group select option {
-      background: #111119;
-      color: #ffffff;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: rgba(255,255,255,0.35);
-
-      background: rgba(255,255,255,0.035);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-
-      min-height: 120px;
-    }
-
-    .form-note {
-      display: block;
-
-      margin-top: 12px;
-
-      color: #666672;
-
-      font-size: 11px;
-
-      line-height: 1.5;
-    }
-
-    /* =========================================================
-       FINAL CTA
-    ========================================================== */
-
-    .final-cta {
-      padding: 120px 0;
-
-      text-align: center;
-
-      border-top: 1px solid var(--border);
-
-      background: #08080d;
-    }
-
-    .final-cta h2 {
-      max-width: 850px;
-
-      margin: 0 auto;
-
-      font-size: clamp(40px, 5vw, 66px);
-
-      line-height: 1;
-
-      letter-spacing: -0.065em;
-    }
-
-    .final-cta h2 span {
-      color: #9d9da9;
-    }
-
-    .final-cta p {
-      max-width: 600px;
-
-      margin: 22px auto 30px;
-
-      color: var(--text-soft);
-    }
-
-    /* =========================================================
-       FOOTER
-    ========================================================== */
-
-    .site-footer {
-      padding: 55px 0 25px;
-
-      border-top: 1px solid var(--border);
-
-      background: #07070b;
-    }
-
-    .footer-grid {
-      display: grid;
-
-      grid-template-columns:
-        1.2fr 0.8fr 0.8fr;
-
-      gap: 40px;
-    }
-
-    .footer-brand p {
-      max-width: 320px;
-
-      margin-top: 13px;
-
-      color: var(--text-muted);
-
-      font-size: 13px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-links a,
-    .footer-contact a {
-      color: var(--text-muted);
-
-      font-size: 13px;
-
-      transition: color 0.2s ease;
-    }
-
-    .footer-links a:hover,
-    .footer-contact a:hover {
-      color: var(--text);
-    }
-
-    .footer-contact {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-
-      margin-top: 50px;
-      padding-top: 22px;
-
-      border-top: 1px solid var(--border);
-
-      color: #555560;
-
-      font-size: 11px;
-    }
-
-    /* =========================================================
-       WHATSAPP
-    ========================================================== */
-
-    .whatsapp-float {
-      position: fixed;
-
-      right: 20px;
-      bottom: 20px;
-
-      z-index: 999;
-
-      min-height: 48px;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 0 18px;
-
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 999px;
-
-      background: rgba(17,17,25,0.92);
-
-      backdrop-filter: blur(12px);
-
-      color: #ffffff;
-
-      font-size: 12px;
-      font-weight: 700;
-
-      box-shadow:
-        0 15px 45px rgba(0,0,0,0.35);
-
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease;
-    }
-
-    .whatsapp-float:hover {
-      transform: translateY(-3px);
-
-      background: #ffffff;
-      color: #08080d;
-    }
-
-    /* =========================================================
-       RESPONSIVE — TABLET
-    ========================================================== */
-
-    @media (max-width: 980px) {
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-      }
-
-      .hero {
-        padding-top: 125px;
-      }
-
-      .hero-visual {
-        min-height: 390px;
-      }
-
-      .benefits-grid,
-      .process-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-      .pricing-grid {
-        grid-template-columns: 1fr;
-
-        max-width: 650px;
-
-        margin: 0 auto;
-      }
-
-      .pricing-card.featured {
-        order: -1;
-      }
-
-      .included-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-      }
-
-      .portfolio-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-      .footer-grid {
-        grid-template-columns:
-          1fr 1fr;
-      }
-    }
-
-    /* =========================================================
-       RESPONSIVE — MOBILE
-    ========================================================== */
-
-    @media (max-width: 720px) {
-
-      .container {
-        width: min(100% - 28px, 1180px);
-      }
-
-      .nav-container {
-        min-height: 68px;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-
-      .main-nav {
-        position: absolute;
-
-        top: 68px;
-        left: 14px;
-        right: 14px;
-
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-
-        gap: 5px;
-
-        padding: 12px;
-
-        border: 1px solid var(--border);
-        border-radius: 16px;
-
-        background: rgba(13,13,20,0.97);
-
-        box-shadow: var(--shadow);
-      }
-
-      .main-nav.active {
-        display: flex;
-      }
-
-      .main-nav a {
-        padding: 13px 12px;
-
-        border-radius: 9px;
-      }
-
-      .main-nav a:hover {
-        background: rgba(255,255,255,0.05);
-      }
-
-      .nav-cta {
-        text-align: center;
-      }
-
-      .hero {
-        min-height: auto;
-
-        padding: 115px 0 75px;
-      }
-
-      .hero-copy h1 {
-        font-size: clamp(42px, 12vw, 58px);
-      }
-
-      .hero-copy > p {
-        font-size: 16px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .hero-visual {
-        min-height: 310px;
-      }
-
-      .browser {
-        transform: none;
-      }
-
-      .browser-content {
-        min-height: 260px;
-
-        padding: 20px;
-      }
-
-      .mock-cards {
-        margin-top: 25px;
-      }
-
-      .section {
-        padding: 78px 0;
-      }
-
-      .section-heading {
-        margin-bottom: 38px;
-      }
-
-      .benefits-grid,
-      .process-grid,
-      .portfolio-grid,
-      .included-list {
-        grid-template-columns: 1fr;
-      }
-
-      .benefit-number {
-        margin-bottom: 28px;
-      }
-
-      .pricing-card {
-        padding: 28px;
-      }
-
-      .pricing-price strong {
-        font-size: 48px;
-      }
-
-      .included-grid {
-        gap: 35px;
-      }
-
-      .contact-form {
-        padding: 24px 20px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-
-        margin-top: 35px;
-      }
-
-      .whatsapp-float {
-        right: 14px;
-        bottom: 14px;
-      }
-
-      .final-cta {
-        padding: 85px 0;
-      }
-    }
-
-    /* =========================================================
-       ACESSIBILIDADE
-    ========================================================== */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
-        animation: none !important;
-      }
-    }
-
-  </style>
 </head>
 
 <body>
 
-  <!-- =========================================================
-       HEADER
-  ========================================================== -->
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
 
-  <header class="site-header" id="header">
+    <header>
 
-    <div class="container nav-container">
-
-      <a
-        href="../index.html"
-        class="logo"
-        aria-label="V8 Digital - página inicial"
-      >
-
-        <img
-          src="../assets/logo/v8p.png"
-          alt="V8 Digital"
-          class="logo-img"
-        >
-
-        <span class="logo-text">
-          Digital
-        </span>
-
-      </a>
-
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        aria-controls="mainNav"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav
-        class="main-nav"
-        id="mainNav"
-        aria-label="Navegação da página"
-      >
-
-        <a href="#planos">
-          Planos
-        </a>
-
-        <a href="#incluido">
-          O que inclui
-        </a>
-
-        <a href="#projetos">
-          Projetos
-        </a>
-
-        <a href="#processo">
-          Como funciona
-        </a>
-
-        <a href="#faq">
-          Dúvidas
-        </a>
-
-        <a
-          href="#orcamento"
-          class="nav-cta"
-        >
-          Criar meu site
-        </a>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-
-  <main>
-
-    <!-- =======================================================
-         HERO
-    ======================================================== -->
-
-    <section class="hero">
-
-      <div class="container hero-grid">
-
-        <div class="hero-copy">
-
-          <span class="eyebrow">
-            V8 DIGITAL • CRIAÇÃO DE SITES
-          </span>
-
-          <h1>
-            Seu negócio
-            <span>merece um site profissional.</span>
-          </h1>
-
-          <p>
-            Criamos sites modernos, rápidos e responsivos
-            para empresas que querem fortalecer sua presença
-            digital e transformar visitantes em clientes.
-          </p>
-
-          <div class="hero-actions">
+        <div class="container nav">
 
             <a
-              href="#planos"
-              class="btn btn-primary"
+                href="../"
+                class="logo"
+                aria-label="V8 Digital"
             >
-              Ver planos
+                <img
+                    src="../assets/logo/v8p.png"
+                    alt="V8 Digital"
+                >
             </a>
 
-            <a
-              href="#orcamento"
-              class="btn btn-secondary"
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Abrir menu"
             >
-              Quero criar meu site
-            </a>
+                ☰
+            </button>
 
-          </div>
+            <nav>
 
-          <p class="hero-note">
-            Soluções profissionais a partir de R$ 99.
-          </p>
+                <ul
+                    class="nav-links"
+                    id="navLinks"
+                >
 
-        </div>
+                    <li>
+                        <a href="#planos">
+                            Planos
+                        </a>
+                    </li>
 
+                    <li>
+                        <a href="#inclui">
+                            O que inclui
+                        </a>
+                    </li>
 
-        <div
-          class="hero-visual"
-          aria-hidden="true"
-        >
+                    <li>
+                        <a href="#projetos">
+                            Projetos
+                        </a>
+                    </li>
 
-          <div class="visual-glow"></div>
+                    <li>
+                        <a href="#processo">
+                            Como funciona
+                        </a>
+                    </li>
 
-          <div class="browser">
+                    <li>
+                        <a href="#faq">
+                            Dúvidas
+                        </a>
+                    </li>
 
-            <div class="browser-top">
+                    <li>
+                        <a
+                            href="#formulario"
+                            class="nav-cta"
+                        >
+                            Criar meu site
+                        </a>
+                    </li>
 
-              <div class="browser-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
+                </ul>
 
-            </div>
-
-            <div class="browser-content">
-
-              <div class="mock-label"></div>
-
-              <div class="mock-title"></div>
-
-              <div class="mock-title short"></div>
-
-              <div class="mock-text"></div>
-              <div class="mock-text"></div>
-
-              <div class="mock-button"></div>
-
-              <div class="mock-cards">
-
-                <div class="mock-card"></div>
-                <div class="mock-card"></div>
-                <div class="mock-card"></div>
-
-              </div>
-
-            </div>
-
-          </div>
+            </nav>
 
         </div>
 
-      </div>
+    </header>
 
-    </section>
 
+    <main>
 
-    <!-- =======================================================
-         BENEFÍCIOS
-    ======================================================== -->
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
-    <section class="section benefits-section">
+        <section class="hero">
 
-      <div class="container">
+            <div class="container hero-grid">
 
-        <div class="section-heading">
+                <div>
 
-          <span class="eyebrow">
-            POR QUE TER UM SITE?
-          </span>
+                    <div class="eyebrow">
+                        V8 DIGITAL
+                    </div>
 
-          <h2>
-            Sua presença digital começa
-            <span>com uma boa experiência.</span>
-          </h2>
+                    <h1>
+                        Seu negócio merece um
+                        <span>
+                            site profissional.
+                        </span>
+                    </h1>
 
-          <p>
-            Um site profissional ajuda sua empresa a transmitir
-            confiança, apresentar seus serviços e facilitar o
-            contato com novos clientes.
-          </p>
+                    <p class="hero-text">
+                        Criamos sites modernos, responsivos e pensados
+                        para apresentar seu negócio com profissionalismo
+                        e transformar visitantes em clientes.
+                    </p>
 
-        </div>
+                    <div class="hero-actions">
 
+                        <a
+                            href="#planos"
+                            class="btn btn-primary"
+                        >
+                            Ver planos
+                        </a>
 
-        <div class="benefits-grid">
+                        <a
+                            href="#projetos"
+                            class="btn btn-secondary"
+                        >
+                            Ver projetos
+                        </a>
 
-          <article class="benefit-card">
+                    </div>
 
-            <span class="benefit-number">
-              01
-            </span>
-
-            <h3>
-              Credibilidade
-            </h3>
-
-            <p>
-              Mostre que sua empresa existe e tenha uma presença
-              profissional na internet.
-            </p>
-
-          </article>
-
-
-          <article class="benefit-card">
-
-            <span class="benefit-number">
-              02
-            </span>
-
-            <h3>
-              Mais oportunidades
-            </h3>
-
-            <p>
-              Facilite para que pessoas encontrem sua empresa
-              e entrem em contato.
-            </p>
-
-          </article>
-
-
-          <article class="benefit-card">
-
-            <span class="benefit-number">
-              03
-            </span>
-
-            <h3>
-              Experiência mobile
-            </h3>
-
-            <p>
-              Seu site adaptado para celulares, tablets e
-              computadores.
-            </p>
-
-          </article>
-
-
-          <article class="benefit-card">
-
-            <span class="benefit-number">
-              04
-            </span>
-
-            <h3>
-              Sua marca online
-            </h3>
-
-            <p>
-              Apresente seus produtos, serviços e diferenciais
-              em um único lugar.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         PLANOS
-    ======================================================== -->
-
-    <section
-      class="section pricing-section"
-      id="planos"
-    >
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <span class="eyebrow">
-            PLANOS
-          </span>
-
-          <h2>
-            Escolha o nível ideal
-            <span>para o seu negócio.</span>
-          </h2>
-
-          <p>
-            Três opções para diferentes necessidades.
-            Comece pequeno ou escolha uma solução mais completa.
-          </p>
-
-        </div>
-
-
-        <div class="pricing-grid">
-
-
-          <!-- =================================================
-               PLANO 99
-          ================================================== -->
-
-          <article class="pricing-card">
-
-            <span class="pricing-name">
-              Essencial
-            </span>
-
-            <h3>
-              Para começar
-            </h3>
-
-            <p class="pricing-description">
-              Uma presença digital profissional para quem
-              precisa colocar o negócio na internet.
-            </p>
-
-            <div class="pricing-price">
-
-              <small>
-                R$
-              </small>
-
-              <strong>
-                99
-              </strong>
-
-              <span>
-                projeto
-              </span>
-
-            </div>
-
-            <ul class="pricing-list">
-
-              <li>
-                Site responsivo
-              </li>
-
-              <li>
-                Design profissional
-              </li>
-
-              <li>
-                Estrutura personalizada
-              </li>
-
-              <li>
-                Botão de WhatsApp
-              </li>
-
-              <li>
-                Links para redes sociais
-              </li>
-
-              <li>
-                Publicação do site
-              </li>
-
-            </ul>
-
-            <a
-              href="#orcamento"
-              class="btn btn-secondary btn-full"
-              data-plan="Essencial - R$ 99"
-            >
-              Quero este plano
-            </a>
-
-          </article>
-
-
-          <!-- =================================================
-               PLANO 299
-          ================================================== -->
-
-          <article class="pricing-card featured">
-
-            <span class="featured-badge">
-              Mais escolhido
-            </span>
-
-            <span class="pricing-name">
-              Profissional
-            </span>
-
-            <h3>
-              Para crescer
-            </h3>
-
-            <p class="pricing-description">
-              Uma presença digital mais completa para empresas
-              que querem apresentar melhor seus serviços.
-            </p>
-
-            <div class="pricing-price">
-
-              <small>
-                R$
-              </small>
-
-              <strong>
-                299
-              </strong>
-
-              <span>
-                projeto
-              </span>
-
-            </div>
-
-            <ul class="pricing-list">
-
-              <li>
-                Tudo do plano Essencial
-              </li>
-
-              <li>
-                Mais páginas e seções
-              </li>
-
-              <li>
-                Formulário de contato
-              </li>
-
-              <li>
-                SEO básico
-              </li>
-
-              <li>
-                Integrações digitais
-              </li>
-
-              <li>
-                Estrutura focada em conversão
-              </li>
-
-              <li>
-                Personalização visual ampliada
-              </li>
-
-            </ul>
-
-            <a
-              href="#orcamento"
-              class="btn btn-primary btn-full"
-              data-plan="Profissional - R$ 299"
-            >
-              Quero este plano
-            </a>
-
-          </article>
-
-
-          <!-- =================================================
-               PLANO 599
-          ================================================== -->
-
-          <article class="pricing-card">
-
-            <span class="pricing-name">
-              Premium
-            </span>
-
-            <h3>
-              Para destacar
-            </h3>
-
-            <p class="pricing-description">
-              Uma solução mais personalizada para negócios
-              que precisam de uma experiência digital diferenciada.
-            </p>
-
-            <div class="pricing-price">
-
-              <small>
-                R$
-              </small>
-
-              <strong>
-                599
-              </strong>
-
-              <span>
-                projeto
-              </span>
-
-            </div>
-
-            <ul class="pricing-list">
-
-              <li>
-                Tudo do plano Profissional
-              </li>
-
-              <li>
-                Design mais personalizado
-              </li>
-
-              <li>
-                Estrutura avançada de páginas
-              </li>
-
-              <li>
-                Recursos interativos
-              </li>
-
-              <li>
-                Integrações personalizadas
-              </li>
-
-              <li>
-                Otimizações adicionais
-              </li>
-
-              <li>
-                Projeto sob medida
-              </li>
-
-            </ul>
-
-            <a
-              href="#orcamento"
-              class="btn btn-secondary btn-full"
-              data-plan="Premium - R$ 599"
-            >
-              Quero este plano
-            </a>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         O QUE INCLUI
-    ======================================================== -->
-
-    <section
-      class="section included-section"
-      id="incluido"
-    >
-
-      <div class="container included-grid">
-
-        <div class="included-copy">
-
-          <span class="eyebrow">
-            ESTRUTURA
-          </span>
-
-          <h2>
-            Tudo pensado para
-            <span>uma presença digital profissional.</span>
-          </h2>
-
-          <p>
-            A V8 Digital combina design, tecnologia e estratégia
-            para criar uma experiência que represente o seu negócio
-            na internet.
-          </p>
-
-        </div>
-
-
-        <div class="included-list">
-
-          <div class="included-item">
-            <strong>
-              Design responsivo
-            </strong>
-
-            <span>
-              Experiência adaptada para celular, tablet e computador.
-            </span>
-          </div>
-
-
-          <div class="included-item">
-            <strong>
-              Identidade visual
-            </strong>
-
-            <span>
-              Cores, tipografia e elementos alinhados à sua marca.
-            </span>
-          </div>
-
-
-          <div class="included-item">
-            <strong>
-              WhatsApp
-            </strong>
-
-            <span>
-              Facilite o contato direto com seus clientes.
-            </span>
-          </div>
-
-
-          <div class="included-item">
-            <strong>
-              Formulários
-            </strong>
-
-            <span>
-              Captação de contatos e solicitações pelo site.
-            </span>
-          </div>
-
-
-          <div class="included-item">
-            <strong>
-              SEO básico
-            </strong>
-
-            <span>
-              Estrutura preparada para mecanismos de busca.
-            </span>
-          </div>
-
-
-          <div class="included-item">
-            <strong>
-              Redes sociais
-            </strong>
-
-            <span>
-              Integração com os canais digitais da empresa.
-            </span>
-          </div>
-
-
-          <div class="included-item">
-            <strong>
-              Publicação
-            </strong>
-
-            <span>
-              Colocamos o projeto no ar após a aprovação.
-            </span>
-          </div>
-
-
-          <div class="included-item">
-            <strong>
-              Performance
-            </strong>
-
-            <span>
-              Estrutura leve e pensada para uma boa experiência.
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         PORTFÓLIO
-    ======================================================== -->
-
-    <section
-      class="section portfolio-section"
-      id="projetos"
-    >
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <span class="eyebrow">
-            PORTFÓLIO
-          </span>
-
-          <h2>
-            Veja o que a V8 Digital
-            <span>pode criar para você.</span>
-          </h2>
-
-          <p>
-            Alguns exemplos de projetos desenvolvidos com diferentes
-            objetivos e estilos.
-          </p>
-
-        </div>
-
-
-        <div class="portfolio-grid">
-
-
-          <article class="portfolio-card">
-
-            <div class="portfolio-image">
-
-              <div class="portfolio-browser">
-
-                <div class="portfolio-browser-top"></div>
-
-                <div class="portfolio-browser-line"></div>
-
-                <div class="portfolio-browser-line small"></div>
-
-                <div class="portfolio-browser-boxes">
-
-                  <span></span>
-                  <span></span>
-                  <span></span>
+                    <p class="hero-note">
+                        Sites profissionais a partir de R$ 99.
+                    </p>
 
                 </div>
 
-              </div>
 
-            </div>
+                <div class="hero-visual">
 
-            <div class="portfolio-content">
+                    <div class="browser">
 
-              <span class="portfolio-category">
-                Landing Page
-              </span>
+                        <div class="browser-top">
 
-              <h3>
-                Assistência Técnica
-              </h3>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
 
-              <p>
-                Página comercial focada em apresentação do serviço,
-                confiança e geração de contatos.
-              </p>
+                            <div class="browser-url"></div>
 
-              <a
-                href="https://assistenciatecnica-eth.pages.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-              >
-                Ver projeto →
-              </a>
+                        </div>
 
-            </div>
+                        <div class="browser-body">
 
-          </article>
+                            <div class="mock-logo"></div>
 
+                            <div class="mock-title"></div>
 
-          <article class="portfolio-card">
+                            <div class="mock-title-2"></div>
 
-            <div class="portfolio-image">
+                            <div class="mock-text"></div>
 
-              <div class="portfolio-browser">
+                            <div class="mock-button"></div>
 
-                <div class="portfolio-browser-top"></div>
+                            <div class="mock-cards">
 
-                <div class="portfolio-browser-line"></div>
+                                <div class="mock-card"></div>
+                                <div class="mock-card"></div>
+                                <div class="mock-card"></div>
 
-                <div class="portfolio-browser-line small"></div>
+                            </div>
 
-                <div class="portfolio-browser-boxes">
+                        </div>
 
-                  <span></span>
-                  <span></span>
-                  <span></span>
+                    </div>
 
                 </div>
 
-              </div>
-
             </div>
 
-            <div class="portfolio-content">
-
-              <span class="portfolio-category">
-                Landing Page
-              </span>
-
-              <h3>
-                My Moments Paris
-              </h3>
-
-              <p>
-                Projeto desenvolvido para apresentar produtos,
-                comunicar uma oportunidade e captar contatos.
-              </p>
-
-              <a
-                href="https://mymonentsparis.pages.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-              >
-                Ver projeto →
-              </a>
-
-            </div>
-
-          </article>
+        </section>
 
 
-          <article class="portfolio-card">
+        <!-- =====================================================
+             BENEFITS
+        ====================================================== -->
 
-            <div class="portfolio-image">
+        <section class="benefits">
 
-              <div class="portfolio-browser">
+            <div class="container benefits-grid">
 
-                <div class="portfolio-browser-top"></div>
+                <div class="benefit">
 
-                <div class="portfolio-browser-line"></div>
+                    <div class="benefit-number">
+                        01
+                    </div>
 
-                <div class="portfolio-browser-line small"></div>
+                    <h3>
+                        Design profissional
+                    </h3>
 
-                <div class="portfolio-browser-boxes">
-
-                  <span></span>
-                  <span></span>
-                  <span></span>
+                    <p>
+                        Uma presença digital moderna e alinhada ao seu negócio.
+                    </p>
 
                 </div>
 
-              </div>
+
+                <div class="benefit">
+
+                    <div class="benefit-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Responsivo
+                    </h3>
+
+                    <p>
+                        Seu site funcionando corretamente em celular, tablet e computador.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Mais credibilidade
+                    </h3>
+
+                    <p>
+                        Mostre seus serviços e produtos de forma profissional.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Pronto para divulgar
+                    </h3>
+
+                    <p>
+                        Seu site publicado e preparado para receber visitantes.
+                    </p>
+
+                </div>
 
             </div>
 
-            <div class="portfolio-content">
+        </section>
 
-              <span class="portfolio-category">
-                Aplicação Web
-              </span>
 
-              <h3>
-                V8 Play+
-              </h3>
+        <!-- =====================================================
+             PLANOS
+        ====================================================== -->
 
-              <p>
-                Aplicação web com catálogo, busca, categorias e
-                organização dinâmica de conteúdo.
-              </p>
+        <section
+            class="section plans"
+            id="planos"
+        >
 
-              <a
-                href="https://v8play.pages.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-              >
-                Ver projeto →
-              </a>
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="eyebrow">
+                        PLANOS
+                    </div>
+
+                    <h2>
+                        Escolha o tamanho certo para o seu negócio.
+                    </h2>
+
+                    <p>
+                        Comece com o essencial ou escolha uma estrutura
+                        mais completa para apresentar sua empresa e gerar
+                        novas oportunidades.
+                    </p>
+
+                </div>
+
+
+                <div class="plans-grid">
+
+                    <!-- PLANO 99 -->
+
+                    <article class="plan">
+
+                        <div class="plan-name">
+                            Essencial
+                        </div>
+
+                        <div class="plan-description">
+                            Para quem precisa colocar seu negócio na internet.
+                        </div>
+
+                        <div class="price">
+                            <strong>
+                                99
+                            </strong>
+
+                            <span>
+                                à vista
+                            </span>
+                        </div>
+
+                        <div class="plan-divider"></div>
+
+                        <ul class="plan-list">
+
+                            <li>
+                                Site responsivo
+                            </li>
+
+                            <li>
+                                Design profissional
+                            </li>
+
+                            <li>
+                                Estrutura personalizada
+                            </li>
+
+                            <li>
+                                Botão de WhatsApp
+                            </li>
+
+                            <li>
+                                Links para redes sociais
+                            </li>
+
+                            <li>
+                                Publicação do site
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="#formulario"
+                            class="btn btn-secondary"
+                            data-plan="Essencial — R$ 99"
+                        >
+                            Quero este plano
+                        </a>
+
+                    </article>
+
+
+                    <!-- PLANO 299 -->
+
+                    <article class="plan featured">
+
+                        <div class="plan-badge">
+                            Mais escolhido
+                        </div>
+
+                        <div class="plan-name">
+                            Profissional
+                        </div>
+
+                        <div class="plan-description">
+                            Para empresas e profissionais que querem crescer.
+                        </div>
+
+                        <div class="price">
+                            <strong>
+                                299
+                            </strong>
+
+                            <span>
+                                à vista
+                            </span>
+                        </div>
+
+                        <div class="plan-divider"></div>
+
+                        <ul class="plan-list">
+
+                            <li>
+                                Tudo do plano Essencial
+                            </li>
+
+                            <li>
+                                Mais páginas e seções
+                            </li>
+
+                            <li>
+                                Formulário de contato
+                            </li>
+
+                            <li>
+                                SEO básico
+                            </li>
+
+                            <li>
+                                Integrações digitais
+                            </li>
+
+                            <li>
+                                Estrutura focada em conversão
+                            </li>
+
+                            <li>
+                                Maior personalização visual
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="#formulario"
+                            class="btn btn-primary"
+                            data-plan="Profissional — R$ 299"
+                        >
+                            Quero este plano
+                        </a>
+
+                    </article>
+
+
+                    <!-- PLANO 599 -->
+
+                    <article class="plan">
+
+                        <div class="plan-name">
+                            Premium
+                        </div>
+
+                        <div class="plan-description">
+                            Para negócios que precisam de uma presença digital diferenciada.
+                        </div>
+
+                        <div class="price">
+                            <strong>
+                                599
+                            </strong>
+
+                            <span>
+                                à vista
+                            </span>
+                        </div>
+
+                        <div class="plan-divider"></div>
+
+                        <ul class="plan-list">
+
+                            <li>
+                                Tudo do plano Profissional
+                            </li>
+
+                            <li>
+                                Design mais personalizado
+                            </li>
+
+                            <li>
+                                Estrutura avançada
+                            </li>
+
+                            <li>
+                                Recursos interativos
+                            </li>
+
+                            <li>
+                                Integrações personalizadas
+                            </li>
+
+                            <li>
+                                Otimizações adicionais
+                            </li>
+
+                            <li>
+                                Projeto sob medida
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="#formulario"
+                            class="btn btn-secondary"
+                            data-plan="Premium — R$ 599"
+                        >
+                            Quero este plano
+                        </a>
+
+                    </article>
+
+                </div>
 
             </div>
 
-          </article>
+        </section>
+
+
+        <!-- =====================================================
+             INCLUI
+        ====================================================== -->
+
+        <section
+            class="section included"
+            id="inclui"
+        >
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="eyebrow">
+                        O QUE INCLUI
+                    </div>
+
+                    <h2>
+                        Tudo pensado para colocar sua empresa online.
+                    </h2>
+
+                    <p>
+                        A estrutura do projeto é criada de acordo com
+                        o objetivo do seu negócio.
+                    </p>
+
+                </div>
+
+
+                <div class="included-grid">
+
+                    <div class="included-card">
+
+                        <div class="included-card-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Design responsivo
+                        </h3>
+
+                        <p>
+                            Layout adaptado para diferentes tamanhos de tela.
+                        </p>
+
+                    </div>
+
+
+                    <div class="included-card">
+
+                        <div class="included-card-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Identidade visual
+                        </h3>
+
+                        <p>
+                            Cores, tipografia e elementos visuais alinhados ao projeto.
+                        </p>
+
+                    </div>
+
+
+                    <div class="included-card">
+
+                        <div class="included-card-number">
+                            03
+                        </div>
+
+                        <h3>
+                            WhatsApp
+                        </h3>
+
+                        <p>
+                            Facilite o contato direto entre visitante e empresa.
+                        </p>
+
+                    </div>
+
+
+                    <div class="included-card">
+
+                        <div class="included-card-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Formulários
+                        </h3>
+
+                        <p>
+                            Captação de contatos conforme o plano contratado.
+                        </p>
+
+                    </div>
+
+
+                    <div class="included-card">
+
+                        <div class="included-card-number">
+                            05
+                        </div>
+
+                        <h3>
+                            SEO básico
+                        </h3>
+
+                        <p>
+                            Estrutura inicial preparada para mecanismos de busca.
+                        </p>
+
+                    </div>
+
+
+                    <div class="included-card">
+
+                        <div class="included-card-number">
+                            06
+                        </div>
+
+                        <h3>
+                            Redes sociais
+                        </h3>
+
+                        <p>
+                            Links e integração com os principais canais digitais.
+                        </p>
+
+                    </div>
+
+
+                    <div class="included-card">
+
+                        <div class="included-card-number">
+                            07
+                        </div>
+
+                        <h3>
+                            Publicação
+                        </h3>
+
+                        <p>
+                            Colocamos o projeto no ar após sua aprovação.
+                        </p>
+
+                    </div>
+
+
+                    <div class="included-card">
+
+                        <div class="included-card-number">
+                            08
+                        </div>
+
+                        <h3>
+                            Performance
+                        </h3>
+
+                        <p>
+                            Código estruturado para oferecer uma experiência rápida.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROJETOS
+        ====================================================== -->
+
+        <section
+            class="section"
+            id="projetos"
+        >
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="eyebrow">
+                        PROJETOS
+                    </div>
+
+                    <h2>
+                        Alguns projetos desenvolvidos pela V8.
+                    </h2>
+
+                    <p>
+                        Cada projeto é desenvolvido de acordo com o
+                        posicionamento e objetivo do negócio.
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+                    <article class="project">
+
+                        <div class="project-image">
+
+                            <div class="project-window">
+
+                                <div class="project-line"></div>
+                                <div class="project-line"></div>
+
+                                <div class="project-line large"></div>
+                                <div class="project-line medium"></div>
+
+                                <div class="project-line"></div>
+                                <div class="project-line"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                Assistência Técnica
+                            </h3>
+
+                            <p>
+                                Site comercial desenvolvido para apresentação
+                                de serviços e geração de contatos.
+                            </p>
+
+                            <a
+                                href="https://assistenciabtv.pages.dev/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link"
+                            >
+                                Ver projeto →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-image">
+
+                            <div class="project-window">
+
+                                <div class="project-line"></div>
+                                <div class="project-line"></div>
+
+                                <div class="project-line large"></div>
+                                <div class="project-line medium"></div>
+
+                                <div class="project-line"></div>
+                                <div class="project-line"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                My Moments Paris
+                            </h3>
+
+                            <p>
+                                Landing page desenvolvida para apresentação
+                                de serviço e experiência da marca.
+                            </p>
+
+                            <a
+                                href="https://mymonentsparis.pages.dev/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link"
+                            >
+                                Ver projeto →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-image">
+
+                            <div class="project-window">
+
+                                <div class="project-line"></div>
+                                <div class="project-line"></div>
+
+                                <div class="project-line large"></div>
+                                <div class="project-line medium"></div>
+
+                                <div class="project-line"></div>
+                                <div class="project-line"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                V8 Play+
+                            </h3>
+
+                            <p>
+                                Projeto digital com identidade visual própria
+                                e estrutura personalizada.
+                            </p>
+
+                            <a
+                                href="https://v8play.pages.dev/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link"
+                            >
+                                Ver projeto →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROCESSO
+        ====================================================== -->
+
+        <section
+            class="section process"
+            id="processo"
+        >
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="eyebrow">
+                        COMO FUNCIONA
+                    </div>
+
+                    <h2>
+                        Do primeiro contato ao site publicado.
+                    </h2>
+
+                    <p>
+                        Um processo simples para você não precisar
+                        entender de programação.
+                    </p>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <div class="process-step">
+
+                        <div class="process-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Você solicita
+                        </h3>
+
+                        <p>
+                            Envie seus dados e conte um pouco sobre seu negócio.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-step">
+
+                        <div class="process-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Definimos o projeto
+                        </h3>
+
+                        <p>
+                            Organizamos estrutura, conteúdo e identidade visual.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-step">
+
+                        <div class="process-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Desenvolvemos
+                        </h3>
+
+                        <p>
+                            A V8 cria e configura seu site de acordo com o projeto.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-step">
+
+                        <div class="process-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Publicamos
+                        </h3>
+
+                        <p>
+                            Depois da aprovação, colocamos o site no ar.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FAQ
+        ====================================================== -->
+
+        <section
+            class="section"
+            id="faq"
+        >
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="eyebrow">
+                        DÚVIDAS
+                    </div>
+
+                    <h2>
+                        Perguntas frequentes.
+                    </h2>
+
+                </div>
+
+
+                <div class="faq-grid">
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+
+                            <span>
+                                O site funciona no celular?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            Sim. Os sites são desenvolvidos para funcionar
+                            em celulares, tablets e computadores.
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+
+                            <span>
+                                O site já fica publicado?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            Sim. Após o desenvolvimento e aprovação do projeto,
+                            realizamos a publicação do site.
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+
+                            <span>
+                                Preciso saber programar?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            Não. A V8 Digital cuida da parte técnica
+                            do desenvolvimento e publicação.
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+
+                            <span>
+                                Posso colocar meu WhatsApp?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            Sim. O WhatsApp pode ser integrado ao site
+                            para facilitar o contato dos visitantes.
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+
+                            <span>
+                                Posso escolher outro plano depois?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            Sim. Caso o negócio precise de uma estrutura
+                            maior, podemos avaliar a evolução do projeto.
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                        >
+
+                            <span>
+                                Como faço para contratar?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            Preencha o formulário abaixo. Depois entraremos
+                            em contato para entender seu projeto e confirmar
+                            os próximos passos.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FORMULÁRIO
+        ====================================================== -->
+
+        <section
+            class="section contact"
+            id="formulario"
+        >
+
+            <div class="container contact-grid">
+
+                <div class="contact-copy">
+
+                    <div class="eyebrow">
+                        VAMOS COMEÇAR
+                    </div>
+
+                    <h2>
+                        Conte para nós o que você precisa.
+                    </h2>
+
+                    <p>
+                        Preencha o formulário e receba um retorno
+                        para conversarmos sobre seu site.
+                    </p>
+
+                    <ul class="contact-points">
+
+                        <li>
+                            <strong>✓</strong>
+                            Atendimento personalizado
+                        </li>
+
+                        <li>
+                            <strong>✓</strong>
+                            Projeto de acordo com seu negócio
+                        </li>
+
+                        <li>
+                            <strong>✓</strong>
+                            Sem necessidade de conhecimento técnico
+                        </li>
+
+                        <li>
+                            <strong>✓</strong>
+                            Site pronto para divulgação
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="form-box">
+
+                    <form
+                        action="https://formspree.io/f/xljrvnjo"
+                        method="POST"
+                    >
+
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="Novo Lead — V8 Digital | Criação de Sites"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="_next"
+                            value="https://v8digital.pages.dev/obrigado.html"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="origem"
+                            value="Página /sites"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="plano"
+                            id="planoSelecionado"
+                            value=""
+                        >
+
+                        <div class="form-grid">
+
+                            <div class="field">
+
+                                <label for="nome">
+                                    Nome
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    name="nome"
+                                    placeholder="Seu nome"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label for="telefone">
+                                    WhatsApp
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="telefone"
+                                    name="telefone"
+                                    placeholder="(00) 00000-0000"
+                                    autocomplete="tel"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label for="email">
+                                    E-mail
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="seu@email.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label for="plano">
+                                    Plano de interesse
+                                </label>
+
+                                <select
+                                    id="plano"
+                                    name="plano_interesse"
+                                    required
+                                >
+
+                                    <option
+                                        value=""
+                                        selected
+                                        disabled
+                                    >
+                                        Selecione
+                                    </option>
+
+                                    <option value="Essencial — R$ 99">
+                                        Essencial — R$ 99
+                                    </option>
+
+                                    <option value="Profissional — R$ 299">
+                                        Profissional — R$ 299
+                                    </option>
+
+                                    <option value="Premium — R$ 599">
+                                        Premium — R$ 599
+                                    </option>
+
+                                    <option value="Ainda não sei">
+                                        Ainda não sei
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="field full">
+
+                                <label for="empresa">
+                                    Empresa ou negócio
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="empresa"
+                                    name="empresa"
+                                    placeholder="Nome da empresa ou negócio"
+                                >
+
+                            </div>
+
+
+                            <div class="field full">
+
+                                <label for="mensagem">
+                                    Conte um pouco sobre o projeto
+                                </label>
+
+                                <textarea
+                                    id="mensagem"
+                                    name="mensagem"
+                                    placeholder="Que tipo de site você precisa?"
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary form-submit"
+                        >
+                            Quero criar meu site
+                        </button>
+
+                        <p class="form-note">
+                            Seus dados serão utilizados apenas para
+                            entrar em contato sobre seu projeto.
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FINAL CTA
+        ====================================================== -->
+
+        <section class="final-cta">
+
+            <div class="container">
+
+                <div class="eyebrow">
+                    V8 DIGITAL
+                </div>
+
+                <h2>
+                    Seu próximo cliente pode estar procurando
+                    pelo seu negócio agora.
+                </h2>
+
+                <p>
+                    Tenha uma presença digital profissional e facilite
+                    o caminho entre sua empresa e seus clientes.
+                </p>
+
+                <a
+                    href="#formulario"
+                    class="btn btn-primary"
+                >
+                    Criar meu site
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <a
+                href="../"
+                class="footer-logo"
+                aria-label="V8 Digital"
+            >
+                <img
+                    src="../assets/logo/v8p.png"
+                    alt="V8 Digital"
+                >
+            </a>
+
+            <p class="footer-text">
+                © 2026 V8 Digital. Todos os direitos reservados.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="../">
+                    V8 Digital
+                </a>
+
+                <a href="#planos">
+                    Planos
+                </a>
+
+                <a href="#formulario">
+                    Contato
+                </a>
+
+            </div>
 
         </div>
 
-      </div>
-
-    </section>
+    </footer>
 
 
-    <!-- =======================================================
-         PROCESSO
-    ======================================================== -->
+    <!-- =========================================================
+         WHATSAPP
+    ========================================================= -->
 
-    <section
-      class="section process-section"
-      id="processo"
+    <a
+        class="whatsapp"
+        href="https://wa.me/54992756194?text=Olá!%20Quero%20criar%20um%20site%20profissional."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar pelo WhatsApp"
     >
+        W
+    </a>
 
-      <div class="container">
 
-        <div class="section-heading">
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
 
-          <span class="eyebrow">
-            COMO FUNCIONA
-          </span>
+    <script>
 
-          <h2>
-            Simples para você.
-            <span>Profissional no resultado.</span>
-          </h2>
+        /* =====================================================
+           MENU MOBILE
+        ===================================================== */
 
-        </div>
+        const menuBtn =
+            document.getElementById("menuBtn");
 
+        const navLinks =
+            document.getElementById("navLinks");
 
-        <div class="process-grid">
 
-          <article class="process-card">
+        if (menuBtn && navLinks) {
 
-            <span>
-              01
-            </span>
-
-            <h3>
-              Você solicita
-            </h3>
-
-            <p>
-              Escolha o plano e envie as informações do seu negócio.
-            </p>
-
-          </article>
-
-
-          <article class="process-card">
-
-            <span>
-              02
-            </span>
-
-            <h3>
-              Definimos o projeto
-            </h3>
-
-            <p>
-              Entendemos sua necessidade, conteúdo e objetivo.
-            </p>
-
-          </article>
-
-
-          <article class="process-card">
-
-            <span>
-              03
-            </span>
-
-            <h3>
-              Desenvolvemos
-            </h3>
-
-            <p>
-              Criamos o site com a estrutura e identidade definidas.
-            </p>
-
-          </article>
-
-
-          <article class="process-card">
-
-            <span>
-              04
-            </span>
-
-            <h3>
-              Publicamos
-            </h3>
-
-            <p>
-              Após os ajustes e aprovação, colocamos o site no ar.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         FAQ
-    ======================================================== -->
-
-    <section
-      class="section faq-section"
-      id="faq"
-    >
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <span class="eyebrow">
-            DÚVIDAS
-          </span>
-
-          <h2>
-            Antes de começar,
-            <span>algumas respostas.</span>
-          </h2>
-
-        </div>
-
-
-        <div class="faq-grid">
-
-
-          <article class="faq-item">
-
-            <button
-              class="faq-question"
-              type="button"
-              aria-expanded="false"
-            >
-
-              <span>
-                O valor é mensal?
-              </span>
-
-              <span class="faq-icon">
-                +
-              </span>
-
-            </button>
-
-            <div class="faq-answer">
-
-              <p>
-                Não. Os valores apresentados são referentes ao
-                desenvolvimento do projeto. Eventuais custos externos,
-                como domínio ou serviços contratados pelo cliente,
-                podem ser tratados separadamente.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="faq-item">
-
-            <button
-              class="faq-question"
-              type="button"
-              aria-expanded="false"
-            >
-
-              <span>
-                O site funciona no celular?
-              </span>
-
-              <span class="faq-icon">
-                +
-              </span>
-
-            </button>
-
-            <div class="faq-answer">
-
-              <p>
-                Sim. Os projetos são desenvolvidos com estrutura
-                responsiva para diferentes tamanhos de tela.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="faq-item">
-
-            <button
-              class="faq-question"
-              type="button"
-              aria-expanded="false"
-            >
-
-              <span>
-                Posso colocar meu WhatsApp?
-              </span>
-
-              <span class="faq-icon">
-                +
-              </span>
-
-            </button>
-
-            <div class="faq-answer">
-
-              <p>
-                Sim. Podemos integrar botões e chamadas para WhatsApp,
-                além de outros canais digitais da empresa.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="faq-item">
-
-            <button
-              class="faq-question"
-              type="button"
-              aria-expanded="false"
-            >
-
-              <span>
-                Vocês publicam o site?
-              </span>
-
-              <span class="faq-icon">
-                +
-              </span>
-
-            </button>
-
-            <div class="faq-answer">
-
-              <p>
-                Sim. Após o desenvolvimento, os ajustes e a aprovação,
-                o projeto pode ser publicado na hospedagem definida
-                para o cliente.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="faq-item">
-
-            <button
-              class="faq-question"
-              type="button"
-              aria-expanded="false"
-            >
-
-              <span>
-                Qual plano devo escolher?
-              </span>
-
-              <span class="faq-icon">
-                +
-              </span>
-
-            </button>
-
-            <div class="faq-answer">
-
-              <p>
-                O plano Essencial é indicado para quem quer começar.
-                O Profissional oferece uma estrutura mais completa,
-                enquanto o Premium é indicado para projetos mais
-                personalizados. Se tiver dúvidas, conte sua necessidade
-                no formulário e podemos orientar você.
-              </p>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         ORÇAMENTO / CAPTURA
-    ======================================================== -->
-
-    <section
-      class="section contact-section"
-      id="orcamento"
-    >
-
-      <div class="container contact-grid">
-
-
-        <div class="contact-copy">
-
-          <span class="eyebrow">
-            VAMOS COMEÇAR
-          </span>
-
-          <h2>
-            Seu site pode
-            <span>começar agora.</span>
-          </h2>
-
-          <p>
-            Conte um pouco sobre seu negócio e escolha o plano
-            que mais combina com o que você precisa.
-          </p>
-
-
-          <div class="contact-points">
-
-            <div class="contact-point">
-
-              <strong>
-                Atendimento direto
-              </strong>
-
-              <span>
-                Receba uma resposta sobre seu projeto.
-              </span>
-
-            </div>
-
-
-            <div class="contact-point">
-
-              <strong>
-                Projeto personalizado
-              </strong>
-
-              <span>
-                Adaptamos a estrutura ao seu negócio.
-              </span>
-
-            </div>
-
-
-            <div class="contact-point">
-
-              <strong>
-                Processo simples
-              </strong>
-
-              <span>
-                Você explica o que precisa. Nós cuidamos da parte digital.
-              </span>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- =================================================
-             FORMULÁRIO FORMSPREE
-        ================================================== -->
-
-        <form
-          class="contact-form"
-          action="https://formspree.io/f/xljrvnjo"
-          method="POST"
-        >
-
-          <h3 class="form-title">
-            Solicite seu orçamento
-          </h3>
-
-
-          <input
-            type="hidden"
-            name="_subject"
-            value="Novo Lead — V8 Digital | Criação de Sites"
-          >
-
-
-          <input
-            type="hidden"
-            name="_next"
-            value="https://v8digital.pages.dev/obrigado.html"
-          >
-
-
-          <div class="form-group">
-
-            <label for="nome">
-              Nome
-            </label>
-
-            <input
-              id="nome"
-              name="nome"
-              type="text"
-              placeholder="Seu nome"
-              autocomplete="name"
-              required
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="whatsapp">
-              WhatsApp
-            </label>
-
-            <input
-              id="whatsapp"
-              name="whatsapp"
-              type="tel"
-              placeholder="(00) 00000-0000"
-              autocomplete="tel"
-              required
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="email">
-              E-mail
-            </label>
-
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="seu@email.com"
-              autocomplete="email"
-              required
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="empresa">
-              Nome da empresa
-            </label>
-
-            <input
-              id="empresa"
-              name="empresa"
-              type="text"
-              placeholder="Nome da sua empresa"
-              autocomplete="organization"
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="plano">
-              Plano de interesse
-            </label>
-
-            <select
-              id="plano"
-              name="plano"
-              required
-            >
-
-              <option
-                value=""
-              >
-                Selecione um plano
-              </option>
-
-              <option
-                value="Essencial - R$ 99"
-              >
-                Essencial — R$ 99
-              </option>
-
-              <option
-                value="Profissional - R$ 299"
-              >
-                Profissional — R$ 299
-              </option>
-
-              <option
-                value="Premium - R$ 599"
-              >
-                Premium — R$ 599
-              </option>
-
-              <option
-                value="Não sei qual escolher"
-              >
-                Ainda não sei
-              </option>
-
-            </select>
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="tipo-negocio">
-              Tipo de negócio
-            </label>
-
-            <input
-              id="tipo-negocio"
-              name="tipo_negocio"
-              type="text"
-              placeholder="Ex.: loja, clínica, profissional autônomo..."
-              required
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="mensagem">
-              Conte um pouco sobre o projeto
-            </label>
-
-            <textarea
-              id="mensagem"
-              name="mensagem"
-              placeholder="O que você gostaria de apresentar no site?"
-              rows="5"
-              required
-            ></textarea>
-
-          </div>
-
-
-          <button
-            type="submit"
-            class="btn btn-primary btn-full"
-          >
-            Solicitar orçamento
-          </button>
-
-
-          <small class="form-note">
-            Seus dados serão utilizados apenas para responder
-            à sua solicitação.
-          </small>
-
-        </form>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         CTA FINAL
-    ======================================================== -->
-
-    <section class="final-cta">
-
-      <div class="container">
-
-        <span class="eyebrow">
-          V8 DIGITAL
-        </span>
-
-        <h2>
-          Coloque sua empresa
-          <span>na internet.</span>
-        </h2>
-
-        <p>
-          Um site profissional pode ser o próximo passo
-          para fortalecer sua presença digital.
-        </p>
-
-        <a
-          href="#orcamento"
-          class="btn btn-primary"
-        >
-          Quero criar meu site
-        </a>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================================================
-       FOOTER
-  ========================================================== -->
-
-  <footer class="site-footer">
-
-    <div class="container footer-grid">
-
-
-      <div class="footer-brand">
-
-        <a
-          href="../index.html"
-          class="logo"
-        >
-
-          <img
-            src="../assets/logo/v8p.png"
-            alt="V8 Digital"
-            class="logo-img"
-          >
-
-          <span class="logo-text">
-            Digital
-          </span>
-
-        </a>
-
-        <p>
-          Desenvolvimento Web & Marketing Digital.
-        </p>
-
-      </div>
-
-
-      <div class="footer-links">
-
-        <a href="#planos">
-          Planos
-        </a>
-
-        <a href="#incluido">
-          O que inclui
-        </a>
-
-        <a href="#projetos">
-          Projetos
-        </a>
-
-        <a href="#faq">
-          Dúvidas
-        </a>
-
-        <a href="#orcamento">
-          Orçamento
-        </a>
-
-      </div>
-
-
-      <div class="footer-contact">
-
-        <a href="mailto:aisermelquisedec@gmail.com">
-          aisermelquisedec@gmail.com
-        </a>
-
-        <a
-          href="https://www.instagram.com/aisermelquisedec/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @aisermelquisedec
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="container footer-bottom">
-
-      <span>
-        © 2026 V8 Digital. Todos os direitos reservados.
-      </span>
-
-      <span>
-        Criação de Sites • Desenvolvimento Web
-      </span>
-
-    </div>
-
-  </footer>
-
-
-  <!-- =========================================================
-       WHATSAPP
-  ========================================================== -->
-
-  <a
-    class="whatsapp-float"
-    href="https://wa.me/54992756194?text=Olá%20V8%20Digital!%20Vim%20pela%20página%20de%20criação%20de%20sites%20e%20quero%20saber%20mais."
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Falar com a V8 Digital pelo WhatsApp"
-  >
-    WhatsApp
-  </a>
-
-
-  <!-- =========================================================
-       JAVASCRIPT
-  ========================================================== -->
-
-  <script>
-
-    /* =========================================================
-       MENU MOBILE
-    ========================================================== */
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      function () {
-
-        const toggle =
-          document.getElementById("menuToggle");
-
-        const nav =
-          document.getElementById("mainNav");
-
-
-        if (toggle && nav) {
-
-          toggle.addEventListener(
-            "click",
-            function () {
-
-              const opened =
-                nav.classList.toggle("active");
-
-              toggle.setAttribute(
-                "aria-expanded",
-                opened ? "true" : "false"
-              );
-
-            }
-          );
-
-
-          nav.querySelectorAll("a").forEach(
-            function (link) {
-
-              link.addEventListener(
+            menuBtn.addEventListener(
                 "click",
-                function () {
+                () => {
 
-                  nav.classList.remove("active");
-
-                  toggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                  );
+                    navLinks.classList.toggle("active");
 
                 }
-              );
+            );
 
-            }
-          );
+
+            navLinks
+                .querySelectorAll("a")
+                .forEach(link => {
+
+                    link.addEventListener(
+                        "click",
+                        () => {
+
+                            navLinks.classList.remove("active");
+
+                        }
+                    );
+
+                });
 
         }
 
 
         /* =====================================================
            FAQ
-        ====================================================== */
+        ===================================================== */
 
-        const faqItems =
-          document.querySelectorAll(".faq-item");
+        document
+            .querySelectorAll(".faq-question")
+            .forEach(button => {
 
+                button.addEventListener(
+                    "click",
+                    () => {
 
-        faqItems.forEach(
-          function (item) {
+                        const item =
+                            button.closest(".faq-item");
 
-            const question =
-              item.querySelector(".faq-question");
+                        document
+                            .querySelectorAll(".faq-item")
+                            .forEach(other => {
 
+                                if (other !== item) {
 
-            if (!question) {
-              return;
-            }
+                                    other.classList.remove("active");
 
+                                }
 
-            question.addEventListener(
-              "click",
-              function () {
+                            });
 
-                const isActive =
-                  item.classList.contains("active");
-
-
-                faqItems.forEach(
-                  function (otherItem) {
-
-                    otherItem.classList.remove("active");
-
-                    const otherQuestion =
-                      otherItem.querySelector(
-                        ".faq-question"
-                      );
-
-                    if (otherQuestion) {
-
-                      otherQuestion.setAttribute(
-                        "aria-expanded",
-                        "false"
-                      );
+                        item.classList.toggle("active");
 
                     }
-
-                  }
                 );
 
-
-                if (!isActive) {
-
-                  item.classList.add("active");
-
-                  question.setAttribute(
-                    "aria-expanded",
-                    "true"
-                  );
-
-                }
-
-              }
-            );
-
-          }
-        );
+            });
 
 
         /* =====================================================
            SELEÇÃO AUTOMÁTICA DO PLANO
-        ====================================================== */
+        ===================================================== */
 
         const planButtons =
-          document.querySelectorAll("[data-plan]");
+            document.querySelectorAll("[data-plan]");
 
         const planSelect =
-          document.getElementById("plano");
+            document.getElementById("plano");
+
+        const hiddenPlan =
+            document.getElementById("planoSelecionado");
 
 
-        planButtons.forEach(
-          function (button) {
+        planButtons.forEach(button => {
 
             button.addEventListener(
-              "click",
-              function () {
+                "click",
+                () => {
 
-                const selectedPlan =
-                  button.getAttribute("data-plan");
+                    const selectedPlan =
+                        button.getAttribute("data-plan");
 
+                    if (planSelect) {
 
-                if (planSelect && selectedPlan) {
+                        const option =
+                            Array.from(
+                                planSelect.options
+                            ).find(
+                                item =>
+                                    item.value === selectedPlan
+                            );
 
-                  planSelect.value =
-                    selectedPlan;
+                        if (option) {
+
+                            planSelect.value =
+                                selectedPlan;
+
+                        }
+
+                    }
+
+                    if (hiddenPlan) {
+
+                        hiddenPlan.value =
+                            selectedPlan;
+
+                    }
 
                 }
-
-              }
             );
 
-          }
-        );
+        });
 
 
         /* =====================================================
-           MÁSCARA SIMPLES DE WHATSAPP
-        ====================================================== */
+           SINCRONIZA PLANO DO SELECT
+        ===================================================== */
 
-        const whatsapp =
-          document.getElementById("whatsapp");
+        if (planSelect && hiddenPlan) {
 
+            planSelect.addEventListener(
+                "change",
+                () => {
 
-        if (whatsapp) {
+                    hiddenPlan.value =
+                        planSelect.value;
 
-          whatsapp.addEventListener(
-            "input",
-            function () {
-
-              let value =
-                whatsapp.value.replace(
-                  /\D/g,
-                  ""
-                );
-
-
-              if (value.length > 11) {
-                value =
-                  value.substring(0, 11);
-              }
-
-
-              if (value.length <= 10) {
-
-                value =
-                  value.replace(
-                    /^(\d{2})(\d)/,
-                    "($1) $2"
-                  );
-
-                value =
-                  value.replace(
-                    /(\d{4})(\d)/,
-                    "$1-$2"
-                  );
-
-              } else {
-
-                value =
-                  value.replace(
-                    /^(\d{2})(\d)/,
-                    "($1) $2"
-                  );
-
-                value =
-                  value.replace(
-                    /(\d{5})(\d)/,
-                    "$1-$2"
-                  );
-
-              }
-
-
-              whatsapp.value =
-                value;
-
-            }
-          );
+                }
+            );
 
         }
 
-      }
-    );
 
-  </script>
+        /* =====================================================
+           MÁSCARA WHATSAPP
+        ===================================================== */
+
+        const phone =
+            document.getElementById("telefone");
 
 
-  <!-- =========================================================
-       V8 LOADER
-       =========================================================
-       Quando o projeto for cadastrado no V8 Admin Universal,
-       substitua o valor abaixo pelo ID deste projeto.
+        if (phone) {
 
-       Exemplo:
+            phone.addEventListener(
+                "input",
+                event => {
 
-       <script
-         src="../js/v8-loader.js"
-         data-project-id="SEU_PROJECT_ID"
-       ></script>
+                    let value =
+                        event.target.value
+                            .replace(/\D/g, "")
+                            .slice(0, 11);
 
-       ========================================================= -->
+
+                    if (value.length > 10) {
+
+                        value =
+                            value.replace(
+                                /^(\d{2})(\d{5})(\d{4}).*/,
+                                "($1) $2-$3"
+                            );
+
+                    } else if (value.length > 6) {
+
+                        value =
+                            value.replace(
+                                /^(\d{2})(\d{4})(\d{0,4}).*/,
+                                "($1) $2-$3"
+                            );
+
+                    } else if (value.length > 2) {
+
+                        value =
+                            value.replace(
+                                /^(\d{2})(\d{0,5}).*/,
+                                "($1) $2"
+                            );
+
+                    }
+
+                    event.target.value =
+                        value;
+
+                }
+            );
+
+        }
+
+    </script>
+
+
+    <!-- =========================================================
+         V8 ADMIN UNIVERSAL — V8 LOADER
+         PROJETO: /sites
+    ========================================================= -->
+
+    <script
+        src="js/v8-loader.js"
+        data-project-id="53eaf1a2-a2f6-4ad0-8817-95f3ee8e1e1b"
+    ></script>
 
 </body>
+
 </html>
