@@ -1,196 +1,9 @@
 /* =========================================================
    V8 DIGITAL — MAIN.JS
-   Controle geral do site
+   Controle geral da interface
    ========================================================= */
 
 "use strict";
-
-
-/* =========================================================
-   CONFIGURAÇÕES
-   ========================================================= */
-
-/*
- * Valores usados enquanto a configuração remota (Worker) ainda
- * não chegou, ou caso a busca falhe. Isso evita que o site
- * fique "quebrado" se o Worker estiver fora do ar.
- */
-const V8_CONFIG_FALLBACK = {
-
-  whatsapp:
-    "54992756194",
-
-  email:
-    "aisermelquisedec@gmail.com",
-
-  instagram:
-    "https://instagram.com/aisermelquisedec",
-
-  site:
-    "https://v8digital.pages.dev/",
-
-  formspree:
-    "https://formspree.io/f/xljrvnjo"
-
-};
-
-// Objeto vivo: começa com o fallback e é atualizado assim que a
-// config remota chega. projects.js e o resto do main.js sempre
-// leem esse mesmo objeto (nunca uma cópia).
-const V8_CONFIG = { ...V8_CONFIG_FALLBACK };
-
-
-/* =========================================================
-   CONFIGURAÇÃO REMOTA (Worker + KV)
-   ========================================================= */
-
-async function loadRemoteConfig() {
-
-  if (
-    typeof V8_API === "undefined" ||
-    !V8_API.baseUrl ||
-    V8_API.baseUrl.includes("SEU-USUARIO")
-  ) {
-    // Worker ainda não foi configurado — segue só com o fallback.
-    return;
-  }
-
-  try {
-
-    const response = await fetch(
-      `${V8_API.baseUrl}/api/config?project=${encodeURIComponent(V8_API.project)}`
-    );
-
-    if (!response.ok) return;
-
-    const data = await response.json();
-    const remote = data.config || {};
-
-    // Só sobrescreve com valores que realmente vieram preenchidos,
-    // pra nunca "apagar" o fallback com um campo vazio.
-    Object.keys(remote).forEach(key => {
-      if (remote[key]) {
-        V8_CONFIG[key] = remote[key];
-      }
-    });
-
-  } catch (err) {
-
-    console.warn("V8 Digital: não foi possível carregar configuração remota.", err);
-
-  }
-
-}
-
-
-/* =========================================================
-   APLICAR CONFIGURAÇÃO NA PÁGINA
-   ========================================================= */
-
-function applyRemoteConfig() {
-
-  initWhatsAppLinks();
-
-  updateMailtoLinks();
-
-  updateInstagramLinks();
-
-  updateFormAction();
-
-  injectMetaPixel();
-
-  injectGoogleAnalytics();
-
-}
-
-
-function updateMailtoLinks() {
-
-  if (!V8_CONFIG.email) return;
-
-  document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-    link.setAttribute("href", `mailto:${V8_CONFIG.email}`);
-
-    const label = link.querySelector("span:last-child");
-    if (label) label.textContent = V8_CONFIG.email;
-  });
-
-}
-
-
-function updateInstagramLinks() {
-
-  if (!V8_CONFIG.instagram) return;
-
-  document.querySelectorAll('a[href*="instagram.com"]').forEach(link => {
-    link.setAttribute("href", V8_CONFIG.instagram);
-  });
-
-}
-
-
-function formatWhatsAppDisplay(raw) {
-
-  const digits = String(raw).replace(/\D/g, "");
-  if (digits.length < 10) return raw;
-
-  const cc = digits.slice(0, 2);
-  const ddd = digits.slice(2, 4);
-  const rest = digits.slice(4);
-  const restFormatted = rest.length > 4
-    ? `${rest.slice(0, -4)}-${rest.slice(-4)}`
-    : rest;
-
-  return `+${cc} ${ddd} ${restFormatted}`;
-
-}
-
-
-function updateFormAction() {
-
-  if (!V8_CONFIG.formspree) return;
-
-  const form = document.querySelector(".contact-form");
-  if (form) form.setAttribute("action", V8_CONFIG.formspree);
-
-}
-
-
-function injectMetaPixel() {
-
-  if (!V8_CONFIG.metaPixel) return;
-
-  /* eslint-disable */
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  /* eslint-enable */
-
-  window.fbq("init", V8_CONFIG.metaPixel);
-  window.fbq("track", "PageView");
-
-}
-
-
-function injectGoogleAnalytics() {
-
-  if (!V8_CONFIG.googleAnalytics) return;
-
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${V8_CONFIG.googleAnalytics}`;
-  document.head.appendChild(script);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { window.dataLayer.push(arguments); }
-  window.gtag = gtag;
-
-  gtag("js", new Date());
-  gtag("config", V8_CONFIG.googleAnalytics);
-
-}
 
 
 /* =========================================================
@@ -199,7 +12,7 @@ function injectGoogleAnalytics() {
 
 document.addEventListener(
   "DOMContentLoaded",
-  async () => {
+  () => {
 
     initMobileMenu();
 
@@ -216,12 +29,6 @@ document.addEventListener(
     initCurrentYear();
 
     initExternalLinks();
-
-    // Busca a config remota e só então aplica os links/pixel/analytics.
-    // O site já funciona com os valores de fallback antes disso terminar.
-    await loadRemoteConfig();
-
-    applyRemoteConfig();
 
   }
 );
@@ -269,8 +76,8 @@ function initMobileMenu() {
 
 
   /*
-   * Fecha o menu quando
-   * um link é selecionado.
+   * Fecha o menu quando um link
+   * da navegação é selecionado.
    */
 
   nav.querySelectorAll("a").forEach(
@@ -301,7 +108,7 @@ function initMobileMenu() {
 
 
   /*
-   * Fecha ao clicar fora.
+   * Fecha o menu ao clicar fora.
    */
 
   document.addEventListener(
@@ -408,7 +215,7 @@ function initSmoothScroll() {
 
         /*
          * Atualiza a URL sem
-         * causar salto da página.
+         * provocar salto da página.
          */
 
         history.pushState(
@@ -499,9 +306,8 @@ function initRevealAnimations() {
 
 
   /*
-   * Se o navegador não suporta
-   * IntersectionObserver,
-   * simplesmente mostra tudo.
+   * Fallback para navegadores sem
+   * suporte ao IntersectionObserver.
    */
 
   if (
@@ -519,6 +325,7 @@ function initRevealAnimations() {
     );
 
     return;
+
   }
 
 
@@ -584,15 +391,6 @@ function initRevealAnimations() {
 
 function initProjectButtons() {
 
-  /*
-   * Caso o HTML utilize:
-   *
-   * data-project-id="v8-play"
-   *
-   * o projects.js poderá abrir
-   * o modal correspondente.
-   */
-
   const buttons =
     document.querySelectorAll(
       "[data-project-id]"
@@ -616,6 +414,7 @@ function initProjectButtons() {
         ) {
 
           event.preventDefault();
+
 
           const id =
             button.dataset.projectId;
@@ -662,25 +461,13 @@ function initContactForm() {
 
 
   /*
-   * O action principal continua sendo
-   * o Formspree configurado no HTML.
+   * O V8 Loader será responsável por
+   * definir o action do Formspree.
+   *
+   * Aqui cuidamos apenas da experiência
+   * durante o envio.
    */
 
-  if (
-    !form.getAttribute("action")
-  ) {
-
-    form.setAttribute(
-      "action",
-      V8_CONFIG.formspree
-    );
-
-  }
-
-
-  /*
-   * Evita envio duplicado.
-   */
 
   let sending = false;
 
@@ -782,8 +569,7 @@ function initExternalLinks() {
 
 
     /*
-     * Links externos recebem
-     * proteção contra tabnabbing.
+     * Proteção contra tabnabbing.
      */
 
     if (
@@ -820,62 +606,6 @@ function initExternalLinks() {
 
 
 /* =========================================================
-   WHATSAPP
-   ========================================================= */
-
-function createWhatsAppMessage(
-  message
-) {
-
-  return (
-    "https://wa.me/" +
-    V8_CONFIG.whatsapp +
-    "?text=" +
-    encodeURIComponent(message)
-  );
-
-}
-
-
-/* =========================================================
-   ATUALIZAÇÃO AUTOMÁTICA DOS LINKS
-   ========================================================= */
-
-function initWhatsAppLinks() {
-
-  const links =
-    document.querySelectorAll(
-      '[data-whatsapp]'
-    );
-
-
-  links.forEach(link => {
-
-    const message =
-      link.dataset.whatsapp ||
-      "Olá V8 Digital! Gostaria de saber mais sobre os serviços.";
-
-    link.href =
-      createWhatsAppMessage(
-        message
-      );
-
-    link.target =
-      "_blank";
-
-    link.rel =
-      "noopener noreferrer";
-
-  });
-
-  document.querySelectorAll("[data-whatsapp-display]").forEach(el => {
-    el.textContent = formatWhatsAppDisplay(V8_CONFIG.whatsapp);
-  });
-
-}
-
-
-/* =========================================================
    CONTROLE DE ERROS
    ========================================================= */
 
@@ -884,9 +614,8 @@ window.addEventListener(
   event => {
 
     /*
-     * Não interrompemos o site por
-     * pequenos erros de elementos
-     * opcionais.
+     * Pequenos erros opcionais não
+     * devem interromper o site.
      */
 
     console.warn(
@@ -904,10 +633,6 @@ window.addEventListener(
 
 window.V8Digital = {
 
-  config: V8_CONFIG,
-
-  createWhatsAppMessage,
-
   initMobileMenu,
 
   initSmoothScroll,
@@ -917,13 +642,3 @@ window.V8Digital = {
   initRevealAnimations
 
 };
-
-
-/* =========================================================
-   INICIALIZA WHATSAPP
-   ========================================================= */
-
-document.addEventListener(
-  "DOMContentLoaded",
-  initWhatsAppLinks
-);
