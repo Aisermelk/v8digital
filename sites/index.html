@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -9,7 +10,9 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Site Profissional a partir de R$ 99 | V8 Digital</title>
+    <title>
+        Site Profissional a partir de R$ 99 | V8 Digital
+    </title>
 
     <meta
         name="description"
@@ -22,8 +25,18 @@
     >
 
     <meta
+        name="author"
+        content="V8 Digital"
+    >
+
+    <meta
         name="robots"
         content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#08080d"
     >
 
     <link
@@ -36,7 +49,11 @@
         href="../assets/logo/v8p.png"
     >
 
-    <!-- Open Graph -->
+
+    <!-- =========================================================
+         OPEN GRAPH
+    ========================================================== -->
+
     <meta
         property="og:type"
         content="website"
@@ -67,7 +84,11 @@
         content="V8 Digital"
     >
 
-    <!-- Twitter -->
+
+    <!-- =========================================================
+         TWITTER
+    ========================================================== -->
+
     <meta
         name="twitter:card"
         content="summary_large_image"
@@ -88,7 +109,11 @@
         content="https://v8digital.pages.dev/assets/logo/v8p.png"
     >
 
-    <!-- Font -->
+
+    <!-- =========================================================
+         FONT
+    ========================================================== -->
+
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
@@ -105,808 +130,21 @@
         rel="stylesheet"
     >
 
-    <style>
 
-        :root {
-            --bg: #08080d;
-            --bg-soft: #0d0d14;
-            --card: #11111a;
-            --card-hover: #151520;
+    <!-- =========================================================
+         CSS
+    ========================================================== -->
 
-            --text: #ffffff;
-            --text-soft: #a7a7b5;
-            --text-muted: #747483;
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 
-            --primary: #7c5cff;
-            --primary-light: #9d86ff;
-            --primary-dark: #6041dc;
-
-            --border: rgba(255, 255, 255, .08);
-            --border-hover: rgba(124, 92, 255, .45);
-
-            --radius: 18px;
-            --container: 1120px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            min-height: 100vh;
-            background: var(--bg);
-            color: var(--text);
-            font-family: "Inter", sans-serif;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button,
-        input,
-        select,
-        textarea {
-            font: inherit;
-        }
-
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .container {
-            width: min(calc(100% - 40px), var(--container));
-            margin-inline: auto;
-        }
-
-        /* =========================================================
-           HEADER
-        ========================================================= */
-
-        .header {
-            position: relative;
-            z-index: 10;
-            padding: 22px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, .05);
-        }
-
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo {
-            display: inline-flex;
-            align-items: center;
-        }
-
-        .logo img {
-            display: block;
-            width: 52px;
-            height: auto;
-        }
-
-        /* =========================================================
-           HERO
-        ========================================================= */
-
-        .hero {
-            position: relative;
-            overflow: hidden;
-            padding: 80px 0 70px;
-            text-align: center;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: -180px;
-            left: 50%;
-            width: 650px;
-            height: 500px;
-            transform: translateX(-50%);
-            background: radial-gradient(
-                circle,
-                rgba(124, 92, 255, .22) 0%,
-                rgba(124, 92, 255, .08) 35%,
-                transparent 70%
-            );
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 760px;
-            margin: 0 auto;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            color: var(--primary-light);
-            font-size: .78rem;
-            font-weight: 700;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--primary);
-            box-shadow: 0 0 16px rgba(124, 92, 255, .8);
-        }
-
-        .hero h1 {
-            max-width: 760px;
-            margin: 0 auto;
-            font-size: clamp(2.5rem, 7vw, 5rem);
-            line-height: 1.02;
-            letter-spacing: -.055em;
-            font-weight: 800;
-        }
-
-        .hero h1 span {
-            display: block;
-            color: var(--primary-light);
-        }
-
-        .hero-text {
-            max-width: 610px;
-            margin: 24px auto 0;
-            color: var(--text-soft);
-            font-size: clamp(1rem, 2vw, 1.15rem);
-        }
-
-        .price {
-            margin-top: 32px;
-        }
-
-        .price-label {
-            display: block;
-            margin-bottom: 2px;
-            color: var(--text-muted);
-            font-size: .9rem;
-        }
-
-        .price-value {
-            display: block;
-            color: #fff;
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 800;
-            line-height: 1;
-            letter-spacing: -.06em;
-        }
-
-        .price-value small {
-            font-size: .42em;
-            vertical-align: middle;
-            letter-spacing: -.02em;
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 56px;
-            margin-top: 34px;
-            padding: 0 32px;
-            border: 0;
-            border-radius: 12px;
-            background: var(--primary);
-            color: #fff;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 12px 35px rgba(124, 92, 255, .25);
-            transition:
-                transform .2s ease,
-                background .2s ease,
-                box-shadow .2s ease;
-        }
-
-        .hero-cta:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-            box-shadow: 0 16px 42px rgba(124, 92, 255, .35);
-        }
-
-        .hero-note {
-            margin-top: 15px;
-            color: var(--text-muted);
-            font-size: .82rem;
-        }
-
-        /* =========================================================
-           BENEFITS
-        ========================================================= */
-
-        .benefits {
-            padding: 0 0 80px;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            background: var(--card);
-        }
-
-        .benefit {
-            padding: 25px 22px;
-            text-align: center;
-            border-right: 1px solid var(--border);
-        }
-
-        .benefit:last-child {
-            border-right: 0;
-        }
-
-        .benefit-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-            margin: 0 auto 12px;
-            border-radius: 10px;
-            background: rgba(124, 92, 255, .12);
-            color: var(--primary-light);
-            font-weight: 800;
-        }
-
-        .benefit strong {
-            display: block;
-            margin-bottom: 3px;
-            font-size: .92rem;
-        }
-
-        .benefit span {
-            color: var(--text-muted);
-            font-size: .78rem;
-        }
-
-        /* =========================================================
-           PROJETOS
-        ========================================================= */
-
-        .projects {
-            padding: 40px 0 90px;
-        }
-
-        .section-heading {
-            margin-bottom: 32px;
-            text-align: center;
-        }
-
-        .section-heading h2 {
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            line-height: 1.1;
-            letter-spacing: -.04em;
-        }
-
-        .section-heading p {
-            max-width: 520px;
-            margin: 10px auto 0;
-            color: var(--text-muted);
-            font-size: .92rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .project-card {
-            display: block;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            background: var(--card);
-            transition:
-                transform .25s ease,
-                border-color .25s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-hover);
-        }
-
-        .project-image {
-            position: relative;
-            aspect-ratio: 16 / 10;
-            overflow: hidden;
-            background: #15151e;
-        }
-
-        .project-image img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .35s ease;
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.04);
-        }
-
-        .project-info {
-            padding: 18px;
-        }
-
-        .project-info span {
-            display: block;
-            margin-bottom: 5px;
-            color: var(--primary-light);
-            font-size: .7rem;
-            font-weight: 700;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-        }
-
-        .project-info strong {
-            font-size: 1rem;
-        }
-
-        /* =========================================================
-           FORM / CAPTURA
-        ========================================================= */
-
-        .capture {
-            padding: 30px 0 100px;
-        }
-
-        .capture-box {
-            display: grid;
-            grid-template-columns: .85fr 1.15fr;
-            gap: 60px;
-            align-items: center;
-
-            padding: clamp(28px, 5vw, 55px);
-            border: 1px solid rgba(124, 92, 255, .22);
-            border-radius: 24px;
-
-            background:
-                radial-gradient(
-                    circle at 0% 0%,
-                    rgba(124, 92, 255, .12),
-                    transparent 45%
-                ),
-                var(--card);
-        }
-
-        .capture-copy h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            line-height: 1.05;
-            letter-spacing: -.045em;
-        }
-
-        .capture-copy h2 span {
-            color: var(--primary-light);
-        }
-
-        .capture-copy p {
-            margin-top: 15px;
-            color: var(--text-soft);
-            font-size: .95rem;
-        }
-
-        .capture-price {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 8px;
-            margin-top: 24px;
-        }
-
-        .capture-price strong {
-            font-size: 2.2rem;
-            letter-spacing: -.05em;
-        }
-
-        .capture-price span {
-            color: var(--text-muted);
-            font-size: .8rem;
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 13px;
-        }
-
-        .field {
-            display: grid;
-            gap: 6px;
-        }
-
-        .field label {
-            color: #d6d6df;
-            font-size: .78rem;
-            font-weight: 600;
-        }
-
-        .field input,
-        .field select,
-        .field textarea {
-            width: 100%;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            outline: none;
-            background: #0b0b11;
-            color: #fff;
-            transition:
-                border-color .2s ease,
-                box-shadow .2s ease;
-        }
-
-        .field input,
-        .field select {
-            height: 48px;
-            padding: 0 14px;
-        }
-
-        .field textarea {
-            min-height: 95px;
-            padding: 13px 14px;
-            resize: vertical;
-        }
-
-        .field input::placeholder,
-        .field textarea::placeholder {
-            color: #5d5d69;
-        }
-
-        .field input:focus,
-        .field select:focus,
-        .field textarea:focus {
-            border-color: rgba(124, 92, 255, .7);
-            box-shadow: 0 0 0 3px rgba(124, 92, 255, .1);
-        }
-
-        .submit-button {
-            min-height: 52px;
-            margin-top: 4px;
-            border: 0;
-            border-radius: 10px;
-            background: var(--primary);
-            color: #fff;
-            font-weight: 700;
-            cursor: pointer;
-            transition:
-                transform .2s ease,
-                background .2s ease;
-        }
-
-        .submit-button:hover {
-            background: var(--primary-light);
-            transform: translateY(-1px);
-        }
-
-        .form-note {
-            color: var(--text-muted);
-            font-size: .72rem;
-            text-align: center;
-        }
-
-        /* =========================================================
-           PLANOS
-        ========================================================= */
-
-        .plans {
-            padding: 0 0 90px;
-        }
-
-        .plans-heading {
-            text-align: center;
-            margin-bottom: 28px;
-        }
-
-        .plans-heading h2 {
-            font-size: clamp(1.6rem, 4vw, 2.2rem);
-            letter-spacing: -.04em;
-        }
-
-        .plans-heading p {
-            margin-top: 8px;
-            color: var(--text-muted);
-            font-size: .88rem;
-        }
-
-        .plans-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .plan {
-            padding: 25px;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            background: var(--card);
-        }
-
-        .plan.featured {
-            border-color: rgba(124, 92, 255, .4);
-        }
-
-        .plan-name {
-            color: var(--text-soft);
-            font-size: .8rem;
-            font-weight: 600;
-        }
-
-        .plan-price {
-            margin-top: 7px;
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: -.05em;
-        }
-
-        .plan-price small {
-            color: var(--text-muted);
-            font-size: .7rem;
-            font-weight: 500;
-        }
-
-        .plan-text {
-            margin-top: 7px;
-            color: var(--text-muted);
-            font-size: .78rem;
-        }
-
-        .plan-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 42px;
-            margin-top: 20px;
-            border: 1px solid var(--border);
-            border-radius: 9px;
-            color: #fff;
-            font-size: .8rem;
-            font-weight: 700;
-            transition: .2s ease;
-        }
-
-        .plan-button:hover {
-            border-color: var(--primary);
-            background: rgba(124, 92, 255, .08);
-        }
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
-        .footer {
-            padding: 35px 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
-        }
-
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-        }
-
-        .footer-brand img {
-            width: 40px;
-            height: auto;
-        }
-
-        .footer-brand p {
-            color: var(--text-muted);
-            font-size: .75rem;
-        }
-
-        .footer-link {
-            color: var(--text-soft);
-            font-size: .78rem;
-            font-weight: 600;
-            transition: color .2s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--primary-light);
-        }
-
-        .footer-copy {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, .05);
-            color: var(--text-muted);
-            font-size: .7rem;
-            text-align: center;
-        }
-
-        /* =========================================================
-           WHATSAPP
-        ========================================================= */
-
-        .whatsapp {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 20;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            width: 54px;
-            height: 54px;
-
-            border-radius: 50%;
-            background: #25d366;
-            color: #fff;
-
-            font-size: 1.2rem;
-            font-weight: 800;
-
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
-
-            transition:
-                transform .2s ease,
-                box-shadow .2s ease;
-        }
-
-        .whatsapp:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 35px rgba(0, 0, 0, .45);
-        }
-
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
-
-        @media (max-width: 850px) {
-
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .benefit:nth-child(2) {
-                border-right: 0;
-            }
-
-            .benefit:nth-child(-n + 2) {
-                border-bottom: 1px solid var(--border);
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                max-width: 560px;
-                margin: 0 auto;
-            }
-
-            .capture-box {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-
-            .plans-grid {
-                grid-template-columns: 1fr;
-                max-width: 480px;
-                margin: 0 auto;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-brand {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 560px) {
-
-            .container {
-                width: min(calc(100% - 28px), var(--container));
-            }
-
-            .header {
-                padding: 18px 0;
-            }
-
-            .logo img {
-                width: 46px;
-            }
-
-            .hero {
-                padding: 65px 0 55px;
-            }
-
-            .hero h1 {
-                font-size: clamp(2.35rem, 12vw, 3.5rem);
-            }
-
-            .hero-text {
-                font-size: .95rem;
-            }
-
-            .hero-cta {
-                width: 100%;
-                padding-inline: 20px;
-            }
-
-            .benefits {
-                padding-bottom: 60px;
-            }
-
-            .benefit {
-                padding: 20px 12px;
-            }
-
-            .benefit strong {
-                font-size: .82rem;
-            }
-
-            .benefit span {
-                font-size: .7rem;
-            }
-
-            .projects {
-                padding-bottom: 65px;
-            }
-
-            .capture {
-                padding-bottom: 70px;
-            }
-
-            .capture-box {
-                padding: 25px 18px;
-                border-radius: 18px;
-            }
-
-            .capture-copy h2 {
-                font-size: 2rem;
-            }
-
-            .plans {
-                padding-bottom: 65px;
-            }
-
-            .whatsapp {
-                right: 15px;
-                bottom: 15px;
-                width: 50px;
-                height: 50px;
-            }
-        }
-
-    </style>
 </head>
 
 
 <body>
+
 
     <!-- =========================================================
          HEADER
@@ -914,25 +152,47 @@
 
     <header class="header">
 
-        <div class="container header-inner">
+        <div class="header-inner">
+
 
             <a
                 href="#inicio"
-                class="logo"
+                class="brand"
                 aria-label="V8 Digital"
             >
+
                 <img
                     src="../assets/logo/v8p.png"
                     alt="V8 Digital"
                 >
+
+                <span>
+                    V8 Digital
+                </span>
+
             </a>
+
+
+            <a
+                href="#formulario"
+                class="header-cta"
+            >
+                Quero criar meu site
+            </a>
+
 
         </div>
 
     </header>
 
 
+
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+
     <main id="inicio">
+
 
         <!-- =====================================================
              HERO
@@ -942,20 +202,31 @@
 
             <div class="container hero-content">
 
-                <div class="eyebrow">
+
+                <span class="eyebrow">
                     V8 DIGITAL
-                </div>
+                </span>
+
 
                 <h1>
+
                     Seu negócio precisa de um
-                    <span>site profissional.</span>
+
+                    <span>
+                        site profissional.
+                    </span>
+
                 </h1>
 
+
                 <p class="hero-text">
+
                     Tenha uma presença profissional na internet
                     com um site moderno, responsivo e pronto para
                     apresentar o seu negócio.
+
                 </p>
+
 
                 <div class="price">
 
@@ -969,6 +240,7 @@
 
                 </div>
 
+
                 <a
                     href="#formulario"
                     class="hero-cta"
@@ -976,13 +248,22 @@
                     Quero criar meu site
                 </a>
 
+
                 <p class="hero-note">
-                    Desenvolvimento profissional • Publicação online
+
+                    Desenvolvimento profissional
+
+                    <span>•</span>
+
+                    Publicação online
+
                 </p>
+
 
             </div>
 
         </section>
+
 
 
         <!-- =====================================================
@@ -995,13 +276,16 @@
 
                 <div class="benefits-grid">
 
+
                     <div class="benefit">
 
                         <div class="benefit-icon">
                             ✓
                         </div>
 
-                        <strong>Site profissional</strong>
+                        <strong>
+                            Site profissional
+                        </strong>
 
                         <span>
                             Design moderno
@@ -1016,7 +300,9 @@
                             ✓
                         </div>
 
-                        <strong>Responsivo</strong>
+                        <strong>
+                            Responsivo
+                        </strong>
 
                         <span>
                             Funciona no celular
@@ -1031,7 +317,9 @@
                             ✓
                         </div>
 
-                        <strong>WhatsApp</strong>
+                        <strong>
+                            WhatsApp
+                        </strong>
 
                         <span>
                             Facilite seus contatos
@@ -1046,13 +334,16 @@
                             ✓
                         </div>
 
-                        <strong>Publicado online</strong>
+                        <strong>
+                            Online
+                        </strong>
 
                         <span>
                             Pronto para divulgar
                         </span>
 
                     </div>
+
 
                 </div>
 
@@ -1061,22 +352,32 @@
         </section>
 
 
+
         <!-- =====================================================
              PROJETOS
         ====================================================== -->
 
-        <section class="projects" id="projetos">
+        <section
+            class="projects"
+            id="projetos"
+        >
 
             <div class="container">
 
+
                 <div class="section-heading">
 
+                    <span class="section-label">
+                        PROJETOS
+                    </span>
+
                     <h2>
-                        Veja alguns projetos
+                        Alguns sites que já criamos.
                     </h2>
 
                     <p>
-                        Exemplos de trabalhos desenvolvidos pela V8 Digital.
+                        Veja na prática o tipo de experiência
+                        que podemos criar para o seu negócio.
                     </p>
 
                 </div>
@@ -1084,6 +385,8 @@
 
                 <div class="projects-grid">
 
+
+                    <!-- PROJETO 1 -->
 
                     <a
                         href="https://assistenciabtv.pages.dev/"
@@ -1096,11 +399,12 @@
 
                             <img
                                 src="../assets/projects/assistencia-tecnica.jpg"
-                                alt="Projeto de site para assistência técnica"
+                                alt="Site de assistência técnica"
                                 loading="lazy"
                             >
 
                         </div>
+
 
                         <div class="project-info">
 
@@ -1117,6 +421,9 @@
                     </a>
 
 
+
+                    <!-- PROJETO 2 -->
+
                     <a
                         href="https://mymonentsparis.pages.dev/"
                         target="_blank"
@@ -1128,11 +435,12 @@
 
                             <img
                                 src="../assets/projects/my-moments-paris.jpg"
-                                alt="Projeto My Moments Paris"
+                                alt="Site My Moments Paris"
                                 loading="lazy"
                             >
 
                         </div>
+
 
                         <div class="project-info">
 
@@ -1149,6 +457,9 @@
                     </a>
 
 
+
+                    <!-- PROJETO 3 -->
+
                     <a
                         href="https://v8play.pages.dev/"
                         target="_blank"
@@ -1160,11 +471,12 @@
 
                             <img
                                 src="../assets/projects/v8-play.jpg"
-                                alt="Projeto V8 Play"
+                                alt="Plataforma V8 Play"
                                 loading="lazy"
                             >
 
                         </div>
+
 
                         <div class="project-info">
 
@@ -1188,6 +500,7 @@
         </section>
 
 
+
         <!-- =====================================================
              FORMULÁRIO DE CAPTURA
         ====================================================== -->
@@ -1199,24 +512,38 @@
 
             <div class="container">
 
+
                 <div class="capture-box">
 
 
+                    <!-- TEXTO -->
+
                     <div class="capture-copy">
 
-                        <div class="eyebrow">
+                        <span class="eyebrow">
                             VAMOS COMEÇAR
-                        </div>
+                        </span>
+
 
                         <h2>
-                            Coloque seu negócio
-                            <span>online.</span>
+
+                            Seu próximo site
+
+                            <span>
+                                começa aqui.
+                            </span>
+
                         </h2>
 
+
                         <p>
-                            Preencha seus dados e fale com a V8 Digital
-                            para começar seu projeto.
+
+                            Preencha seus dados e conte rapidamente
+                            o que você precisa. A V8 Digital entra
+                            em contato para conversar sobre seu projeto.
+
                         </p>
+
 
                         <div class="capture-price">
 
@@ -1230,8 +557,12 @@
 
                         </div>
 
+
                     </div>
 
+
+
+                    <!-- FORMULÁRIO -->
 
                     <form
                         id="contact-form"
@@ -1240,11 +571,13 @@
                         method="POST"
                     >
 
+
                         <input
                             type="hidden"
                             name="_subject"
                             value="Novo Lead — V8 Digital | Criação de Sites"
                         >
+
 
                         <input
                             type="hidden"
@@ -1252,11 +585,13 @@
                             value="https://v8digital.pages.dev/obrigado.html"
                         >
 
+
                         <input
                             type="hidden"
                             name="origem"
                             value="Página /sites"
                         >
+
 
                         <input
                             type="hidden"
@@ -1265,6 +600,9 @@
                             value="Essencial — R$ 99"
                         >
 
+
+
+                        <!-- NOME -->
 
                         <div class="field">
 
@@ -1284,6 +622,9 @@
                         </div>
 
 
+
+                        <!-- WHATSAPP -->
+
                         <div class="field">
 
                             <label for="telefone">
@@ -1301,6 +642,9 @@
 
                         </div>
 
+
+
+                        <!-- EMAIL -->
 
                         <div class="field">
 
@@ -1320,6 +664,9 @@
                         </div>
 
 
+
+                        <!-- EMPRESA -->
+
                         <div class="field">
 
                             <label for="empresa">
@@ -1336,20 +683,26 @@
                         </div>
 
 
+
+                        <!-- MENSAGEM -->
+
                         <div class="field">
 
                             <label for="mensagem">
-                                Conte rapidamente sobre seu projeto
+                                O que você precisa?
                             </label>
 
                             <textarea
                                 id="mensagem"
                                 name="mensagem"
-                                placeholder="Ex.: Quero criar um site para minha empresa."
+                                placeholder="Ex.: Quero um site para minha empresa."
                             ></textarea>
 
                         </div>
 
+
+
+                        <!-- BOTÃO -->
 
                         <button
                             type="submit"
@@ -1358,17 +711,24 @@
                             Quero criar meu site
                         </button>
 
+
                         <p class="form-note">
-                            Seus dados serão usados apenas para entrar em contato sobre o projeto.
+
+                            Seus dados serão usados somente para
+                            entrar em contato sobre o projeto.
+
                         </p>
 
+
                     </form>
+
 
                 </div>
 
             </div>
 
         </section>
+
 
 
         <!-- =====================================================
@@ -1379,21 +739,32 @@
 
             <div class="container">
 
+
                 <div class="plans-heading">
 
+                    <span class="section-label">
+                        OUTRAS OPÇÕES
+                    </span>
+
                     <h2>
-                        Precisa de mais?
+                        Precisa de algo maior?
                     </h2>
 
                     <p>
-                        Além do plano inicial, temos outras opções para projetos maiores.
+
+                        O R$ 99 é o ponto de partida.
+                        Também temos opções para projetos mais completos.
+
                     </p>
 
                 </div>
 
 
+
                 <div class="plans-grid">
 
+
+                    <!-- ESSENCIAL -->
 
                     <article class="plan featured">
 
@@ -1403,13 +774,10 @@
 
                         <div class="plan-price">
                             R$ 99
-                            <small>
-                                a partir
-                            </small>
                         </div>
 
                         <p class="plan-text">
-                            Para quem precisa colocar o negócio online.
+                            Para colocar seu negócio online.
                         </p>
 
                         <a
@@ -1423,6 +791,9 @@
                     </article>
 
 
+
+                    <!-- PROFISSIONAL -->
+
                     <article class="plan">
 
                         <span class="plan-name">
@@ -1434,7 +805,7 @@
                         </div>
 
                         <p class="plan-text">
-                            Mais recursos e personalização para o projeto.
+                            Mais recursos e personalização.
                         </p>
 
                         <a
@@ -1448,6 +819,9 @@
                     </article>
 
 
+
+                    <!-- PREMIUM -->
+
                     <article class="plan">
 
                         <span class="plan-name">
@@ -1459,7 +833,7 @@
                         </div>
 
                         <p class="plan-text">
-                            Para projetos com maior nível de personalização.
+                            Para projetos mais completos.
                         </p>
 
                         <a
@@ -1479,7 +853,56 @@
 
         </section>
 
+
+
+        <!-- =====================================================
+             CTA FINAL
+        ====================================================== -->
+
+        <section class="final-cta">
+
+            <div class="container">
+
+
+                <div class="final-cta-content">
+
+
+                    <span class="eyebrow">
+                        V8 DIGITAL
+                    </span>
+
+
+                    <h2>
+
+                        Pronto para colocar
+                        seu negócio online?
+
+                    </h2>
+
+
+                    <p>
+                        Crie seu site profissional
+                        a partir de R$ 99.
+                    </p>
+
+
+                    <a
+                        href="#formulario"
+                        class="final-cta-button"
+                    >
+                        Quero criar meu site
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
     </main>
+
 
 
     <!-- =========================================================
@@ -1490,20 +913,35 @@
 
         <div class="container">
 
+
             <div class="footer-inner">
 
+
                 <div class="footer-brand">
+
 
                     <img
                         src="../assets/logo/v8p.png"
                         alt="V8 Digital"
                     >
 
-                    <p>
-                        Sites profissionais para negócios que querem crescer.
-                    </p>
+
+                    <div>
+
+                        <strong>
+                            V8 Digital
+                        </strong>
+
+                        <p>
+                            Sites profissionais para negócios
+                            que querem crescer.
+                        </p>
+
+                    </div>
+
 
                 </div>
+
 
 
                 <a
@@ -1513,19 +951,25 @@
                     Conhecer a V8 Digital e ver portfólio →
                 </a>
 
+
             </div>
+
 
 
             <div class="footer-copy">
 
-                © <span id="ano"></span> V8 Digital.
+                ©
+                <span id="ano"></span>
+                V8 Digital.
                 Todos os direitos reservados.
 
             </div>
 
+
         </div>
 
     </footer>
+
 
 
     <!-- =========================================================
@@ -1544,8 +988,9 @@
     </a>
 
 
+
     <!-- =========================================================
-         V8 UNIVERSAL LOADER
+         V8 ADMIN UNIVERSAL — LOADER
     ========================================================== -->
 
     <script
@@ -1555,8 +1000,9 @@
     ></script>
 
 
+
     <!-- =========================================================
-         PAGE JS
+         PAGE JAVASCRIPT
     ========================================================== -->
 
     <script>
@@ -1564,178 +1010,287 @@
         "use strict";
 
 
-        /* =========================================================
-           ANO
-        ========================================================= */
+        /* =====================================================
+           ANO ATUAL
+        ===================================================== */
 
-        const ano = document.getElementById("ano");
+        const ano =
+            document.getElementById("ano");
 
         if (ano) {
-            ano.textContent = new Date().getFullYear();
+
+            ano.textContent =
+                new Date().getFullYear();
+
         }
 
 
-        /* =========================================================
+
+        /* =====================================================
            MÁSCARA WHATSAPP
-        ========================================================= */
+        ===================================================== */
 
         const telefone =
             document.getElementById("telefone");
 
+
         if (telefone) {
 
-            telefone.addEventListener("input", function () {
+            telefone.addEventListener(
+                "input",
+                function () {
 
-                let value =
-                    this.value.replace(/\D/g, "");
+                    let value =
+                        this.value.replace(/\D/g, "");
 
-                value =
-                    value.substring(0, 11);
-
-                if (value.length <= 10) {
 
                     value =
-                        value.replace(
-                            /^(\d{2})(\d{0,4})(\d{0,4}).*/,
-                            function (_, ddd, part1, part2) {
+                        value.substring(0, 11);
 
-                                let result = "";
 
-                                if (ddd) {
-                                    result += "(" + ddd + ")";
+                    if (value.length <= 10) {
+
+                        value =
+                            value.replace(
+                                /^(\d{2})(\d{0,4})(\d{0,4}).*/,
+                                function (
+                                    _,
+                                    ddd,
+                                    parte1,
+                                    parte2
+                                ) {
+
+                                    let result = "";
+
+
+                                    if (ddd) {
+
+                                        result +=
+                                            "(" +
+                                            ddd +
+                                            ")";
+
+                                    }
+
+
+                                    if (parte1) {
+
+                                        result +=
+                                            " " +
+                                            parte1;
+
+                                    }
+
+
+                                    if (parte2) {
+
+                                        result +=
+                                            "-" +
+                                            parte2;
+
+                                    }
+
+
+                                    return result;
+
                                 }
+                            );
 
-                                if (part1) {
-                                    result += " " + part1;
+                    } else {
+
+                        value =
+                            value.replace(
+                                /^(\d{2})(\d{5})(\d{0,4}).*/,
+                                function (
+                                    _,
+                                    ddd,
+                                    parte1,
+                                    parte2
+                                ) {
+
+                                    let result =
+                                        "(" +
+                                        ddd +
+                                        ") " +
+                                        parte1;
+
+
+                                    if (parte2) {
+
+                                        result +=
+                                            "-" +
+                                            parte2;
+
+                                    }
+
+
+                                    return result;
+
                                 }
+                            );
 
-                                if (part2) {
-                                    result += "-" + part2;
-                                }
+                    }
 
-                                return result;
-                            }
-                        );
 
-                } else {
+                    this.value =
+                        value;
 
-                    value =
-                        value.replace(
-                            /^(\d{2})(\d{5})(\d{0,4}).*/,
-                            function (_, ddd, part1, part2) {
-
-                                let result =
-                                    "(" + ddd + ") " + part1;
-
-                                if (part2) {
-                                    result += "-" + part2;
-                                }
-
-                                return result;
-                            }
-                        );
                 }
-
-                this.value = value;
-
-            });
+            );
 
         }
 
 
-        /* =========================================================
+
+        /* =====================================================
            SELEÇÃO DE PLANO
-        ========================================================= */
+        ===================================================== */
 
         const planoSelecionado =
-            document.getElementById("planoSelecionado");
+            document.getElementById(
+                "planoSelecionado"
+            );
+
 
         const planButtons =
-            document.querySelectorAll("[data-plan]");
+            document.querySelectorAll(
+                "[data-plan]"
+            );
 
 
-        planButtons.forEach(function (button) {
+        planButtons.forEach(
+            function (button) {
 
-            button.addEventListener("click", function () {
+                button.addEventListener(
+                    "click",
+                    function () {
 
-                const plan =
-                    this.getAttribute("data-plan");
-
-                if (planoSelecionado && plan) {
-                    planoSelecionado.value = plan;
-                }
-
-            });
-
-        });
+                        const plan =
+                            this.getAttribute(
+                                "data-plan"
+                            );
 
 
-        /* =========================================================
+                        if (
+                            planoSelecionado &&
+                            plan
+                        ) {
+
+                            planoSelecionado.value =
+                                plan;
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
            FORM UX
-        ========================================================= */
+        ===================================================== */
 
         const form =
-            document.getElementById("contact-form");
+            document.getElementById(
+                "contact-form"
+            );
 
 
         if (form) {
 
-            form.addEventListener("submit", function () {
+            form.addEventListener(
+                "submit",
+                function () {
 
-                const button =
-                    form.querySelector("button[type='submit']");
+                    const button =
+                        form.querySelector(
+                            "button[type='submit']"
+                        );
 
-                if (!button) {
-                    return;
+
+                    if (!button) {
+                        return;
+                    }
+
+
+                    button.disabled =
+                        true;
+
+
+                    button.textContent =
+                        "Enviando...";
+
                 }
-
-                button.disabled = true;
-                button.textContent = "Enviando...";
-
-            });
+            );
 
         }
 
 
-        /* =========================================================
-           SMOOTH SCROLL
-        ========================================================= */
+
+        /* =====================================================
+           SCROLL SUAVE
+        ===================================================== */
 
         document
-            .querySelectorAll('a[href^="#"]')
-            .forEach(function (link) {
+            .querySelectorAll(
+                'a[href^="#"]'
+            )
+            .forEach(
+                function (link) {
 
-                link.addEventListener("click", function (event) {
+                    link.addEventListener(
+                        "click",
+                        function (event) {
 
-                    const targetId =
-                        this.getAttribute("href");
+                            const targetId =
+                                this.getAttribute(
+                                    "href"
+                                );
 
-                    if (
-                        !targetId ||
-                        targetId === "#"
-                    ) {
-                        return;
-                    }
 
-                    const target =
-                        document.querySelector(targetId);
+                            if (
+                                !targetId ||
+                                targetId === "#"
+                            ) {
 
-                    if (!target) {
-                        return;
-                    }
+                                return;
 
-                    event.preventDefault();
+                            }
 
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
 
-                });
+                            const target =
+                                document.querySelector(
+                                    targetId
+                                );
 
-            });
+
+                            if (!target) {
+                                return;
+                            }
+
+
+                            event.preventDefault();
+
+
+                            target.scrollIntoView({
+
+                                behavior: "smooth",
+
+                                block: "start"
+
+                            });
+
+                        }
+                    );
+
+                }
+            );
 
     </script>
+
 
 </body>
 
