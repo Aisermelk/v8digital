@@ -142,7 +142,8 @@
 
 
     <!-- ========================================================
-         ESTILO DO PORTFÓLIO BEHANCE + CTA DOS PLANOS
+         ESTILOS EXTRAS
+         PORTFÓLIO + CTA + MODAL
     ========================================================= -->
 
     <style>
@@ -309,7 +310,7 @@
 
 
         /* ======================================================
-           CTA ÚNICO ABAIXO DOS PLANOS
+           CTA DOS PLANOS
         ====================================================== */
 
         .plans-cta {
@@ -327,6 +328,8 @@
 
 
         .plans-cta-question {
+            max-width: 600px;
+
             margin: 0 0 18px;
 
             color: #b8b8c4;
@@ -369,6 +372,8 @@
                     #9c4dff
                 );
 
+            font-family: inherit;
+
             font-size: 13px;
             font-weight: 800;
 
@@ -407,6 +412,445 @@
         .plans-cta-button:hover span {
             transform:
                 translateX(4px);
+        }
+
+
+        /* ======================================================
+           MODAL
+        ====================================================== */
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+
+        .plan-modal {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            opacity: 0;
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease;
+        }
+
+
+        .plan-modal.active {
+            opacity: 1;
+            visibility: visible;
+
+            pointer-events: auto;
+        }
+
+
+        .plan-modal-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                rgba(0, 0, 0, 0.78);
+
+            backdrop-filter:
+                blur(8px);
+
+            -webkit-backdrop-filter:
+                blur(8px);
+        }
+
+
+        .plan-modal-box {
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+            max-width: 470px;
+
+            padding: 34px;
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.10);
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #15151f 0%,
+                    #0d0d14 100%
+                );
+
+            box-shadow:
+                0 30px 100px
+                rgba(0, 0, 0, 0.55);
+
+            transform:
+                translateY(20px)
+                scale(0.97);
+
+            transition:
+                transform 0.25s ease;
+        }
+
+
+        .plan-modal.active
+        .plan-modal-box {
+
+            transform:
+                translateY(0)
+                scale(1);
+
+        }
+
+
+        .plan-modal-close {
+            position: absolute;
+
+            top: 16px;
+            right: 16px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 38px;
+            height: 38px;
+
+            padding: 0;
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.08);
+
+            border-radius: 10px;
+
+            color: #b8b8c4;
+
+            background:
+                rgba(255, 255, 255, 0.04);
+
+            font-family: inherit;
+
+            font-size: 25px;
+            line-height: 1;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+
+        .plan-modal-close:hover {
+            color: #ffffff;
+
+            background:
+                rgba(255, 255, 255, 0.09);
+        }
+
+
+        .plan-modal-label {
+            display: inline-block;
+
+            margin-bottom: 10px;
+
+            color: #b875ff;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 0.14em;
+
+            text-transform: uppercase;
+        }
+
+
+        .plan-modal-box h2 {
+            margin: 0;
+
+            padding-right: 40px;
+
+            color: #f7f7fa;
+
+            font-size: 25px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+
+        .plan-modal-text {
+            margin: 10px 0 24px;
+
+            color: #858592;
+
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+
+        /* ======================================================
+           OPÇÕES DOS PLANOS
+        ====================================================== */
+
+        .plan-options {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+
+        .plan-option {
+            display: flex;
+
+            align-items: center;
+
+            width: 100%;
+
+            min-height: 74px;
+
+            padding: 14px 16px;
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.08);
+
+            border-radius: 14px;
+
+            color: #ffffff;
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+            font-family: inherit;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            transition:
+                border-color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .plan-option:hover {
+            border-color:
+                rgba(156, 77, 255, 0.38);
+
+            background:
+                rgba(156, 77, 255, 0.06);
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        .plan-option.selected {
+            border-color:
+                rgba(156, 77, 255, 0.70);
+
+            background:
+                rgba(156, 77, 255, 0.10);
+
+            box-shadow:
+                inset 0 0 0 1px
+                rgba(156, 77, 255, 0.08);
+        }
+
+
+        .plan-option-info {
+            display: flex;
+
+            flex-direction: column;
+
+            flex: 1;
+
+            min-width: 0;
+
+            gap: 4px;
+        }
+
+
+        .plan-option-info strong {
+            color: #f7f7fa;
+
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+
+        .plan-option-info small {
+            color: #858592;
+
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+
+        .plan-option-price {
+            margin-left: 12px;
+
+            color: #b875ff;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+
+        .plan-option-check {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 22px;
+            height: 22px;
+
+            margin-left: 12px;
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.12);
+
+            border-radius: 50%;
+
+            color: transparent;
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+
+        .plan-option.selected
+        .plan-option-check {
+
+            border-color:
+                #9c4dff;
+
+            color: #ffffff;
+
+            background:
+                #9c4dff;
+
+        }
+
+
+        /* ======================================================
+           BOTÃO WHATSAPP DO MODAL
+        ====================================================== */
+
+        .plan-modal-whatsapp {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            width: 100%;
+
+            min-height: 52px;
+
+            margin-top: 20px;
+
+            padding: 0 20px;
+
+            border: 0;
+
+            border-radius: 12px;
+
+            color: #ffffff;
+
+            background:
+                #30303a;
+
+            font-family: inherit;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            cursor: not-allowed;
+
+            opacity: 0.55;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                opacity 0.2s ease;
+        }
+
+
+        .plan-modal-whatsapp.ready {
+            background:
+                linear-gradient(
+                    135deg,
+                    #b875ff,
+                    #9c4dff
+                );
+
+            opacity: 1;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 12px 35px
+                rgba(156, 77, 255, 0.25);
+        }
+
+
+        .plan-modal-whatsapp.ready:hover {
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 16px 42px
+                rgba(156, 77, 255, 0.35);
+        }
+
+
+        .plan-modal-whatsapp.ready span:last-child {
+            transition:
+                transform 0.2s ease;
+        }
+
+
+        .plan-modal-whatsapp.ready:hover
+        span:last-child {
+            transform:
+                translateX(4px);
+        }
+
+
+        .plan-modal-note {
+            margin: 14px 0 0;
+
+            color: #686875;
+
+            font-size: 10px;
+
+            line-height: 1.5;
+
+            text-align: center;
         }
 
 
@@ -459,6 +903,61 @@
                 min-width: 0;
 
                 min-height: 54px;
+            }
+
+
+            .plan-modal {
+                padding: 14px;
+            }
+
+
+            .plan-modal-box {
+                max-width: 100%;
+
+                padding: 28px 20px 22px;
+
+                border-radius: 20px;
+            }
+
+
+            .plan-modal-box h2 {
+                font-size: 22px;
+            }
+
+
+            .plan-option {
+                min-height: 70px;
+
+                padding: 12px;
+            }
+
+
+            .plan-option-info small {
+                font-size: 10px;
+            }
+
+
+            .plan-option-price {
+                font-size: 13px;
+            }
+
+        }
+
+
+        /* ======================================================
+           ACESSIBILIDADE / REDUÇÃO DE MOVIMENTO
+        ====================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .plan-modal,
+            .plan-modal-box,
+            .plans-cta-button,
+            .plan-option,
+            .plan-modal-whatsapp {
+
+                transition: none !important;
+
             }
 
         }
@@ -890,7 +1389,6 @@
                         >
 
 
-
                         <div class="field">
 
                             <label for="nome">
@@ -1049,7 +1547,6 @@
 
                     <article class="plan">
 
-
                         <span class="plan-name">
                             ESSENCIAL
                         </span>
@@ -1068,45 +1565,37 @@
 
                         <ul class="plan-features">
 
-
                             <li>
                                 <span>✓</span>
                                 Site profissional de 1 página
                             </li>
-
 
                             <li>
                                 <span>✓</span>
                                 Design responsivo
                             </li>
 
-
                             <li>
                                 <span>✓</span>
                                 Botão direto para WhatsApp
                             </li>
-
 
                             <li>
                                 <span>✓</span>
                                 Formulário de contato
                             </li>
 
-
                             <li>
                                 <span>✓</span>
                                 Publicação online
                             </li>
-
 
                             <li>
                                 <span>✓</span>
                                 Estrutura otimizada para celular
                             </li>
 
-
                         </ul>
-
 
                     </article>
 
@@ -1117,7 +1606,6 @@
                     ========================================= -->
 
                     <article class="plan featured">
-
 
                         <span class="plan-name">
                             PROFISSIONAL
@@ -1137,39 +1625,32 @@
 
                         <ul class="plan-features">
 
-
                             <li>
                                 <span>✓</span>
                                 Tudo do plano Essencial
                             </li>
-
 
                             <li>
                                 <span>✓</span>
                                 Galeria de imagens
                             </li>
 
-
                             <li>
                                 <span>✓</span>
                                 Google Maps
                             </li>
-
 
                             <li>
                                 <span>✓</span>
                                 SEO básico
                             </li>
 
-
                             <li>
                                 <span>✓</span>
                                 Design personalizado
                             </li>
 
-
                         </ul>
-
 
                     </article>
 
@@ -1180,7 +1661,6 @@
                     ========================================= -->
 
                     <article class="plan">
-
 
                         <span class="plan-name">
                             PREMIUM
@@ -1200,45 +1680,37 @@
 
                         <ul class="plan-features">
 
-
                             <li>
                                 <span>✓</span>
                                 Tudo do plano Profissional
                             </li>
-
 
                             <li>
                                 <span>✓</span>
                                 Design exclusivo
                             </li>
 
-
                             <li>
                                 <span>✓</span>
                                 Personalização avançada
                             </li>
-
 
                             <li>
                                 <span>✓</span>
                                 Integrações
                             </li>
 
-
                             <li>
                                 <span>✓</span>
                                 Estrutura avançada
                             </li>
-
 
                             <li>
                                 <span>✓</span>
                                 Maior nível de personalização
                             </li>
 
-
                         </ul>
-
 
                     </article>
 
@@ -1253,21 +1725,19 @@
 
                 <div class="plans-cta">
 
-
                     <p class="plans-cta-question">
 
                         <strong>
                             Gostou de uma das opções?
                         </strong>
 
-                        Fale conosco pelo WhatsApp e informe
-                        qual plano você deseja.
+                        Escolha seu plano e fale conosco pelo WhatsApp.
 
                     </p>
 
 
-                    <a
-                        href="#"
+                    <button
+                        type="button"
                         class="plans-cta-button"
                         id="plans-whatsapp"
                     >
@@ -1278,8 +1748,7 @@
                             →
                         </span>
 
-                    </a>
-
+                    </button>
 
                 </div>
 
@@ -1287,6 +1756,188 @@
             </div>
 
         </section>
+
+
+
+        <!-- ====================================================
+             MODAL — ESCOLHA DO PLANO
+        ===================================================== -->
+
+        <div
+            class="plan-modal"
+            id="plan-modal"
+            aria-hidden="true"
+        >
+
+            <div
+                class="plan-modal-overlay"
+                data-close-plan-modal
+            ></div>
+
+
+            <div
+                class="plan-modal-box"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="plan-modal-title"
+            >
+
+                <button
+                    type="button"
+                    class="plan-modal-close"
+                    id="plan-modal-close"
+                    aria-label="Fechar"
+                >
+                    ×
+                </button>
+
+
+                <span class="plan-modal-label">
+                    V8 DIGITAL
+                </span>
+
+
+                <h2 id="plan-modal-title">
+                    Qual plano você deseja?
+                </h2>
+
+
+                <p class="plan-modal-text">
+                    Escolha uma opção para continuar
+                    pelo WhatsApp.
+                </p>
+
+
+                <div class="plan-options">
+
+
+                    <button
+                        type="button"
+                        class="plan-option"
+                        data-plan="Essencial"
+                        data-price="R$ 99"
+                    >
+
+                        <span class="plan-option-info">
+
+                            <strong>
+                                Essencial
+                            </strong>
+
+                            <small>
+                                Site profissional de 1 página
+                            </small>
+
+                        </span>
+
+
+                        <span class="plan-option-price">
+                            R$ 99
+                        </span>
+
+
+                        <span class="plan-option-check">
+                            ✓
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="plan-option"
+                        data-plan="Profissional"
+                        data-price="R$ 299"
+                    >
+
+                        <span class="plan-option-info">
+
+                            <strong>
+                                Profissional
+                            </strong>
+
+                            <small>
+                                Presença digital mais completa
+                            </small>
+
+                        </span>
+
+
+                        <span class="plan-option-price">
+                            R$ 299
+                        </span>
+
+
+                        <span class="plan-option-check">
+                            ✓
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="plan-option"
+                        data-plan="Premium"
+                        data-price="R$ 599"
+                    >
+
+                        <span class="plan-option-info">
+
+                            <strong>
+                                Premium
+                            </strong>
+
+                            <small>
+                                Solução completa e personalizada
+                            </small>
+
+                        </span>
+
+
+                        <span class="plan-option-price">
+                            R$ 599
+                        </span>
+
+
+                        <span class="plan-option-check">
+                            ✓
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="plan-modal-whatsapp"
+                    id="plan-modal-whatsapp"
+                    disabled
+                >
+
+                    <span>
+                        Continuar para o WhatsApp
+                    </span>
+
+                    <span aria-hidden="true">
+                        →
+                    </span>
+
+                </button>
+
+
+                <p class="plan-modal-note">
+                    Você será direcionado para conversar
+                    diretamente com a V8 Digital.
+                </p>
+
+            </div>
+
+        </div>
 
 
 
@@ -1407,7 +2058,7 @@
 
 
     <!-- ========================================================
-         WHATSAPP
+         WHATSAPP PRINCIPAL
     ========================================================= -->
 
     <a
@@ -1522,7 +2173,7 @@
 
 
                 /* =================================================
-                   CTA ÚNICO — WHATSAPP
+                   MODAL — ELEMENTOS
                 ================================================= */
 
                 const whatsappCTA =
@@ -1531,25 +2182,218 @@
                     );
 
 
-                if (whatsappCTA) {
+                const planModal =
+                    document.getElementById(
+                        "plan-modal"
+                    );
+
+
+                const planModalClose =
+                    document.getElementById(
+                        "plan-modal-close"
+                    );
+
+
+                const planModalWhatsapp =
+                    document.getElementById(
+                        "plan-modal-whatsapp"
+                    );
+
+
+                const planOptions =
+                    document.querySelectorAll(
+                        ".plan-option"
+                    );
+
+
+                let selectedPlanName = "";
+
+                let selectedPlanPrice = "";
+
+
+
+                /* =================================================
+                   ABRIR MODAL
+                ================================================= */
+
+                if (
+                    whatsappCTA &&
+                    planModal
+                ) {
 
                     whatsappCTA.addEventListener(
                         "click",
-                        function (event) {
+                        function () {
 
-                            event.preventDefault();
+                            planModal.classList.add(
+                                "active"
+                            );
+
+                            planModal.setAttribute(
+                                "aria-hidden",
+                                "false"
+                            );
+
+                            document.body.classList.add(
+                                "modal-open"
+                            );
+
+                        }
+                    );
+
+                }
 
 
-                            /*
-                             * O v8-loader.js configura o link
-                             * principal do WhatsApp através de:
-                             *
-                             * data-v8="contact.whatsapp"
-                             *
-                             * Pegamos esse mesmo link para
-                             * manter o número centralizado
-                             * no V8 Admin.
-                             */
+
+                /* =================================================
+                   FECHAR MODAL
+                ================================================= */
+
+                function closePlanModal() {
+
+                    if (!planModal) {
+                        return;
+                    }
+
+
+                    planModal.classList.remove(
+                        "active"
+                    );
+
+                    planModal.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+                    document.body.classList.remove(
+                        "modal-open"
+                    );
+
+                }
+
+
+                if (planModalClose) {
+
+                    planModalClose.addEventListener(
+                        "click",
+                        closePlanModal
+                    );
+
+                }
+
+
+                document
+                    .querySelectorAll(
+                        "[data-close-plan-modal]"
+                    )
+                    .forEach(
+                        function (element) {
+
+                            element.addEventListener(
+                                "click",
+                                closePlanModal
+                            );
+
+                        }
+                    );
+
+
+                document.addEventListener(
+                    "keydown",
+                    function (event) {
+
+                        if (
+                            event.key === "Escape" &&
+                            planModal &&
+                            planModal.classList.contains(
+                                "active"
+                            )
+                        ) {
+
+                            closePlanModal();
+
+                        }
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   SELECIONAR PLANO
+                ================================================= */
+
+                planOptions.forEach(
+                    function (option) {
+
+                        option.addEventListener(
+                            "click",
+                            function () {
+
+
+                                planOptions.forEach(
+                                    function (item) {
+
+                                        item.classList.remove(
+                                            "selected"
+                                        );
+
+                                    }
+                                );
+
+
+                                this.classList.add(
+                                    "selected"
+                                );
+
+
+                                selectedPlanName =
+                                    this.dataset.plan || "";
+
+
+                                selectedPlanPrice =
+                                    this.dataset.price || "";
+
+
+                                if (planModalWhatsapp) {
+
+                                    planModalWhatsapp.disabled =
+                                        false;
+
+                                    planModalWhatsapp.classList.add(
+                                        "ready"
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   ENVIAR PARA WHATSAPP
+                ================================================= */
+
+                if (planModalWhatsapp) {
+
+                    planModalWhatsapp.addEventListener(
+                        "click",
+                        function () {
+
+
+                            if (
+                                !selectedPlanName ||
+                                !selectedPlanPrice
+                            ) {
+
+                                return;
+
+                            }
+
 
                             const whatsappLink =
                                 document.querySelector(
@@ -1557,96 +2401,66 @@
                                 );
 
 
-                            let href = "";
-
-
                             if (
-                                whatsappLink &&
-                                whatsappLink.href &&
-                                whatsappLink.href !==
+                                !whatsappLink ||
+                                !whatsappLink.href ||
+                                whatsappLink.href ===
                                 window.location.href + "#"
                             ) {
 
-                                href =
-                                    whatsappLink.href;
-
-                            }
-
-
-                            /*
-                             * Mensagem enviada automaticamente.
-                             */
-
-                            const message =
-                                "Olá! Tenho interesse em contratar um site com a V8 Digital. " +
-                                "Gostaria de saber mais sobre os planos. " +
-                                "Tenho interesse no plano Essencial (R$ 99), Profissional (R$ 299) ou Premium (R$ 599). " +
-                                "Qual opção devo escolher?";
-
-
-                            /*
-                             * Se o loader já tiver
-                             * configurado o WhatsApp,
-                             * adicionamos a mensagem.
-                             */
-
-                            if (href) {
-
-                                try {
-
-                                    const url =
-                                        new URL(href);
-
-
-                                    url.searchParams.set(
-                                        "text",
-                                        message
-                                    );
-
-
-                                    window.open(
-                                        url.toString(),
-                                        "_blank",
-                                        "noopener,noreferrer"
-                                    );
-
-
-                                    return;
-
-                                } catch (error) {
-
-                                    console.error(
-                                        "Erro ao preparar WhatsApp:",
-                                        error
-                                    );
-
-                                }
-
-                            }
-
-
-                            /*
-                             * Fallback:
-                             * caso o loader ainda não tenha
-                             * carregado o número, usamos
-                             * o botão principal do WhatsApp.
-                             */
-
-                            if (
-                                whatsappLink &&
-                                whatsappLink.href
-                            ) {
-
-                                whatsappLink.click();
+                                alert(
+                                    "Não foi possível abrir o WhatsApp agora. Tente novamente em alguns segundos."
+                                );
 
                                 return;
 
                             }
 
 
-                            alert(
-                                "Não foi possível abrir o WhatsApp agora. Tente novamente em alguns segundos."
-                            );
+                            const message =
+                                "Olá! Tenho interesse em contratar o plano " +
+                                selectedPlanName +
+                                " (" +
+                                selectedPlanPrice +
+                                ") da V8 Digital. " +
+                                "Gostaria de saber mais detalhes sobre esse plano.";
+
+
+                            try {
+
+                                const url =
+                                    new URL(
+                                        whatsappLink.href
+                                    );
+
+
+                                url.searchParams.set(
+                                    "text",
+                                    message
+                                );
+
+
+                                window.open(
+                                    url.toString(),
+                                    "_blank",
+                                    "noopener,noreferrer"
+                                );
+
+
+                                closePlanModal();
+
+                            } catch (error) {
+
+                                console.error(
+                                    "Erro ao preparar WhatsApp:",
+                                    error
+                                );
+
+                                alert(
+                                    "Não foi possível abrir o WhatsApp agora."
+                                );
+
+                            }
 
                         }
                     );
@@ -1725,7 +2539,9 @@
                                         !targetId ||
                                         targetId === "#"
                                     ) {
+
                                         return;
+
                                     }
 
 
