@@ -142,7 +142,7 @@
 
 
     <!-- ========================================================
-         ESTILO DO PORTFÓLIO BEHANCE
+         ESTILO DO PORTFÓLIO BEHANCE + CTA DOS PLANOS
     ========================================================= -->
 
     <style>
@@ -309,14 +309,38 @@
 
 
         /* ======================================================
-           CTA ABAIXO DOS PLANOS
+           CTA ÚNICO ABAIXO DOS PLANOS
         ====================================================== */
 
         .plans-cta {
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
 
-            margin-top: 42px;
+            width: 100%;
+
+            margin-top: 48px;
+
+            text-align: center;
+        }
+
+
+        .plans-cta-question {
+            margin: 0 0 18px;
+
+            color: #b8b8c4;
+
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+
+        .plans-cta-question strong {
+            color: #f7f7fa;
+
+            font-weight: 800;
         }
 
 
@@ -328,11 +352,12 @@
 
             gap: 12px;
 
-            min-width: 240px;
-            min-height: 54px;
+            min-width: 280px;
+            min-height: 56px;
 
             padding: 0 30px;
 
+            border: 0;
             border-radius: 14px;
 
             color: #ffffff;
@@ -349,6 +374,8 @@
 
             text-decoration: none;
 
+            cursor: pointer;
+
             box-shadow:
                 0 14px 40px rgba(156, 77, 255, 0.28);
 
@@ -363,6 +390,11 @@
 
             box-shadow:
                 0 18px 48px rgba(156, 77, 255, 0.38);
+        }
+
+
+        .plans-cta-button:active {
+            transform: translateY(0);
         }
 
 
@@ -409,13 +441,24 @@
 
 
             .plans-cta {
-                margin-top: 32px;
+                margin-top: 36px;
+            }
+
+
+            .plans-cta-question {
+                max-width: 300px;
+
+                margin-bottom: 16px;
+
+                font-size: 13px;
             }
 
 
             .plans-cta-button {
                 width: 100%;
                 min-width: 0;
+
+                min-height: 54px;
             }
 
         }
@@ -843,7 +886,7 @@
                             type="hidden"
                             name="plano"
                             id="planoSelecionado"
-                            value="Essencial — R$ 99"
+                            value="Não definido — cliente escolherá pelo WhatsApp"
                         >
 
 
@@ -1065,15 +1108,6 @@
                         </ul>
 
 
-                        <a
-                            href="#formulario"
-                            class="plan-button"
-                            data-plano="Essencial — R$ 99"
-                        >
-                            Quero o Essencial
-                        </a>
-
-
                     </article>
 
 
@@ -1135,15 +1169,6 @@
 
 
                         </ul>
-
-
-                        <a
-                            href="#formulario"
-                            class="plan-button"
-                            data-plano="Profissional — R$ 299"
-                        >
-                            Quero o Profissional
-                        </a>
 
 
                     </article>
@@ -1215,39 +1240,46 @@
                         </ul>
 
 
-                        <a
-                            href="#formulario"
-                            class="plan-button"
-                            data-plano="Premium — R$ 599"
-                        >
-                            Quero o Premium
-                        </a>
-
-
                     </article>
 
 
                 </div>
 
 
+
                 <!-- =================================================
-                     CTA PRINCIPAL ABAIXO DOS PREÇOS
+                     CTA ÚNICO
                 ================================================== -->
 
                 <div class="plans-cta">
 
+
+                    <p class="plans-cta-question">
+
+                        <strong>
+                            Gostou de uma das opções?
+                        </strong>
+
+                        Fale conosco pelo WhatsApp e informe
+                        qual plano você deseja.
+
+                    </p>
+
+
                     <a
-                        href="#formulario"
+                        href="#"
                         class="plans-cta-button"
+                        id="plans-whatsapp"
                     >
 
-                        Comprar agora
+                        Comprar agora pelo WhatsApp
 
                         <span aria-hidden="true">
                             →
                         </span>
 
                     </a>
+
 
                 </div>
 
@@ -1490,43 +1522,136 @@
 
 
                 /* =================================================
-                   PLANO SELECIONADO
+                   CTA ÚNICO — WHATSAPP
                 ================================================= */
 
-                const planButtons =
-                    document.querySelectorAll(
-                        "[data-plano]"
-                    );
-
-
-                const selectedPlan =
+                const whatsappCTA =
                     document.getElementById(
-                        "planoSelecionado"
+                        "plans-whatsapp"
                     );
 
 
-                planButtons.forEach(
-                    function (button) {
+                if (whatsappCTA) {
 
-                        button.addEventListener(
-                            "click",
-                            function () {
+                    whatsappCTA.addEventListener(
+                        "click",
+                        function (event) {
 
-                                if (
-                                    selectedPlan &&
-                                    this.dataset.plano
-                                ) {
+                            event.preventDefault();
 
-                                    selectedPlan.value =
-                                        this.dataset.plano;
+
+                            /*
+                             * O v8-loader.js configura o link
+                             * principal do WhatsApp através de:
+                             *
+                             * data-v8="contact.whatsapp"
+                             *
+                             * Pegamos esse mesmo link para
+                             * manter o número centralizado
+                             * no V8 Admin.
+                             */
+
+                            const whatsappLink =
+                                document.querySelector(
+                                    '.whatsapp[data-v8="contact.whatsapp"]'
+                                );
+
+
+                            let href = "";
+
+
+                            if (
+                                whatsappLink &&
+                                whatsappLink.href &&
+                                whatsappLink.href !==
+                                window.location.href + "#"
+                            ) {
+
+                                href =
+                                    whatsappLink.href;
+
+                            }
+
+
+                            /*
+                             * Mensagem enviada automaticamente.
+                             */
+
+                            const message =
+                                "Olá! Tenho interesse em contratar um site com a V8 Digital. " +
+                                "Gostaria de saber mais sobre os planos. " +
+                                "Tenho interesse no plano Essencial (R$ 99), Profissional (R$ 299) ou Premium (R$ 599). " +
+                                "Qual opção devo escolher?";
+
+
+                            /*
+                             * Se o loader já tiver
+                             * configurado o WhatsApp,
+                             * adicionamos a mensagem.
+                             */
+
+                            if (href) {
+
+                                try {
+
+                                    const url =
+                                        new URL(href);
+
+
+                                    url.searchParams.set(
+                                        "text",
+                                        message
+                                    );
+
+
+                                    window.open(
+                                        url.toString(),
+                                        "_blank",
+                                        "noopener,noreferrer"
+                                    );
+
+
+                                    return;
+
+                                } catch (error) {
+
+                                    console.error(
+                                        "Erro ao preparar WhatsApp:",
+                                        error
+                                    );
 
                                 }
 
                             }
-                        );
 
-                    }
-                );
+
+                            /*
+                             * Fallback:
+                             * caso o loader ainda não tenha
+                             * carregado o número, usamos
+                             * o botão principal do WhatsApp.
+                             */
+
+                            if (
+                                whatsappLink &&
+                                whatsappLink.href
+                            ) {
+
+                                whatsappLink.click();
+
+                                return;
+
+                            }
+
+
+                            alert(
+                                "Não foi possível abrir o WhatsApp agora. Tente novamente em alguns segundos."
+                            );
+
+                        }
+                    );
+
+                }
 
 
 
