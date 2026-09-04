@@ -1,0 +1,907 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Política de Privacidade | V8 Digital</title>
+
+    <meta
+        name="description"
+        content="Política de Privacidade da V8 Digital. Saiba como coletamos, utilizamos, armazenamos e protegemos seus dados pessoais."
+    >
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://v8digital.pages.dev/politica-privacidade.html">
+
+    <style>
+        :root {
+            --primary: #6c3cff;
+            --primary-dark: #5124d6;
+            --text: #17151d;
+            --muted: #6d6875;
+            --background: #f8f7fb;
+            --surface: #ffffff;
+            --border: #e9e6ef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* HEADER */
+
+        header {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+        }
+
+        .header-container {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+
+            min-height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            color: var(--text);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 10px 16px;
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .back-link:hover {
+            background: #f5f2ff;
+            border-color: #d8ceff;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 80px 20px 50px;
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(108, 60, 255, 0.12),
+                    transparent 55%
+                );
+        }
+
+        .hero-container {
+            width: min(850px, 100%);
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 6px 12px;
+            margin-bottom: 18px;
+
+            border-radius: 999px;
+
+            background: #eee9ff;
+            color: var(--primary-dark);
+
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            line-height: 1.1;
+            letter-spacing: -0.05em;
+            margin-bottom: 18px;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            margin: 0 auto;
+
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .updated {
+            margin-top: 18px;
+
+            color: #898391;
+            font-size: 0.88rem;
+        }
+
+        /* CONTENT */
+
+        main {
+            width: min(900px, calc(100% - 40px));
+            margin: 0 auto 80px;
+        }
+
+        .policy {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            padding: clamp(28px, 5vw, 55px);
+
+            box-shadow:
+                0 20px 60px rgba(20, 10, 50, 0.05);
+        }
+
+        .policy section + section {
+            margin-top: 42px;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            line-height: 1.3;
+
+            margin-bottom: 14px;
+
+            letter-spacing: -0.025em;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+
+            width: 5px;
+            height: 22px;
+
+            margin-right: 10px;
+
+            vertical-align: -3px;
+
+            border-radius: 5px;
+
+            background: var(--primary);
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: #44404b;
+        }
+
+        ul {
+            margin: 14px 0 16px 22px;
+            color: #44404b;
+        }
+
+        li {
+            margin-bottom: 7px;
+            padding-left: 4px;
+        }
+
+        strong {
+            color: var(--text);
+        }
+
+        .highlight {
+            padding: 18px 20px;
+            margin: 24px 0;
+
+            border: 1px solid #ded6ff;
+            border-radius: 12px;
+
+            background: #f7f4ff;
+        }
+
+        .highlight p {
+            margin: 0;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            background: #fff;
+
+            padding: 35px 20px;
+        }
+
+        .footer-container {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer-brand {
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .footer-brand span {
+            color: var(--primary);
+        }
+
+        .footer-copy {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .header-container {
+                width: min(100% - 28px, 1120px);
+                min-height: 64px;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+            }
+
+            .back-link {
+                padding: 8px 12px;
+                font-size: 0.82rem;
+            }
+
+            .hero {
+                padding: 60px 18px 35px;
+            }
+
+            main {
+                width: min(100% - 24px, 900px);
+            }
+
+            .policy {
+                padding: 25px 20px;
+                border-radius: 15px;
+            }
+
+            .policy section + section {
+                margin-top: 34px;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            p,
+            li {
+                font-size: 0.94rem;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="header-container">
+
+            <a
+                href="/"
+                class="logo"
+                aria-label="V8 Digital - Página inicial"
+            >
+                V8<span>Digital</span>
+            </a>
+
+            <a
+                href="/"
+                class="back-link"
+            >
+                ← Voltar ao site
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-container">
+
+            <span class="badge">
+                Privacidade e Segurança
+            </span>
+
+            <h1>
+                Política de Privacidade
+            </h1>
+
+            <p class="hero-description">
+                Saiba como a V8 Digital coleta, utiliza,
+                armazena e protege seus dados pessoais.
+            </p>
+
+            <p class="updated">
+                Última atualização: 04 de setembro de 2026
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTEÚDO -->
+
+    <main>
+
+        <article class="policy">
+
+            <section>
+                <h2>1. Quem somos</h2>
+
+                <p>
+                    A <strong>V8 Digital — Desenvolvimento Web &
+                    Marketing Digital</strong> atua com desenvolvimento
+                    de sites, landing pages, sistemas web, automação,
+                    marketing digital, tráfego pago, SEO e soluções
+                    digitais.
+                </p>
+
+                <p>
+                    Para fins da Lei nº 13.709/2018 — Lei Geral de
+                    Proteção de Dados Pessoais (LGPD), a V8 Digital
+                    poderá atuar como controladora dos dados pessoais
+                    fornecidos diretamente pelo usuário por meio dos
+                    canais disponibilizados em nosso site.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>2. Quais dados podemos coletar</h2>
+
+                <p>
+                    Dependendo da forma como você interage conosco,
+                    poderemos coletar:
+                </p>
+
+                <ul>
+                    <li>Nome;</li>
+                    <li>Número de WhatsApp ou telefone;</li>
+                    <li>Endereço de e-mail;</li>
+                    <li>Informações relacionadas ao projeto ou serviço desejado;</li>
+                    <li>Mensagens e informações fornecidas voluntariamente;</li>
+                    <li>Dados técnicos de navegação;</li>
+                    <li>Endereço IP;</li>
+                    <li>Tipo de navegador e dispositivo;</li>
+                    <li>Páginas acessadas;</li>
+                    <li>Informações relacionadas à interação com campanhas publicitárias.</li>
+                </ul>
+            </section>
+
+
+            <section>
+                <h2>3. Como coletamos os dados</h2>
+
+                <p>
+                    Os dados podem ser coletados quando você:
+                </p>
+
+                <ul>
+                    <li>Preenche nosso formulário de contato;</li>
+                    <li>Solicita um orçamento;</li>
+                    <li>Entra em contato pelo WhatsApp;</li>
+                    <li>Entra em contato por e-mail;</li>
+                    <li>Interage com nossas campanhas publicitárias;</li>
+                    <li>Navega pelo nosso site;</li>
+                    <li>Utiliza funcionalidades que dependam de cookies ou tecnologias semelhantes.</li>
+                </ul>
+            </section>
+
+
+            <section>
+                <h2>4. Para que utilizamos seus dados</h2>
+
+                <p>
+                    Os dados pessoais poderão ser utilizados para:
+                </p>
+
+                <ul>
+                    <li>Responder solicitações de contato;</li>
+                    <li>Entrar em contato sobre projetos e orçamentos;</li>
+                    <li>Compreender as necessidades apresentadas;</li>
+                    <li>Prestar e administrar serviços contratados;</li>
+                    <li>Enviar informações relacionadas à solicitação realizada;</li>
+                    <li>Melhorar nossos serviços e site;</li>
+                    <li>Analisar o desempenho do site;</li>
+                    <li>Medir resultados de campanhas de marketing;</li>
+                    <li>Prevenir fraudes, abusos e atividades ilegais;</li>
+                    <li>Cumprir obrigações legais ou regulatórias.</li>
+                </ul>
+            </section>
+
+
+            <section>
+                <h2>5. Formulário de contato</h2>
+
+                <p>
+                    Quando você utiliza o formulário disponível no
+                    site da V8 Digital, poderemos receber informações
+                    como nome, WhatsApp, e-mail, tipo de serviço
+                    desejado e descrição do projeto.
+                </p>
+
+                <p>
+                    Essas informações são utilizadas principalmente
+                    para compreender sua solicitação e entrar em
+                    contato para atendimento, orçamento ou
+                    esclarecimento de dúvidas.
+                </p>
+
+                <div class="highlight">
+                    <p>
+                        <strong>Importante:</strong> não forneça pelo
+                        formulário informações pessoais sensíveis ou
+                        dados de terceiros que não sejam necessários
+                        para o atendimento da sua solicitação.
+                    </p>
+                </div>
+            </section>
+
+
+            <section>
+                <h2>6. WhatsApp, e-mail e outros canais</h2>
+
+                <p>
+                    Quando você escolhe entrar em contato conosco
+                    por WhatsApp, e-mail ou outro canal externo,
+                    o tratamento das informações também poderá
+                    estar sujeito às políticas de privacidade e
+                    aos termos de uso do respectivo provedor.
+                </p>
+
+                <p>
+                    Esses canais poderão ser utilizados para
+                    comunicação comercial, atendimento, suporte
+                    e negociação de serviços.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>7. Cookies e tecnologias semelhantes</h2>
+
+                <p>
+                    Nosso site poderá utilizar cookies e tecnologias
+                    semelhantes para melhorar a experiência de
+                    navegação, compreender como os visitantes
+                    utilizam nossas páginas e medir resultados
+                    de campanhas.
+                </p>
+
+                <p>
+                    Os cookies podem ser utilizados para:
+                </p>
+
+                <ul>
+                    <li>Funcionamento e segurança do site;</li>
+                    <li>Preferências e funcionalidades;</li>
+                    <li>Estatísticas de acesso;</li>
+                    <li>Análise de navegação;</li>
+                    <li>Mensuração de campanhas publicitárias;</li>
+                    <li>Identificação de conversões.</li>
+                </ul>
+
+                <p>
+                    Você poderá controlar ou bloquear cookies por
+                    meio das configurações do seu navegador.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>8. Google Analytics</h2>
+
+                <p>
+                    O site poderá utilizar o Google Analytics para
+                    compreender como os visitantes interagem com
+                    nossas páginas, analisar métricas de acesso e
+                    melhorar a experiência oferecida.
+                </p>
+
+                <p>
+                    As informações coletadas por essa ferramenta
+                    também poderão estar sujeitas às políticas e
+                    condições do Google.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>9. Meta Pixel e publicidade</h2>
+
+                <p>
+                    Quando utilizado, o Meta Pixel ou tecnologias
+                    semelhantes poderão ser empregados para medir
+                    resultados de campanhas, compreender ações
+                    realizadas no site e criar públicos relacionados
+                    às nossas campanhas publicitárias.
+                </p>
+
+                <p>
+                    Essas tecnologias poderão permitir a mensuração
+                    de eventos como visitas, interações e conversões.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>10. Compartilhamento de dados</h2>
+
+                <p>
+                    A V8 Digital <strong>não comercializa dados pessoais</strong>.
+                </p>
+
+                <p>
+                    Os dados poderão ser compartilhados quando
+                    necessário com fornecedores e prestadores de
+                    serviços utilizados para o funcionamento da
+                    operação, incluindo:
+                </p>
+
+                <ul>
+                    <li>Serviços de hospedagem;</li>
+                    <li>Plataformas de formulário;</li>
+                    <li>Serviços de análise de tráfego;</li>
+                    <li>Plataformas de publicidade;</li>
+                    <li>Ferramentas de comunicação;</li>
+                    <li>Serviços de tecnologia e infraestrutura;</li>
+                    <li>Prestadores envolvidos na execução dos serviços.</li>
+                </ul>
+
+                <p>
+                    O compartilhamento será limitado ao necessário
+                    para a finalidade correspondente.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>11. Transferência internacional</h2>
+
+                <p>
+                    Alguns fornecedores de tecnologia utilizados
+                    pela V8 Digital poderão processar ou armazenar
+                    dados em servidores localizados fora do Brasil.
+                </p>
+
+                <p>
+                    Quando houver transferência internacional de
+                    dados pessoais, serão observados os requisitos
+                    e mecanismos previstos na legislação aplicável.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>12. Segurança dos dados</h2>
+
+                <p>
+                    Adotamos medidas técnicas e administrativas
+                    razoáveis para proteger os dados pessoais contra
+                    acessos não autorizados, perda, destruição,
+                    alteração, divulgação ou tratamento inadequado.
+                </p>
+
+                <p>
+                    Entretanto, nenhum sistema eletrônico ou
+                    transmissão de dados pela internet pode ser
+                    considerado absolutamente seguro.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>13. Retenção e eliminação dos dados</h2>
+
+                <p>
+                    Os dados pessoais serão mantidos pelo período
+                    necessário para cumprir as finalidades para as
+                    quais foram coletados.
+                </p>
+
+                <p>
+                    Poderemos conservar determinadas informações
+                    quando necessário para:
+                </p>
+
+                <ul>
+                    <li>Cumprir obrigações legais ou regulatórias;</li>
+                    <li>Exercer ou defender direitos;</li>
+                    <li>Cumprir obrigações contratuais;</li>
+                    <li>Prevenir fraudes e abusos;</li>
+                    <li>Atender outras hipóteses permitidas pela legislação.</li>
+                </ul>
+            </section>
+
+
+            <section>
+                <h2>14. Direitos do titular</h2>
+
+                <p>
+                    Nos termos da LGPD, o titular poderá solicitar,
+                    observadas as hipóteses e limitações legais:
+                </p>
+
+                <ul>
+                    <li>Confirmação da existência de tratamento;</li>
+                    <li>Acesso aos dados pessoais;</li>
+                    <li>Correção de dados incompletos, inexatos ou desatualizados;</li>
+                    <li>Anonimização, bloqueio ou eliminação de dados desnecessários;</li>
+                    <li>Portabilidade dos dados, quando aplicável;</li>
+                    <li>Informações sobre compartilhamentos realizados;</li>
+                    <li>Informações sobre o tratamento dos dados;</li>
+                    <li>Revogação do consentimento, quando aplicável;</li>
+                    <li>Eliminação dos dados tratados com base no consentimento, quando aplicável;</li>
+                    <li>Oposição ao tratamento em determinadas hipóteses;</li>
+                    <li>Revisão de decisões tomadas unicamente com base em tratamento automatizado, quando aplicável.</li>
+                </ul>
+            </section>
+
+
+            <section>
+                <h2>15. Como solicitar seus direitos</h2>
+
+                <p>
+                    Para exercer seus direitos ou esclarecer dúvidas
+                    relacionadas ao tratamento de seus dados pessoais,
+                    entre em contato conosco por meio dos canais
+                    oficiais disponibilizados no site da V8 Digital.
+                </p>
+
+                <p>
+                    Poderemos solicitar informações adicionais para
+                    confirmar a identidade do solicitante e evitar
+                    que dados pessoais sejam fornecidos indevidamente
+                    a terceiros.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>16. Dados de crianças e adolescentes</h2>
+
+                <p>
+                    Nosso site e nossos serviços não são direcionados
+                    especificamente a crianças.
+                </p>
+
+                <p>
+                    Caso seja identificado tratamento indevido de
+                    dados pessoais de crianças ou adolescentes,
+                    serão adotadas as medidas cabíveis de acordo
+                    com a legislação aplicável e o melhor interesse
+                    do menor.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>17. Links para sites de terceiros</h2>
+
+                <p>
+                    Nosso site poderá conter links para páginas,
+                    plataformas ou serviços de terceiros.
+                </p>
+
+                <p>
+                    A V8 Digital não é responsável pelas práticas
+                    de privacidade, segurança ou conteúdo desses
+                    terceiros.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>18. Alterações nesta Política</h2>
+
+                <p>
+                    Esta Política de Privacidade poderá ser
+                    atualizada periodicamente para refletir
+                    alterações em nossos serviços, tecnologias
+                    utilizadas, práticas de tratamento de dados
+                    ou requisitos legais.
+                </p>
+
+                <p>
+                    A versão mais recente estará sempre disponível
+                    nesta página, acompanhada da respectiva data
+                    de atualização.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>19. Contato</h2>
+
+                <p>
+                    Caso tenha dúvidas sobre esta Política de
+                    Privacidade, sobre o tratamento de seus dados
+                    pessoais ou queira exercer seus direitos
+                    previstos na LGPD, entre em contato com a
+                    V8 Digital por meio dos canais oficiais
+                    disponibilizados em nosso site.
+                </p>
+
+                <p>
+                    <strong>V8 Digital — Desenvolvimento Web &
+                    Marketing Digital</strong>
+                </p>
+
+                <p>
+                    Site:
+                    <a href="https://v8digital.pages.dev/">
+                        v8digital.pages.dev
+                    </a>
+                </p>
+
+                <p>
+                    <strong>Última atualização:</strong>
+                    04/09/2026
+                </p>
+            </section>
+
+
+            <section>
+                <h2>20. Disposições finais</h2>
+
+                <p>
+                    Esta Política foi elaborada para apresentar,
+                    de forma transparente, as principais práticas
+                    relacionadas ao tratamento de dados pessoais
+                    realizadas pela V8 Digital por meio de seu site
+                    e canais digitais.
+                </p>
+
+                <p>
+                    Caso sejam adicionadas novas funcionalidades,
+                    formulários, sistemas de cadastro, plataformas
+                    de pagamento, ferramentas de análise ou outras
+                    formas de tratamento de dados, esta Política
+                    poderá ser atualizada para refletir essas
+                    alterações.
+                </p>
+            </section>
+
+        </article>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div>
+                <div class="footer-brand">
+                    V8<span>Digital</span>
+                </div>
+
+                <div class="footer-copy">
+                    Desenvolvimento Web & Marketing Digital
+                </div>
+            </div>
+
+            <nav class="footer-links">
+
+                <a href="/">
+                    Início
+                </a>
+
+                <a href="/politica-privacidade.html"
+                   aria-current="page">
+                    Privacidade
+                </a>
+
+            </nav>
+
+            <div class="footer-copy">
+                © 2026 V8 Digital. Todos os direitos reservados.
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
+```
