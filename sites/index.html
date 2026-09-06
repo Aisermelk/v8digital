@@ -11,17 +11,17 @@
     >
 
     <title>
-        Site profissional por R$ 149 | V8 Digital
+        Site profissional a partir de R$ 99 | V8 Digital
     </title>
 
     <meta
         name="description"
-        content="Crie seu site profissional por R$ 149, com domínio grátis por 1 ano e entrega em até 48 horas."
+        content="Crie seu site profissional a partir de R$ 99. Site responsivo, rápido e pronto para colocar seu negócio na internet."
     >
 
     <meta
         name="keywords"
-        content="criação de sites, site profissional, V8 Digital, site por R$149"
+        content="criação de sites, site profissional, site barato, site R$99, V8 Digital"
     >
 
     <meta
@@ -61,12 +61,12 @@
 
     <meta
         property="og:title"
-        content="Site profissional por R$ 149 | V8 Digital"
+        content="Site profissional a partir de R$ 99 | V8 Digital"
     >
 
     <meta
         property="og:description"
-        content="Coloque seu negócio na internet com um site profissional, responsivo e pronto em até 48 horas."
+        content="Coloque seu negócio na internet com um site profissional, rápido e responsivo a partir de R$ 99."
     >
 
     <meta
@@ -96,7 +96,7 @@
 
     <meta
         name="twitter:title"
-        content="Site profissional por R$ 149 | V8 Digital"
+        content="Site profissional a partir de R$ 99 | V8 Digital"
     >
 
     <meta
@@ -135,9 +135,847 @@
          CSS
     ========================================================= -->
 
-
+    <!-- ========================================================
+         ESTILOS EXTRAS
+         PORTFÓLIO + CTA + MODAL
+    ========================================================= -->
 
     <style>
+
+        /* ======================================================
+           PORTFÓLIO
+        ====================================================== */
+
+        .projects .section-heading {
+            max-width: 760px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .projects .section-heading p {
+            max-width: 620px;
+            margin: 13px auto 0;
+        }
+
+
+        /* ======================================================
+           BLOCO BEHANCE
+        ====================================================== */
+
+        .behance-portfolio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            min-height: 250px;
+
+            padding: 45px 30px;
+
+            text-align: center;
+            text-decoration: none;
+
+            border: 1px solid rgba(156, 77, 255, 0.32);
+            border-radius: 28px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(156, 77, 255, 0.14),
+                    rgba(17, 17, 25, 0.96) 58%
+                );
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.22);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .behance-portfolio:hover {
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(156, 77, 255, 0.60);
+
+            box-shadow:
+                0 25px 70px rgba(156, 77, 255, 0.12);
+        }
+
+
+        .behance-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 64px;
+            height: 64px;
+
+            margin-bottom: 20px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(156, 77, 255, 0.12);
+
+            color: #b875ff;
+
+            font-size: 27px;
+            font-weight: 800;
+
+            letter-spacing: -2px;
+        }
+
+
+        .behance-label {
+            color: #b875ff;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 0.14em;
+
+            text-transform: uppercase;
+        }
+
+
+        .behance-title {
+            display: block;
+
+            margin-top: 8px;
+
+            color: #f7f7fa;
+
+            font-size: 24px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+
+        .behance-description {
+            display: block;
+
+            max-width: 520px;
+
+            margin-top: 10px;
+
+            color: #b8b8c4;
+
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+
+        .behance-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            min-height: 48px;
+
+            margin-top: 24px;
+
+            padding: 0 24px;
+
+            border-radius: 999px;
+
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #b875ff,
+                    #9c4dff
+                );
+
+            font-size: 12px;
+            font-weight: 800;
+
+            box-shadow:
+                0 12px 35px rgba(156, 77, 255, 0.22);
+        }
+
+
+        /* ======================================================
+           CTA DOS PLANOS
+        ====================================================== */
+
+        .plans-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+
+            margin-top: 48px;
+
+            text-align: center;
+        }
+
+
+        .plans-cta-question {
+            max-width: 600px;
+
+            margin: 0 0 18px;
+
+            color: #b8b8c4;
+
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+
+        .plans-cta-question strong {
+            color: #f7f7fa;
+
+            font-weight: 800;
+        }
+
+
+        .plans-cta-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 12px;
+
+            min-width: 280px;
+            min-height: 56px;
+
+            padding: 0 30px;
+
+            border: 0;
+            border-radius: 14px;
+
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #b875ff,
+                    #9c4dff
+                );
+
+            font-family: inherit;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 14px 40px rgba(156, 77, 255, 0.28);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .plans-cta-button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 18px 48px rgba(156, 77, 255, 0.38);
+        }
+
+
+        .plans-cta-button:active {
+            transform: translateY(0);
+        }
+
+
+        .plans-cta-button span {
+            transition:
+                transform 0.2s ease;
+        }
+
+
+        .plans-cta-button:hover span {
+            transform:
+                translateX(4px);
+        }
+
+
+        /* ======================================================
+           MODAL
+        ====================================================== */
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+
+        .plan-modal {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            opacity: 0;
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease;
+        }
+
+
+        .plan-modal.active {
+            opacity: 1;
+            visibility: visible;
+
+            pointer-events: auto;
+        }
+
+
+        .plan-modal-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                rgba(0, 0, 0, 0.78);
+
+            backdrop-filter:
+                blur(8px);
+
+            -webkit-backdrop-filter:
+                blur(8px);
+        }
+
+
+        .plan-modal-box {
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+            max-width: 470px;
+
+            padding: 34px;
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.10);
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #15151f 0%,
+                    #0d0d14 100%
+                );
+
+            box-shadow:
+                0 30px 100px
+                rgba(0, 0, 0, 0.55);
+
+            transform:
+                translateY(20px)
+                scale(0.97);
+
+            transition:
+                transform 0.25s ease;
+        }
+
+
+        .plan-modal.active
+        .plan-modal-box {
+
+            transform:
+                translateY(0)
+                scale(1);
+
+        }
+
+
+        .plan-modal-close {
+            position: absolute;
+
+            top: 16px;
+            right: 16px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 38px;
+            height: 38px;
+
+            padding: 0;
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.08);
+
+            border-radius: 10px;
+
+            color: #b8b8c4;
+
+            background:
+                rgba(255, 255, 255, 0.04);
+
+            font-family: inherit;
+
+            font-size: 25px;
+            line-height: 1;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+
+        .plan-modal-close:hover {
+            color: #ffffff;
+
+            background:
+                rgba(255, 255, 255, 0.09);
+        }
+
+
+        .plan-modal-label {
+            display: inline-block;
+
+            margin-bottom: 10px;
+
+            color: #b875ff;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 0.14em;
+
+            text-transform: uppercase;
+        }
+
+
+        .plan-modal-box h2 {
+            margin: 0;
+
+            padding-right: 40px;
+
+            color: #f7f7fa;
+
+            font-size: 25px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+
+        .plan-modal-text {
+            margin: 10px 0 24px;
+
+            color: #858592;
+
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+
+        /* ======================================================
+           OPÇÕES DOS PLANOS
+        ====================================================== */
+
+        .plan-options {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+
+        .plan-option {
+            display: flex;
+
+            align-items: center;
+
+            width: 100%;
+
+            min-height: 74px;
+
+            padding: 14px 16px;
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.08);
+
+            border-radius: 14px;
+
+            color: #ffffff;
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+            font-family: inherit;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            transition:
+                border-color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .plan-option:hover {
+            border-color:
+                rgba(156, 77, 255, 0.38);
+
+            background:
+                rgba(156, 77, 255, 0.06);
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        .plan-option.selected {
+            border-color:
+                rgba(156, 77, 255, 0.70);
+
+            background:
+                rgba(156, 77, 255, 0.10);
+
+            box-shadow:
+                inset 0 0 0 1px
+                rgba(156, 77, 255, 0.08);
+        }
+
+
+        .plan-option-info {
+            display: flex;
+
+            flex-direction: column;
+
+            flex: 1;
+
+            min-width: 0;
+
+            gap: 4px;
+        }
+
+
+        .plan-option-info strong {
+            color: #f7f7fa;
+
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+
+        .plan-option-info small {
+            color: #858592;
+
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+
+        .plan-option-price {
+            margin-left: 12px;
+
+            color: #b875ff;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+
+        .plan-option-check {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 22px;
+            height: 22px;
+
+            margin-left: 12px;
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.12);
+
+            border-radius: 50%;
+
+            color: transparent;
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+
+        .plan-option.selected
+        .plan-option-check {
+
+            border-color:
+                #9c4dff;
+
+            color: #ffffff;
+
+            background:
+                #9c4dff;
+
+        }
+
+
+        /* ======================================================
+           BOTÃO WHATSAPP DO MODAL
+        ====================================================== */
+
+        .plan-modal-whatsapp {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            width: 100%;
+
+            min-height: 52px;
+
+            margin-top: 20px;
+
+            padding: 0 20px;
+
+            border: 0;
+
+            border-radius: 12px;
+
+            color: #ffffff;
+
+            background:
+                #30303a;
+
+            font-family: inherit;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            cursor: not-allowed;
+
+            opacity: 0.55;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                opacity 0.2s ease;
+        }
+
+
+        .plan-modal-whatsapp.ready {
+            background:
+                linear-gradient(
+                    135deg,
+                    #b875ff,
+                    #9c4dff
+                );
+
+            opacity: 1;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 12px 35px
+                rgba(156, 77, 255, 0.25);
+        }
+
+
+        .plan-modal-whatsapp.ready:hover {
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 16px 42px
+                rgba(156, 77, 255, 0.35);
+        }
+
+
+        .plan-modal-whatsapp.ready span:last-child {
+            transition:
+                transform 0.2s ease;
+        }
+
+
+        .plan-modal-whatsapp.ready:hover
+        span:last-child {
+            transform:
+                translateX(4px);
+        }
+
+
+        .plan-modal-note {
+            margin: 14px 0 0;
+
+            color: #686875;
+
+            font-size: 10px;
+
+            line-height: 1.5;
+
+            text-align: center;
+        }
+
+
+        /* ======================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 700px) {
+
+            .projects .section-heading {
+                margin-bottom: 27px;
+            }
+
+
+            .behance-portfolio {
+                min-height: 220px;
+
+                padding: 35px 20px;
+
+                border-radius: 22px;
+            }
+
+
+            .behance-title {
+                font-size: 21px;
+            }
+
+
+            .behance-description {
+                font-size: 12px;
+            }
+
+
+            .plans-cta {
+                margin-top: 36px;
+            }
+
+
+            .plans-cta-question {
+                max-width: 300px;
+
+                margin-bottom: 16px;
+
+                font-size: 13px;
+            }
+
+
+            .plans-cta-button {
+                width: 100%;
+                min-width: 0;
+
+                min-height: 54px;
+            }
+
+
+            .plan-modal {
+                padding: 14px;
+            }
+
+
+            .plan-modal-box {
+                max-width: 100%;
+
+                padding: 28px 20px 22px;
+
+                border-radius: 20px;
+            }
+
+
+            .plan-modal-box h2 {
+                font-size: 22px;
+            }
+
+
+            .plan-option {
+                min-height: 70px;
+
+                padding: 12px;
+            }
+
+
+            .plan-option-info small {
+                font-size: 10px;
+            }
+
+
+            .plan-option-price {
+                font-size: 13px;
+            }
+
+        }
+
+
+        /* ======================================================
+           ACESSIBILIDADE / REDUÇÃO DE MOVIMENTO
+        ====================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .plan-modal,
+            .plan-modal-box,
+            .plans-cta-button,
+            .plan-option,
+            .plan-modal-whatsapp {
+
+                transition: none !important;
+
+            }
+
+        }
+
+    </style>
+
+
+    <!-- ========================================================
+         STRUCTURED DATA
+    ========================================================= -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "V8 Digital",
+        "url": "https://v8digital.pages.dev/",
+        "description": "Criação de sites profissionais, landing pages e soluções digitais.",
+        "priceRange": "R$ 99 - R$ 599"
+    }
+    </script>
+
+
+<style id="v8-integrated-style">
 /* ============================================================
    V8 DIGITAL — STYLE.CSS
    ============================================================ */
@@ -3160,891 +3998,130 @@ textarea:focus-visible {
     }
 
 }
-    </style>
-
-    <!-- ========================================================
-         ESTILOS EXTRAS
-         PORTFÓLIO + CTA + MODAL
-    ========================================================= -->
-
-    <style>
-
-        /* ======================================================
-           PORTFÓLIO
-        ====================================================== */
-
-        .projects .section-heading {
-            max-width: 760px;
-            margin: 0 auto 38px;
-            text-align: center;
-        }
-
-        .projects .section-heading p {
-            max-width: 620px;
-            margin: 13px auto 0;
-        }
-
-
-        /* ======================================================
-           BLOCO BEHANCE
-        ====================================================== */
-
-        .behance-portfolio {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            width: 100%;
-            min-height: 250px;
-
-            padding: 45px 30px;
-
-            text-align: center;
-            text-decoration: none;
-
-            border: 1px solid rgba(156, 77, 255, 0.32);
-            border-radius: 28px;
-
-            background:
-                radial-gradient(
-                    circle at 50% 0%,
-                    rgba(156, 77, 255, 0.14),
-                    rgba(17, 17, 25, 0.96) 58%
-                );
-
-            box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.22);
-
-            transition:
-                transform 0.25s ease,
-                border-color 0.25s ease,
-                box-shadow 0.25s ease;
-        }
-
-
-        .behance-portfolio:hover {
-            transform: translateY(-5px);
-
-            border-color:
-                rgba(156, 77, 255, 0.60);
-
-            box-shadow:
-                0 25px 70px rgba(156, 77, 255, 0.12);
-        }
-
-
-        .behance-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            width: 64px;
-            height: 64px;
-
-            margin-bottom: 20px;
-
-            border-radius: 18px;
-
-            background:
-                rgba(156, 77, 255, 0.12);
-
-            color: #b875ff;
-
-            font-size: 27px;
-            font-weight: 800;
-
-            letter-spacing: -2px;
-        }
-
-
-        .behance-label {
-            color: #b875ff;
-
-            font-size: 10px;
-            font-weight: 800;
-
-            letter-spacing: 0.14em;
-
-            text-transform: uppercase;
-        }
-
-
-        .behance-title {
-            display: block;
-
-            margin-top: 8px;
-
-            color: #f7f7fa;
-
-            font-size: 24px;
-            line-height: 1.2;
-            font-weight: 800;
-        }
-
-
-        .behance-description {
-            display: block;
-
-            max-width: 520px;
-
-            margin-top: 10px;
-
-            color: #b8b8c4;
-
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-
-        .behance-button {
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            gap: 10px;
-
-            min-height: 48px;
-
-            margin-top: 24px;
-
-            padding: 0 24px;
-
-            border-radius: 999px;
-
-            color: #ffffff;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #b875ff,
-                    #9c4dff
-                );
-
-            font-size: 12px;
-            font-weight: 800;
-
-            box-shadow:
-                0 12px 35px rgba(156, 77, 255, 0.22);
-        }
-
-
-        /* ======================================================
-           CTA DOS PLANOS
-        ====================================================== */
-
-        .plans-cta {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            width: 100%;
-
-            margin-top: 48px;
-
-            text-align: center;
-        }
-
-
-        .plans-cta-question {
-            max-width: 600px;
-
-            margin: 0 0 18px;
-
-            color: #b8b8c4;
-
-            font-size: 14px;
-            line-height: 1.6;
-            font-weight: 500;
-        }
-
-
-        .plans-cta-question strong {
-            color: #f7f7fa;
-
-            font-weight: 800;
-        }
-
-
-        .plans-cta-button {
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            gap: 12px;
-
-            min-width: 280px;
-            min-height: 56px;
-
-            padding: 0 30px;
-
-            border: 0;
-            border-radius: 14px;
-
-            color: #ffffff;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #b875ff,
-                    #9c4dff
-                );
-
-            font-family: inherit;
-
-            font-size: 13px;
-            font-weight: 800;
-
-            text-decoration: none;
-
-            cursor: pointer;
-
-            box-shadow:
-                0 14px 40px rgba(156, 77, 255, 0.28);
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-        }
-
-
-        .plans-cta-button:hover {
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 18px 48px rgba(156, 77, 255, 0.38);
-        }
-
-
-        .plans-cta-button:active {
-            transform: translateY(0);
-        }
-
-
-        .plans-cta-button span {
-            transition:
-                transform 0.2s ease;
-        }
-
-
-        .plans-cta-button:hover span {
-            transform:
-                translateX(4px);
-        }
-
-
-        /* ======================================================
-           MODAL
-        ====================================================== */
-
-        body.modal-open {
-            overflow: hidden;
-        }
-
-
-        .plan-modal {
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 9999;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            padding: 20px;
-
-            opacity: 0;
-            visibility: hidden;
-
-            pointer-events: none;
-
-            transition:
-                opacity 0.25s ease,
-                visibility 0.25s ease;
-        }
-
-
-        .plan-modal.active {
-            opacity: 1;
-            visibility: visible;
-
-            pointer-events: auto;
-        }
-
-
-        .plan-modal-overlay {
-            position: absolute;
-
-            inset: 0;
-
-            background:
-                rgba(0, 0, 0, 0.78);
-
-            backdrop-filter:
-                blur(8px);
-
-            -webkit-backdrop-filter:
-                blur(8px);
-        }
-
-
-        .plan-modal-box {
-            position: relative;
-
-            z-index: 2;
-
-            width: 100%;
-            max-width: 470px;
-
-            padding: 34px;
-
-            border: 1px solid
-                rgba(255, 255, 255, 0.10);
-
-            border-radius: 24px;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    #15151f 0%,
-                    #0d0d14 100%
-                );
-
-            box-shadow:
-                0 30px 100px
-                rgba(0, 0, 0, 0.55);
-
-            transform:
-                translateY(20px)
-                scale(0.97);
-
-            transition:
-                transform 0.25s ease;
-        }
-
-
-        .plan-modal.active
-        .plan-modal-box {
-
-            transform:
-                translateY(0)
-                scale(1);
-
-        }
-
-
-        .plan-modal-close {
-            position: absolute;
-
-            top: 16px;
-            right: 16px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            width: 38px;
-            height: 38px;
-
-            padding: 0;
-
-            border: 1px solid
-                rgba(255, 255, 255, 0.08);
-
-            border-radius: 10px;
-
-            color: #b8b8c4;
-
-            background:
-                rgba(255, 255, 255, 0.04);
-
-            font-family: inherit;
-
-            font-size: 25px;
-            line-height: 1;
-
-            cursor: pointer;
-
-            transition:
-                background 0.2s ease,
-                color 0.2s ease;
-        }
-
-
-        .plan-modal-close:hover {
-            color: #ffffff;
-
-            background:
-                rgba(255, 255, 255, 0.09);
-        }
-
-
-        .plan-modal-label {
-            display: inline-block;
-
-            margin-bottom: 10px;
-
-            color: #b875ff;
-
-            font-size: 10px;
-            font-weight: 800;
-
-            letter-spacing: 0.14em;
-
-            text-transform: uppercase;
-        }
-
-
-        .plan-modal-box h2 {
-            margin: 0;
-
-            padding-right: 40px;
-
-            color: #f7f7fa;
-
-            font-size: 25px;
-            line-height: 1.2;
-            font-weight: 800;
-        }
-
-
-        .plan-modal-text {
-            margin: 10px 0 24px;
-
-            color: #858592;
-
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-
-        /* ======================================================
-           OPÇÕES DOS PLANOS
-        ====================================================== */
-
-        .plan-options {
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 10px;
-        }
-
-
-        .plan-option {
-            display: flex;
-
-            align-items: center;
-
-            width: 100%;
-
-            min-height: 74px;
-
-            padding: 14px 16px;
-
-            border: 1px solid
-                rgba(255, 255, 255, 0.08);
-
-            border-radius: 14px;
-
-            color: #ffffff;
-
-            background:
-                rgba(255, 255, 255, 0.025);
-
-            font-family: inherit;
-
-            text-align: left;
-
-            cursor: pointer;
-
-            transition:
-                border-color 0.2s ease,
-                background 0.2s ease,
-                transform 0.2s ease;
-        }
-
-
-        .plan-option:hover {
-            border-color:
-                rgba(156, 77, 255, 0.38);
-
-            background:
-                rgba(156, 77, 255, 0.06);
-
-            transform:
-                translateY(-1px);
-        }
-
-
-        .plan-option.selected {
-            border-color:
-                rgba(156, 77, 255, 0.70);
-
-            background:
-                rgba(156, 77, 255, 0.10);
-
-            box-shadow:
-                inset 0 0 0 1px
-                rgba(156, 77, 255, 0.08);
-        }
-
-
-        .plan-option-info {
-            display: flex;
-
-            flex-direction: column;
-
-            flex: 1;
-
-            min-width: 0;
-
-            gap: 4px;
-        }
-
-
-        .plan-option-info strong {
-            color: #f7f7fa;
-
-            font-size: 14px;
-            font-weight: 800;
-        }
-
-
-        .plan-option-info small {
-            color: #858592;
-
-            font-size: 11px;
-            line-height: 1.4;
-        }
-
-
-        .plan-option-price {
-            margin-left: 12px;
-
-            color: #b875ff;
-
-            font-size: 14px;
-            font-weight: 800;
-
-            white-space: nowrap;
-        }
-
-
-        .plan-option-check {
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            width: 22px;
-            height: 22px;
-
-            margin-left: 12px;
-
-            border: 1px solid
-                rgba(255, 255, 255, 0.12);
-
-            border-radius: 50%;
-
-            color: transparent;
-
-            font-size: 12px;
-            font-weight: 800;
-        }
-
-
-        .plan-option.selected
-        .plan-option-check {
-
-            border-color:
-                #9c4dff;
-
-            color: #ffffff;
-
-            background:
-                #9c4dff;
-
-        }
-
-
-        /* ======================================================
-           BOTÃO WHATSAPP DO MODAL
-        ====================================================== */
-
-        .plan-modal-whatsapp {
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            gap: 10px;
-
-            width: 100%;
-
-            min-height: 52px;
-
-            margin-top: 20px;
-
-            padding: 0 20px;
-
-            border: 0;
-
-            border-radius: 12px;
-
-            color: #ffffff;
-
-            background:
-                #30303a;
-
-            font-family: inherit;
-
-            font-size: 12px;
-            font-weight: 800;
-
-            cursor: not-allowed;
-
-            opacity: 0.55;
-
-            transition:
-                background 0.2s ease,
-                transform 0.2s ease,
-                box-shadow 0.2s ease,
-                opacity 0.2s ease;
-        }
-
-
-        .plan-modal-whatsapp.ready {
-            background:
-                linear-gradient(
-                    135deg,
-                    #b875ff,
-                    #9c4dff
-                );
-
-            opacity: 1;
-
-            cursor: pointer;
-
-            box-shadow:
-                0 12px 35px
-                rgba(156, 77, 255, 0.25);
-        }
-
-
-        .plan-modal-whatsapp.ready:hover {
-            transform:
-                translateY(-2px);
-
-            box-shadow:
-                0 16px 42px
-                rgba(156, 77, 255, 0.35);
-        }
-
-
-        .plan-modal-whatsapp.ready span:last-child {
-            transition:
-                transform 0.2s ease;
-        }
-
-
-        .plan-modal-whatsapp.ready:hover
-        span:last-child {
-            transform:
-                translateX(4px);
-        }
-
-
-        .plan-modal-note {
-            margin: 14px 0 0;
-
-            color: #686875;
-
-            font-size: 10px;
-
-            line-height: 1.5;
-
-            text-align: center;
-        }
-
-
-        /* ======================================================
-           MOBILE
-        ====================================================== */
-
-        @media (max-width: 700px) {
-
-            .projects .section-heading {
-                margin-bottom: 27px;
-            }
-
-
-            .behance-portfolio {
-                min-height: 220px;
-
-                padding: 35px 20px;
-
-                border-radius: 22px;
-            }
-
-
-            .behance-title {
-                font-size: 21px;
-            }
-
-
-            .behance-description {
-                font-size: 12px;
-            }
-
-
-            .plans-cta {
-                margin-top: 36px;
-            }
-
-
-            .plans-cta-question {
-                max-width: 300px;
-
-                margin-bottom: 16px;
-
-                font-size: 13px;
-            }
-
-
-            .plans-cta-button {
-                width: 100%;
-                min-width: 0;
-
-                min-height: 54px;
-            }
-
-
-            .plan-modal {
-                padding: 14px;
-            }
-
-
-            .plan-modal-box {
-                max-width: 100%;
-
-                padding: 28px 20px 22px;
-
-                border-radius: 20px;
-            }
-
-
-            .plan-modal-box h2 {
-                font-size: 22px;
-            }
-
-
-            .plan-option {
-                min-height: 70px;
-
-                padding: 12px;
-            }
-
-
-            .plan-option-info small {
-                font-size: 10px;
-            }
-
-
-            .plan-option-price {
-                font-size: 13px;
-            }
-
-        }
-
-
-        /* ======================================================
-           ACESSIBILIDADE / REDUÇÃO DE MOVIMENTO
-        ====================================================== */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            .plan-modal,
-            .plan-modal-box,
-            .plans-cta-button,
-            .plan-option,
-            .plan-modal-whatsapp {
-
-                transition: none !important;
-
-            }
-
-        }
-
-    </style>
-
-
-    <!-- ========================================================
-         STRUCTURED DATA
-    ========================================================= -->
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "V8 Digital",
-        "url": "https://v8digital.pages.dev/",
-        "description": "Criação de sites profissionais, landing pages e soluções digitais.",
-        "priceRange": "R$ 149 - R$ 599"
+</style>
+<style id="v8-navigation-style">
+/* V8 DIGITAL — NAV MENU */
+.v8-main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9990;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    background: rgba(8,8,13,.82);
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.v8-main-nav .v8-nav-inner {
+    width: min(calc(100% - 40px), var(--container,1120px));
+    margin: 0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+}
+.v8-nav-brand {
+    display:inline-flex;
+    align-items:center;
+    flex:0 0 auto;
+    color:#fff;
+    font-size:16px;
+    font-weight:850;
+    letter-spacing:-.04em;
+}
+.v8-nav-links {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:26px;
+    flex:1;
+}
+.v8-nav-links a {
+    color:rgba(255,255,255,.72);
+    font-size:12px;
+    font-weight:700;
+    transition:color .2s ease;
+}
+.v8-nav-links a:hover { color:#fff; }
+.v8-nav-main-link { color:#fff !important; }
+.v8-nav-cta {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:42px;
+    padding:0 17px;
+    border-radius:999px;
+    color:#fff !important;
+    background:linear-gradient(135deg,#b875ff,#9c4dff);
+    box-shadow:0 10px 28px rgba(156,77,255,.22);
+    font-size:11px !important;
+    font-weight:850 !important;
+    white-space:nowrap;
+}
+.v8-nav-toggle {
+    display:none;
+    width:42px;
+    height:42px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:12px;
+    background:rgba(255,255,255,.04);
+    color:#fff;
+    font-size:21px;
+    line-height:1;
+}
+@media (max-width: 820px) {
+    .v8-main-nav { height:64px; }
+    .v8-main-nav .v8-nav-inner { width:min(calc(100% - 28px),var(--container,1120px)); }
+    .v8-nav-links {
+        display:none;
+        position:absolute;
+        top:64px;
+        left:14px;
+        right:14px;
+        padding:12px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:2px;
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:16px;
+        background:rgba(12,12,19,.97);
+        box-shadow:0 20px 60px rgba(0,0,0,.4);
     }
-    </script>
-
-
-    <style>
-        /* V8 DIGITAL — CAMPANHA R$149 / NEON PREMIUM */
-        :root {
-            --primary: #a855f7;
-            --primary-light: #d06cff;
-            --primary-dark: #7c3aed;
-            --accent-magenta: #ec4899;
-        }
-        .hero { min-height: 760px; }
-        .hero::before { opacity: .72; background: radial-gradient(circle, rgba(168,85,247,.13) 0%, rgba(236,72,153,.035) 34%, transparent 68%); }
-        .eyebrow, .section-label { color: var(--primary-light); }
-        .hero h1 span, .capture-copy h2 span {
-            background: linear-gradient(100deg, #d06cff 0%, #ec4899 52%, #8b5cf6 100%);
-            -webkit-background-clip: text; background-clip: text; color: transparent;
-        }
-        .price { flex-wrap: wrap; max-width: 520px; margin-inline: auto; }
-        .price-label { color: #a7a7b5; }
-        .price-value { font-size: clamp(48px, 6vw, 64px); background: linear-gradient(100deg,#fff 0%,#d06cff 55%,#ec4899 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-        .price-note { flex-basis: 100%; margin-top: -3px; color: #b8b8c4; }
-        .price-note::before { content: '✦ '; color: #ec4899; }
-        .hero-cta, .final-cta-button, .plans-cta-button { background: linear-gradient(100deg,#a855f7,#c026d3 58%,#ec4899); box-shadow: 0 15px 45px rgba(168,85,247,.20); }
-        .hero-note { color: #a7a7b5; }
-        .hero-note span { color: rgba(208,108,255,.45); }
-        .benefit-icon { color: #d06cff; background: rgba(168,85,247,.09); }
-        .benefit { background: rgba(255,255,255,.018); border-color: rgba(255,255,255,.075); }
-        .plans { padding-top: 70px; }
-        .plan.featured { border-color: rgba(168,85,247,.32); }
-        .capture-box { border-color: rgba(168,85,247,.18); background: radial-gradient(circle at 15% 10%,rgba(168,85,247,.07),transparent 42%),#0e0e16; }
-        .capture-price strong { background: linear-gradient(100deg,#fff,#d06cff,#ec4899); -webkit-background-clip:text; background-clip:text; color:transparent; }
-        .final-cta { border-top-color: rgba(255,255,255,.045); }
-        @media (max-width:700px) {
-            .hero { min-height: 700px; padding-top: 125px; }
-            .hero h1 { font-size: clamp(42px,12vw,58px); }
-            .hero-text { font-size: 15px; max-width: 340px; }
-            .price-value { font-size: 52px; }
-            .hero-cta { width: min(100%,320px); }
-        }
-    </style>
-
-</head>
+    .v8-nav-links.is-open { display:flex; }
+    .v8-nav-links a {
+        padding:13px 12px;
+        border-radius:10px;
+        font-size:13px;
+    }
+    .v8-nav-links a:hover { background:rgba(255,255,255,.05); }
+    .v8-nav-cta { display:none !important; }
+    .v8-nav-toggle { display:block; }
+    body { padding-top:64px; }
+}
+</style></head>
 
 
 <body>
+
+<nav class="v8-main-nav" aria-label="Navegação principal">
+  <div class="v8-nav-inner">
+    <a class="v8-nav-brand" href="https://v8digital.pages.dev/" aria-label="V8 Digital — Site Principal">V8 DIGITAL</a>
+    <div class="v8-nav-links" id="v8-nav-links">
+      <a href="#inicio">Início</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a class="v8-nav-main-link" href="https://v8digital.pages.dev/">Site Principal</a>
+      <a class="v8-nav-cta" href="#formulario">QUERO MEU SITE →</a>
+    </div>
+    <a class="v8-nav-cta" href="#formulario">QUERO MEU SITE →</a>
+    <button class="v8-nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="v8-nav-links">☰</button>
+  </div>
+</nav>
+
 
 
     <!-- ========================================================
@@ -4077,7 +4154,7 @@ textarea:focus-visible {
                 href="#formulario"
                 class="header-cta"
             >
-                Quero aproveitar
+                Quero criar meu site
             </a>
 
         </div>
@@ -4093,7 +4170,7 @@ textarea:focus-visible {
              HERO
         ===================================================== -->
 
-        <section class="hero">
+        <section class="hero" id="inicio">
 
             <div class="container">
 
@@ -4107,10 +4184,10 @@ textarea:focus-visible {
 
                     <h1>
 
-                        Seu negócio merece
+                        Seu negócio precisa
 
                         <span>
-                            uma presença digital profissional.
+                            de um site que venda.
                         </span>
 
                     </h1>
@@ -4118,8 +4195,8 @@ textarea:focus-visible {
 
                     <p class="hero-text">
 
-                        Mais presença online. Mais resultados.
-                        <br>Site profissional, responsivo e pronto para sua empresa.
+                        Site profissional, rápido e responsivo
+                        para colocar sua empresa na internet.
 
                     </p>
 
@@ -4127,17 +4204,17 @@ textarea:focus-visible {
                     <div class="price">
 
                         <span class="price-label">
-                            Oferta especial
+                            A partir de
                         </span>
 
 
                         <strong class="price-value">
-                            R$ 149
+                            R$ 99
                         </strong>
 
 
                         <span class="price-note">
-                            com domínio grátis por 1 ano
+                            projeto
                         </span>
 
                     </div>
@@ -4148,7 +4225,7 @@ textarea:focus-visible {
                         class="hero-cta"
                     >
 
-                        Quero aproveitar
+                        Quero criar meu site
 
                         <span aria-hidden="true">
                             →
@@ -4159,7 +4236,7 @@ textarea:focus-visible {
 
                     <p class="hero-note">
 
-                        Domínio grátis por 1 ano
+                        Sem mensalidade
 
                         <span>•</span>
 
@@ -4184,7 +4261,7 @@ textarea:focus-visible {
              BENEFÍCIOS
         ===================================================== -->
 
-        <section class="benefits">
+        <section class="benefits" id="beneficios">
 
             <div class="container">
 
@@ -4202,7 +4279,7 @@ textarea:focus-visible {
                         </strong>
 
                         <span>
-                            Design profissional
+                            Visual moderno
                         </span>
 
                     </div>
@@ -4219,7 +4296,7 @@ textarea:focus-visible {
                         </strong>
 
                         <span>
-                            Perfeito no celular
+                            Funciona no celular
                         </span>
 
                     </div>
@@ -4236,7 +4313,7 @@ textarea:focus-visible {
                         </strong>
 
                         <span>
-                            WhatsApp integrado
+                            Facilita o contato
                         </span>
 
                     </div>
@@ -4249,11 +4326,11 @@ textarea:focus-visible {
                         </div>
 
                         <strong>
-                            Entrega rápida
+                            Online
                         </strong>
 
                         <span>
-                            Site pronto em até 48h
+                            Pronto para divulgar
                         </span>
 
                     </div>
@@ -4271,7 +4348,7 @@ textarea:focus-visible {
              PORTFÓLIO
         ===================================================== -->
 
-        <section class="projects">
+        <section class="projects" id="portfolio">
 
             <div class="container">
 
@@ -4283,11 +4360,11 @@ textarea:focus-visible {
                     </span>
 
                     <h2>
-                        Conheça nossos com domínio grátis por 1 anos.
+                        Conheça nossos projetos.
                     </h2>
 
                     <p>
-                        Veja os com domínio grátis por 1 anos desenvolvidos pela V8 Digital
+                        Veja os projetos desenvolvidos pela V8 Digital
                         e conheça cada trabalho com mais detalhes.
                     </p>
 
@@ -4328,7 +4405,7 @@ textarea:focus-visible {
 
 
                         <span class="behance-description">
-                            Conheça os com domínio grátis por 1 anos da V8 Digital,
+                            Conheça os projetos da V8 Digital,
                             detalhes dos trabalhos e experiências
                             desenvolvidas.
                         </span>
@@ -4361,7 +4438,7 @@ textarea:focus-visible {
         <section
             class="capture"
             id="formulario"
-        >
+         id="como-funciona">
 
             <div class="container">
 
@@ -4378,10 +4455,10 @@ textarea:focus-visible {
 
                         <h2>
 
-                            Leve seu negócio
+                            Coloque seu negócio
 
                             <span>
-                                para a internet.
+                                na internet.
                             </span>
 
                         </h2>
@@ -4389,7 +4466,9 @@ textarea:focus-visible {
 
                         <p>
 
-                            Preencha seus dados e fale com a V8 Digital para começar seu site profissional.
+                            Conte um pouco sobre seu negócio.
+                            A V8 Digital entra em contato para
+                            entender o que você precisa.
 
                         </p>
 
@@ -4397,7 +4476,7 @@ textarea:focus-visible {
                         <div class="capture-price">
 
                             <strong>
-                                R$ 149
+                                R$ 99
                             </strong>
 
                             <span>
@@ -4543,13 +4622,13 @@ textarea:focus-visible {
                             type="submit"
                             class="submit-button"
                         >
-                            Quero aproveitar
+                            Quero criar meu site
                         </button>
 
 
                         <p class="form-note">
                             Seus dados serão utilizados apenas
-                            para entrar em contato sobre seu com domínio grátis por 1 ano.
+                            para entrar em contato sobre seu projeto.
                         </p>
 
 
@@ -4579,18 +4658,18 @@ textarea:focus-visible {
                 <div class="plans-heading">
 
                     <span class="section-label">
-                        Outras soluções
+                        Outras opções
                     </span>
 
 
                     <h2>
-                        Precisa de algo maior?
+                        Escolha o nível ideal para seu negócio.
                     </h2>
 
 
                     <p>
                         Comece com o essencial e evolua conforme
-                        a necessidade do seu com domínio grátis por 1 ano.
+                        a necessidade do seu projeto.
                     </p>
 
                 </div>
@@ -4612,7 +4691,7 @@ textarea:focus-visible {
 
 
                         <div class="plan-price">
-                            R$ 149
+                            R$ 99
                         </div>
 
 
@@ -4787,10 +4866,10 @@ textarea:focus-visible {
                     <p class="plans-cta-question">
 
                         <strong>
-                            Quer uma solução personalizada?
+                            Gostou de uma das opções?
                         </strong>
 
-                        Fale conosco e encontre a melhor opção para seu negócio.
+                        Escolha seu plano e fale conosco pelo WhatsApp.
 
                     </p>
 
@@ -4801,7 +4880,7 @@ textarea:focus-visible {
                         id="plans-whatsapp"
                     >
 
-                        Falar com a V8 pelo WhatsApp
+                        Comprar agora pelo WhatsApp
 
                         <span aria-hidden="true">
                             →
@@ -4857,12 +4936,13 @@ textarea:focus-visible {
 
 
                 <h2 id="plan-modal-title">
-                    Qual solução você deseja?
+                    Qual plano você deseja?
                 </h2>
 
 
                 <p class="plan-modal-text">
-                    Escolha uma opção para continuar pelo WhatsApp.
+                    Escolha uma opção para continuar
+                    pelo WhatsApp.
                 </p>
 
 
@@ -4873,7 +4953,7 @@ textarea:focus-visible {
                         type="button"
                         class="plan-option"
                         data-plan="Essencial"
-                        data-price="R$ 149"
+                        data-price="R$ 99"
                     >
 
                         <span class="plan-option-info">
@@ -4890,7 +4970,7 @@ textarea:focus-visible {
 
 
                         <span class="plan-option-price">
-                            R$ 149
+                            R$ 99
                         </span>
 
 
@@ -4989,7 +5069,8 @@ textarea:focus-visible {
 
 
                 <p class="plan-modal-note">
-                    Você será direcionado para conversar diretamente com a V8 Digital.
+                    Você será direcionado para conversar
+                    diretamente com a V8 Digital.
                 </p>
 
             </div>
@@ -5015,13 +5096,13 @@ textarea:focus-visible {
 
 
                     <h2>
-                        Sua empresa pode ter uma presença
-                        profissional na internet.
+                        Seu próximo cliente pode encontrar
+                        você na internet.
                     </h2>
 
 
                     <p>
-                        Crie seu site profissional por R$ 149, com domínio grátis por 1 ano.
+                        Crie seu site profissional a partir de R$ 99.
                     </p>
 
 
@@ -5030,7 +5111,7 @@ textarea:focus-visible {
                         class="final-cta-button"
                     >
 
-                        Quero aproveitar
+                        Quero criar meu site
 
                         <span aria-hidden="true">
                             →
@@ -5633,6 +5714,29 @@ textarea:focus-visible {
 
     </script>
 
+
+
+<script id="v8-navigation-script">
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.querySelector(".v8-nav-toggle");
+  const menu = document.getElementById("v8-nav-links");
+  if (!toggle || !menu) return;
+  toggle.addEventListener("click", function () {
+    const open = menu.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+    toggle.textContent = open ? "×" : "☰";
+  });
+  menu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      menu.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Abrir menu");
+      toggle.textContent = "☰";
+    });
+  });
+});
+</script>
 
 </body>
 
